@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CoolMode } from "./CoolMode";
 import GlareHover from "./GlareHover";
+import logo from '../images/logo/logo.png'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,8 @@ export default function Navbar() {
     <nav className=" bg-white/90 shadow-md fixed top-0 left-0 w-full z-50">
       <div className=" mx-auto max-w-7xl px-6 flex justify-between items-center h-16 relative">
         {/* Logo Placeholder */}
-        <div className="text-2xl font-bold">LOGO</div>
+        {/* <div className="text-2xl font-bold">LOGO</div> */}
+        <img src={logo} className="h-[38px]" alt="" />
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 items-center font-medium">
