@@ -1,0 +1,109 @@
+  {/* Team */}
+        {/* <div className="mb-20">
+          <motion.h3
+            className="text-3xl font-bold text-gray-900 text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Meet Our Team
+          </motion.h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Alex Rivera",
+                role: "Creative Director",
+                desc: "15+ years crafting visual identities that resonate",
+                img: "https://readdy.ai/api/search-image?query=professional%20creative%20director%20headshot%2C%20confident%20creative%20professional%2C%20modern%20studio%20background%2C%20artistic%20personality%2C%20warm%20professional%20lighting%2C%20approachable%20creative%20leader&width=300&height=300&seq=team-alex-1&orientation=squarish",
+              },
+              {
+                name: "Maya Chen",
+                role: "Digital Strategy Lead",
+                desc: "Data strategist turning insights into growth",
+                img: "https://readdy.ai/api/search-image?query=professional%20female%20digital%20strategist%2C%20confident%20business%20professional%2C%20modern%20office%20environment%2C%20strategic%20thinker%2C%20professional%20corporate%20headshot%2C%20warm%20lighting&width=300&height=300&seq=team-maya-1&orientation=squarish",
+              },
+              {
+                name: "Jordan Taylor",
+                role: "Technical Director",
+                desc: "Full-stack developer building digital experiences",
+                img: "https://readdy.ai/api/search-image?query=professional%20technical%20director%2C%20confident%20software%20developer%2C%20modern%20tech%20workspace%20background%2C%20professional%20developer%20headshot%2C%20clean%20modern%20aesthetic&width=300&height=300&seq=team-jordan-1&orientation=squarish",
+              },
+            ].map((member, index) => (
+              <motion.div
+                key={index}
+                className="text-center group cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.15,
+                }}
+              >
+                <div className="relative mb-6">
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-48 h-48 rounded-full mx-auto object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                  {member.name}
+                </h4>
+                <p className="text-blue-600 font-medium mb-2">{member.role}</p>
+                <p className="text-gray-600">{member.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div> */}
+
+        {/* Achievements */}
+        {/* <motion.div
+          className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-12"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
+            Our Achievements
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              {
+                icon: "ri-checkbox-circle-line",
+                value: "200+",
+                label: "Projects Completed",
+              },
+              { icon: "ri-trophy-line", value: "50+", label: "Awards Won" },
+              {
+                icon: "ri-heart-line",
+                value: "95%",
+                label: "Client Retention",
+              },
+              { icon: "ri-time-line", value: "15+", label: "Years Experience" },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.15,
+                }}
+              >
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <i className={`${item.icon} text-2xl text-blue-600`}></i>
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">
+                  {item.value}
+                </div>
+                <div className="text-gray-600">{item.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div> */}
