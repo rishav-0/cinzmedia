@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CoolMode } from "./CoolMode";
 import GlareHover from "./GlareHover";
 import logo from '../images/logo/logo.png'
+import giflogo from '../images/logo/giflogo.gif'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function Navbar() {
       <div className=" mx-auto max-w-7xl px-6 flex justify-between items-center h-16 relative">
         {/* Logo Placeholder */}
         {/* <div className="text-2xl font-bold">LOGO</div> */}
-        <img src={logo} className="h-[38px]" alt="" />
+        <img src={giflogo} className="h-[140px]" alt="" />
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 items-center font-medium">
