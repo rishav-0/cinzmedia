@@ -1,55 +1,71 @@
 import { motion } from "framer-motion";
+import { CardContainer, CardBody, CardItem } from "../components/3dCard";
+import { video } from "framer-motion/client";
 
 const Services = () => {
   const services = [
     {
       title: "Website Development",
       description:
-        "Modern, responsive websites built with cutting-edge technology",
+        "Blazing-fast, SEO-optimized websites that rank higher and convert visitors into customers.",
       icon: "ri-code-s-slash-line",
+      link: "/services/website-development",
       image:
-        "https://readdy.ai/api/search-image?query=modern%20website%20development%20coding%20on%20multiple%20screens%2C%20clean%20responsive%20web%20design%20interface%2C%20professional%20developer%20workspace%20with%20code%20editor%20and%20browser%20previews%2C%20blue%20and%20purple%20accent%20colors&width=400&height=300&seq=service-web-1&orientation=landscape",
+        "https://i.pinimg.com/1200x/bf/d8/9e/bfd89ebf40141163f30ffefcdde45aeb.jpg",
     },
     {
       title: "Graphic Design",
-      description: "Eye-catching visuals that communicate your brand message",
+      description:
+        "Creative visuals and brand assets designed to captivate and communicate.",
       icon: "ri-palette-line",
+      link: "/services/graphic-design",
       image:
-        "https://readdy.ai/api/search-image?query=graphic%20design%20studio%20with%20creative%20artwork%2C%20digital%20illustrations%2C%20logo%20designs%2C%20brand%20identity%20materials%2C%20colorful%20design%20elements%2C%20professional%20creative%20workspace&width=400&height=300&seq=service-design-1&orientation=landscape",
+        "https://i.pinimg.com/1200x/6d/01/81/6d0181c5295ca415de604c9f41c4cd71.jpg",
     },
     {
       title: "Video Editing",
-      description: "Compelling video content that engages and converts",
+      description:
+        "High-impact videos crafted to engage audiences and drive action.",
       icon: "ri-film-line",
-      image:
-        "https://readdy.ai/api/search-image?query=professional%20video%20editing%20setup%2C%20video%20editing%20timeline%20interface%2C%20cinematic%20shots%2C%20professional%20video%20equipment%2C%20modern%20video%20production%20workspace&width=400&height=300&seq=service-video-1&orientation=landscape",
+      link: "/services/video-editing",
+      video:
+        "https://video-previews.elements.envatousercontent.com/8470c3f0-6ad1-4e05-a809-8ea8680612f4/watermarked_preview/watermarked_preview.mp4",
+      // image:
+      //   "https://readdy.ai/api/search-image?query=professional%20video%20editing%20setup&width=400&height=300",
     },
     {
       title: "Brand Building",
-      description: "Complete brand identity from strategy to execution",
+      description:
+        "Develop a strong, memorable identity that resonates with your customers.",
       icon: "ri-trophy-line",
+      link: "/services/brand-building",
       image:
-        "https://readdy.ai/api/search-image?query=brand%20building%20strategy%20session%20with%20logo%20concepts%2C%20brand%20guidelines%2C%20color%20palettes%2C%20typography%20samples%2C%20brand%20identity%20materials%20spread%20on%20desk%2C%20professional%20branding%20workspace&width=400&height=300&seq=service-brand-1&orientation=landscape",
+        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Social Media Management",
-      description: "Strategic social presence that builds communities",
+      description:
+        "Grow and nurture your audience with strategic, data-driven campaigns.",
       icon: "ri-share-line",
+      link: "/services/social-media-management",
       image:
-        "https://readdy.ai/api/search-image?query=social%20media%20management%20dashboard%20with%20multiple%20platform%20analytics%2C%20content%20calendar%2C%20engagement%20metrics%2C%20smartphone%20with%20social%20apps%2C%20modern%20social%20media%20workspace&width=400&height=300&seq=service-social-1&orientation=landscape",
+        "https://images.unsplash.com/photo-1726066012685-f5ccd26b6f55?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Digital Marketing",
-      description: "Data-driven campaigns that deliver measurable ROI",
+      description:
+        "Performance-focused campaigns delivering measurable ROI every time.",
       icon: "ri-rocket-line",
+      link: "/services/digital-marketing",
       image:
-        "https://readdy.ai/api/search-image?query=digital%20marketing%20analytics%20dashboard%20with%20charts%2C%20graphs%2C%20conversion%20metrics%2C%20PPC%20campaigns%2C%20SEO%20data%2C%20modern%20marketing%20workspace%20with%20multiple%20screens%20showing%20performance%20data&width=400&height=300&seq=service-marketing-1&orientation=landscape",
+        "https://media.istockphoto.com/id/625727674/photo/marketing-strategy-business-concept.jpg?s=2048x2048&w=is&k=20&c=pSCaaFy2p8IWhd2dwmtPVH8LMyT_vcprIQmcOTAX_kc=",
     },
   ];
 
   return (
     <section id="services" className="py-20 px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
+        {/* Section Heading */}
         <div className="text-center mb-16">
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
@@ -67,65 +83,80 @@ const Services = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Comprehensive digital solutions to elevate your brand and drive
-            results
+            Full-stack digital solutions crafted to grow your brand and boost
+            revenue.
           </motion.p>
         </div>
 
+        {/* Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <ServiceCard key={index} service={service} index={index} />
-          ))}
-        </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              viewport={{ once: true }}
+              className=""
+            >
+              <CardContainer className="">
+                <CardBody className="bg-white shadow-xl relative rounded-2xl p-6 hover:shadow-2xl w-full h-full">
+                  <CardItem translateZ="60" className="mb-4 h-48 overflow-hidden flex items-center justify-center rounded-2xl">
+                    {service.image ? (
+                      <img
+                        src={service.image}
+                        alt={`${service.title} service - professional example`}
+                        className=" w-full object-contain rounded-xl group-hover/card:shadow-xl transition-transform duration-500"
+                      />
+                    ) : (
+                      <video
+                        src={service.video}
+                        width="236"
+                        frameborder="0"
+                        scrolling="no"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full object-cover rounded-xl group-hover/card:shadow-xl transition-transform duration-500"
+                      />
+                    )}
+                  </CardItem>
+                  <CardItem
+                    translateZ="50"
+                    as="h3"
+                    className="text-xl font-semibold text-gray-900"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <i
+                        className={`${service.icon} text-2xl text-blue-600`}
+                      ></i>
 
-        <div className="text-center mt-12">
-          <motion.button
-            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 cursor-pointer whitespace-nowrap"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 * services.length }}
-            viewport={{ once: true }}
-          >
-            Explore All Services
-          </motion.button>
+                      {service.title}
+                    </div>
+                  </CardItem>
+                  <CardItem
+                    translateZ="40"
+                    as="p"
+                    className="text-gray-600 mb-4 text-sm leading-relaxed"
+                  >
+                    {service.description}
+                  </CardItem>
+                  <CardItem
+                    translateZ="30"
+                    as="a"
+                    href={service.link}
+                    className="inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold hover:scale-105 transition-transform"
+                  >
+                    Explore →
+                  </CardItem>
+                </CardBody>
+              </CardContainer>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
-  );
-};
-
-const ServiceCard = ({ service, index }) => {
-  return (
-    <motion.div
-      className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.15,
-        ease: "easeOut",
-      }}
-      viewport={{ once: true }}
-    >
-      <div className="relative overflow-hidden rounded-xl mb-6">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="w-full h-48 object-cover object-top group-hover:scale-110 transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-        <div className="absolute top-4 left-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
-          <i className={`${service.icon} text-2xl text-blue-600`}></i>
-        </div>
-      </div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-3">
-        {service.title}
-      </h3>
-      <p className="text-gray-600 mb-4">{service.description}</p>
-      <button className="text-blue-600 font-semibold hover:text-purple-600 transition-colors cursor-pointer whitespace-nowrap">
-        Explore →
-      </button>
-    </motion.div>
   );
 };
 

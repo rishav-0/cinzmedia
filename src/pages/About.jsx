@@ -1,9 +1,11 @@
-import { motion } from "framer-motion";
+import { hover, motion } from "framer-motion";
 import { FaPaintBrush, FaChartLine, FaSmile } from "react-icons/fa";
 import { Highlighter } from "../components/Highlighter";
 import { CoolMode } from "../components/CoolMode";
 import { IconCloud } from "../components/IconCloud";
-// import { IconCloudDemo } from "../components/IconCloud";
+import Marquee from "react-fast-marquee";
+import { img } from "framer-motion/client";
+
 
 const About = () => {
 
@@ -27,7 +29,11 @@ const icons = [
   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1051px-Adobe_Photoshop_CC_icon.svg.png",
 ];
 
-
+const images = [
+  "https://assamdigital.com/wp-content/uploads/2022/09/google-ads-certified.png",
+  "https://assets.goodfirms.co/badges/color-badge/top-digital-marketing-companies.svg",
+  "https://assamdigital.com/wp-content/uploads/2022/09/adobe-certified-1024x153.png",
+];
 
 
   return (
@@ -81,7 +87,7 @@ const icons = [
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
             <p className="text-lg text-gray-600 mb-6 -1">
-              Founded in 2009, Cinzmedia is a
+              Founded in 2019, Cinzmedia is a
               <strong className="mx-1">
                 full-service creative and digital marketing agency
               </strong>
@@ -123,15 +129,15 @@ const icons = [
 
             {/* CTA Button */}
             <CoolMode>
-            <motion.a
-              href="#contact"
-              className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Work With Us
-            </motion.a>
-              </CoolMode>
+              <motion.a
+                href="#contact"
+                className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Work With Us
+              </motion.a>
+            </CoolMode>
           </motion.div>
 
           {/* Image/Video */}
@@ -143,14 +149,18 @@ const icons = [
             transition={{ duration: 0.6 }}
           >
             <div className="flex item-center h-full justify-center">
-
-             <IconCloud images={icons}/>
+              <IconCloud images={icons} />
             </div>
             {/* Optional decorative gradient shape */}
             <div className="absolute -z-10 top-0 left-0 w-full h-full bg-gradient-to-tr from-pink-100 via-transparent to-purple-100 rounded-2xl"></div>
           </motion.div>
         </div>
       </div>
+      <Marquee pauseOnHover={true} autoFill={true}>
+        {images.map((i) => (
+          <img src={i} className="h-12 px-10" key={i} alt="" />
+        ))}
+      </Marquee>
     </section>
   );
 };
