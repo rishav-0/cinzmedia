@@ -46,9 +46,9 @@ export default function Index() {
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
+      <section className="relative sm:min-h-screen flex flex-col justify-center items-center overflow-x-hidden">
         {/* Ballpit Background */}
-        <div className="absolute inset-0 z-0">
+        <div id="bubble" className="fixed inset-0 -z-10 pointer-events-none">
           <Ballpit
             count={100}
             gravity={0.01}

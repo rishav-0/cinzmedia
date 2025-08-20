@@ -24,7 +24,7 @@ export default function Home() {
   }, [location]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden overflow-y-auto">
       <LandingPage />
       <About />
       <Service />
