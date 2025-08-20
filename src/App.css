@@ -181,3 +181,9 @@
     transform-origin: -21vw 25vh;
     box-shadow: 30vmin 0 4.681684628080844vmin currentColor;
 }
+
+/* @media  (max-width: px) {
+    #bubble {
+        display: none;
+    }
+} */
