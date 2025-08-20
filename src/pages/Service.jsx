@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CardContainer, CardBody, CardItem } from "../components/3dCard";
 import { video } from "framer-motion/client";
+import { Link } from "react-router";
 
 const Services = () => {
   const services = [
@@ -99,59 +100,61 @@ const Services = () => {
               viewport={{ once: true }}
               className=""
             >
-              <CardContainer className="">
-                <CardBody className="bg-white shadow-xl relative rounded-2xl p-6 hover:shadow-2xl w-full h-full">
-                  <CardItem translateZ="60" className="mb-4 h-48 overflow-hidden flex items-center justify-center rounded-2xl">
-                    {service.image ? (
-                      <img
-                        src={service.image}
-                        alt={`${service.title} service - professional example`}
-                        className=" w-full object-contain rounded-xl group-hover/card:shadow-xl transition-transform duration-500"
-                      />
-                    ) : (
-                      <video
-                        src={service.video}
-                        width="236"
-                        frameborder="0"
-                        scrolling="no"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="w-full object-cover rounded-xl group-hover/card:shadow-xl transition-transform duration-500"
-                      />
-                    )}
-                  </CardItem>
-                  <CardItem
-                    translateZ="50"
-                    as="h3"
-                    className="text-xl font-semibold text-gray-900"
-                  >
-                    <div className="flex items-center gap-3 mb-3">
-                      <i
-                        className={`${service.icon} text-2xl text-blue-600`}
-                      ></i>
+              <Link to='./graphic'>
+                <CardContainer className="">
+                  <CardBody className="bg-white shadow-xl relative rounded-2xl p-6 hover:shadow-2xl w-full h-full">
+                    <CardItem translateZ="60" className="mb-4 h-48 overflow-hidden flex items-center justify-center rounded-2xl">
+                      {service.image ? (
+                        <img
+                          src={service.image}
+                          alt={`${service.title} service - professional example`}
+                          className=" w-full object-contain rounded-xl group-hover/card:shadow-xl transition-transform duration-500"
+                        />
+                      ) : (
+                        <video
+                          src={service.video}
+                          width="236"
+                          frameborder="0"
+                          scrolling="no"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className="w-full object-cover rounded-xl group-hover/card:shadow-xl transition-transform duration-500"
+                        />
+                      )}
+                    </CardItem>
+                    <CardItem
+                      translateZ="50"
+                      as="h3"
+                      className="text-xl font-semibold text-gray-900"
+                    >
+                      <div className="flex items-center gap-3 mb-3">
+                        <i
+                          className={`${service.icon} text-2xl text-blue-600`}
+                        ></i>
 
-                      {service.title}
-                    </div>
-                  </CardItem>
-                  <CardItem
-                    translateZ="40"
-                    as="p"
-                    className="text-gray-600 mb-4 text-sm leading-relaxed"
-                  >
-                    {service.description}
-                  </CardItem>
-                  <CardItem
-                    translateZ="30"
-                    as="a"
-                    href={service.link}
-                    className="inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold hover:scale-105 transition-transform"
-                  >
-                    Explore →
-                  </CardItem>
-                </CardBody>
-              </CardContainer>
+                        {service.title}
+                      </div>
+                    </CardItem>
+                    <CardItem
+                      translateZ="40"
+                      as="p"
+                      className="text-gray-600 mb-4 text-sm leading-relaxed"
+                    >
+                      {service.description}
+                    </CardItem>
+                    <CardItem
+                      translateZ="30"
+                      as="a"
+                      href={service.link}
+                      className="inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold hover:scale-105 transition-transform"
+                    >
+                      Explore →
+                    </CardItem>
+                  </CardBody>
+                </CardContainer>
+              </Link>
             </motion.div>
           ))}
         </div>

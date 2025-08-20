@@ -1,34 +1,25 @@
-
+import { Route, Routes } from 'react-router';
 import './App.css'
 import Navbar from './components/Navbar';
-import About from './pages/About';
-import BlogSection from './pages/BlogSection';
-import Chooseus from './pages/Chooseus';
-import ContactSection from './pages/ContactSection';
+import Home from './pages/Home';
+import Index from './components/graphic/Index';
 import Footer from './pages/Footer';
-import LandingPage from './pages/LandingPage';
-import Projects from './pages/Projects';
-import SectionOne from './pages/SectionOne';
 import Services from './pages/Service';
-import Testimonials from './pages/Testimonials';
-
+import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
 
   return (
-    <div className="overflow-x-hidden">
+    <>
       <Navbar />
-      {/* <SectionOne /> */}
-      <LandingPage />
-      <About />
-      <Services />
-      <Chooseus />
-      <Projects />
-      <Testimonials />
-      <BlogSection />
-      <ContactSection />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Services" element={<Services />} />
+        <Route path="/graphic" element={<Index />} />
+      </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 
