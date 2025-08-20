@@ -118,20 +118,23 @@ const Projects = () => {
     <section id="portfolio" className="py-20 px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2
+        <header className="text-center mb-16">
+          <h1
             id="portfolio-title"
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            className=" text-3xl md:text-5xl font-bold  text-gray-900 mb-4"
           >
-            Our Portfolio
-          </h2>
-          <p
+            Our Portfolio: Proven Results & Success Stories
+          </h1>
+          <h2
             id="portfolio-description"
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
-            Explore our diverse range of successful projects and case studies
-          </p>
-        </div>
+            Discover how we've helped businesses achieve measurable growth
+            through innovative web development, strategic digital marketing, and
+            award-winning design solutions. View real case studies with
+            documented results and client testimonials.
+          </h2>
+        </header>
 
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
