@@ -33,7 +33,7 @@ export default function Navbar() {
         <img src={Cinzmedia} className="h-[140px]" alt="Cinzmedia logo" />
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 items-center font-medium">
+        <ul className="hidden md:flex space-x-2 lg:space-x-8 items-center font-medium">
           {navItems.map((item) => (
             <li key={item.id} onClick={() => handleNavClick(item.id)}>
               <GlareHover

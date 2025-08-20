@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { CardBody, CardContainer, CardItem } from "../3dCard";
 import Ballpit from "../Ballpit";
@@ -43,24 +43,45 @@ const subServices = [
 ];
 
 export default function Index() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile(); // run once on mount
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="relative sm:min-h-screen flex flex-col justify-center items-center overflow-x-hidden">
-        {/* Ballpit Background */}
-        <div
-          id="bubble"
-          className="hidden md:block fixed inset-0 -z-10 pointer-events-none"
-        >
-          <Ballpit
-            count={100}
-            gravity={0.01}
-            friction={0.9975}
-            wallBounce={0.95}
-            followCursor={true}
-            colors={["#3B82F6", "#60A5FA", "#9333EA", "#C084FC"]}
-          />
-        </div>
+      <section className="relative min-h-screen flex flex-col justify-center items-center overflow-x-hidden">
+        {/* Background */}
+        {!isMobile ? ( // Ballpit only on desktop
+          <div id="bubble" className="absolute inset-0 z-0">
+            <Ballpit
+              count={100}
+              gravity={0.001}
+              friction={0.9975}
+              wallBounce={0.95}
+              followCursor={true}
+              colors={["#3B82F6", "#60A5FA", "#9333EA", "#C084FC"]}
+            />
+          </div>
+        ) : (
+          <>
+            <motion.div
+              className="absolute w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+              animate={{ x: [0, 120, 0], y: [0, -60, 0] }}
+              transition={{ repeat: Infinity, duration: 6 }}
+            />
+            <motion.div
+              className="absolute w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+              animate={{ x: [0, -120, 0], y: [0, 60, 0] }}
+              transition={{ repeat: Infinity, duration: 7 }}
+            />
+          </>
+        )}
 
         {/* Foreground Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
