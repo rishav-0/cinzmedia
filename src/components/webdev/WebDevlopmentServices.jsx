@@ -96,23 +96,31 @@ function HoloShowcase({ className = "" }) {
               Hologram Preview
             </p>
             <div className="mt-2 grid grid-cols-3 gap-3">
-              <div className="h-16 rounded-lg bg-gradient-to-b flex justify-around items-center px-4 from-slate-800 to-slate-900 ring-1 ring-white/5">
-                <img src={gpt} className="opacity-45 invert" alt="chat gpt" />
+              <div className="h-16 rounded-lg bg-gradient-to-b flex justify-around items-center sm:px-4 from-slate-800 to-slate-900 ring-1 ring-white/5">
+                <img
+                  src={gpt}
+                  className="opacity-45 invert h-8 sm:h-auto"
+                  alt="chat gpt"
+                />
                 <img
                   src={perlexity}
-                  className="opacity-45 invert"
+                  className="opacity-45 h-8 sm:h-auto"
                   alt="perplexity"
                 />
               </div>
-              <div className="h-16 rounded-lg bg-gradient-to-b flex justify-around items-center px-4 from-slate-800 to-slate-900 ring-1 ring-white/5">
-                <img src={figma} className="opacity-45 invert" alt="figma" />
-                <img src={react} className="opacity-45 invert" alt="react" />
+              <div className="h-16 rounded-lg bg-gradient-to-b flex justify-around items-center sm:px-4 from-slate-800 to-slate-900 ring-1 ring-white/5">
+                <img src={figma} className="opacity-45 h-8 invert sm:h-auto" alt="figma" />
+                <img src={react} className="opacity-45 h-8 invert sm:h-auto" alt="react" />
               </div>
-              <div className="h-16 rounded-lg bg-gradient-to-b flex justify-around items-center px-4 from-slate-800 to-slate-900 ring-1 ring-white/5">
-                <img src={copilot} className="opacity-45 invert" alt="copilot" />
+              <div className="h-16 rounded-lg bg-gradient-to-b flex justify-around items-center sm:px-4 from-slate-800 to-slate-900 ring-1 ring-white/5">
+                <img
+                  src={copilot}
+                  className="opacity-45 h-8 invert sm:h-auto"
+                  alt="copilot"
+                />
                 <img
                   src={deepseek}
-                  className="opacity-45 invert"
+                  className="opacity-45 h-8 invert sm:h-auto"
                   alt="deepseek"
                 />
               </div>

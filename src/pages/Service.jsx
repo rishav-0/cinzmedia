@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import { CardContainer, CardBody, CardItem } from "../components/3dCard";
-import { video } from "framer-motion/client";
+import { image, video } from "framer-motion/client";
 import { Link } from "react-router";
-import graphic from '../images/Graphic/graphic.jpg'
+import graphic from '../images/services/graphic.png'
+import webdev from '../images/services/webdev.png';
+import brand from '../images/services/brand.png';
+import socialmedia from '../images/services/socialmedia.png'; 
+import digitalmarketing from '../images/services/digitalmarketing.png';
+import videoe from '../images/services/video.png';
 
 const Services = () => {
   const services = [
@@ -12,8 +17,8 @@ const Services = () => {
         "Blazing-fast, SEO-optimized websites that rank higher and convert visitors into customers.",
       icon: "ri-code-s-slash-line",
       link: "/services/website-development",
-      image:
-        "https://i.pinimg.com/1200x/bf/d8/9e/bfd89ebf40141163f30ffefcdde45aeb.jpg",
+      image: webdev,
+      // image:        "https://i.pinimg.com/1200x/bf/d8/9e/bfd89ebf40141163f30ffefcdde45aeb.jpg",
       link:'webdev',
     },
     {
@@ -21,7 +26,7 @@ const Services = () => {
       description:
         "Creative visuals and brand assets designed to captivate and communicate.",
       icon: "ri-palette-line",
-      link: "/services/graphic-design",
+      // link: "/services/graphic-design",
       image: graphic,
       link:"graphic",
     },
@@ -31,8 +36,9 @@ const Services = () => {
         "High-impact videos crafted to engage audiences and drive action.",
       icon: "ri-film-line",
       link: "/services/video-editing",
-      video:
-        "https://video-previews.elements.envatousercontent.com/8470c3f0-6ad1-4e05-a809-8ea8680612f4/watermarked_preview/watermarked_preview.mp4",
+      image: videoe,
+      // video:
+        // "https://video-previews.elements.envatousercontent.com/8470c3f0-6ad1-4e05-a809-8ea8680612f4/watermarked_preview/watermarked_preview.mp4",
       // image:
       //   "https://readdy.ai/api/search-image?query=professional%20video%20editing%20setup&width=400&height=300",
     },
@@ -42,8 +48,9 @@ const Services = () => {
         "Develop a strong, memorable identity that resonates with your customers.",
       icon: "ri-trophy-line",
       link: "/services/brand-building",
-      image:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: brand,
+      // image:       "https://images.unsplash.com/photo-1504384308090-c
+      // image:       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Social Media Management",
@@ -51,8 +58,8 @@ const Services = () => {
         "Grow and nurture your audience with strategic, data-driven campaigns.",
       icon: "ri-share-line",
       link: "/services/social-media-management",
-      image:
-        "https://images.unsplash.com/photo-1726066012685-f5ccd26b6f55?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: socialmedia,
+      // image:        "https://images.unsplash.com/photo-1726066012685-f5ccd26b6f55?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Digital Marketing",
@@ -60,8 +67,8 @@ const Services = () => {
         "Performance-focused campaigns delivering measurable ROI every time.",
       icon: "ri-rocket-line",
       link: "/services/digital-marketing",
-      image:
-        "https://media.istockphoto.com/id/625727674/photo/marketing-strategy-business-concept.jpg?s=2048x2048&w=is&k=20&c=pSCaaFy2p8IWhd2dwmtPVH8LMyT_vcprIQmcOTAX_kc=",
+      image: digitalmarketing,
+      // image:        "https://media.istockphoto.com/id/625727674/photo/marketing-strategy-business-concept.jpg?s=2048x2048&w=is&k=20&c=pSCaaFy2p8IWhd2dwmtPVH8LMyT_vcprIQmcOTAX_kc=",
     },
   ];
 
