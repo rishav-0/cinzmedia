@@ -16,19 +16,17 @@ const Services = () => {
       description:
         "Blazing-fast, SEO-optimized websites that rank higher and convert visitors into customers.",
       icon: "ri-code-s-slash-line",
-      link: "/services/website-development",
       image: webdev,
       // image:        "https://i.pinimg.com/1200x/bf/d8/9e/bfd89ebf40141163f30ffefcdde45aeb.jpg",
-      link:'webdev',
+      link: "webdev",
     },
     {
       title: "Graphic Design",
       description:
         "Creative visuals and brand assets designed to captivate and communicate.",
       icon: "ri-palette-line",
-      // link: "/services/graphic-design",
       image: graphic,
-      link:"graphic",
+      link: "graphic",
     },
     {
       title: "Video Editing",
@@ -38,7 +36,7 @@ const Services = () => {
       link: "/services/video-editing",
       image: videoe,
       // video:
-        // "https://video-previews.elements.envatousercontent.com/8470c3f0-6ad1-4e05-a809-8ea8680612f4/watermarked_preview/watermarked_preview.mp4",
+      // "https://video-previews.elements.envatousercontent.com/8470c3f0-6ad1-4e05-a809-8ea8680612f4/watermarked_preview/watermarked_preview.mp4",
       // image:
       //   "https://readdy.ai/api/search-image?query=professional%20video%20editing%20setup&width=400&height=300",
     },
@@ -57,7 +55,7 @@ const Services = () => {
       description:
         "Grow and nurture your audience with strategic, data-driven campaigns.",
       icon: "ri-share-line",
-      link: "/services/social-media-management",
+      link: "socialmediamarketing",
       image: socialmedia,
       // image:        "https://images.unsplash.com/photo-1726066012685-f5ccd26b6f55?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
