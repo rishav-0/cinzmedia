@@ -60,10 +60,11 @@ export default function Index() {
         {!isMobile ? ( // Ballpit only on desktop
           <div id="bubble" className="absolute inset-0 z-0">
             <Ballpit
-              count={100}
-              gravity={0.001}
+              count={60}
+              gravity={0.01}
               friction={0.9975}
               wallBounce={0.95}
+              maxSize={.90}
               followCursor={true}
               colors={["#3B82F6", "#60A5FA", "#9333EA", "#C084FC"]}
             />
@@ -178,14 +179,6 @@ export default function Index() {
                   className="text-gray-600 mb-4 text-sm leading-relaxed"
                 >
                   {service.text}
-                </CardItem>
-                <CardItem
-                  translateZ="30"
-                  as="a"
-                  href={service.link}
-                  className="inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold hover:scale-105 transition-transform"
-                >
-                  Explore →
                 </CardItem>
               </CardBody>
             </CardContainer>

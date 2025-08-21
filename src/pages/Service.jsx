@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { CardContainer, CardBody, CardItem } from "../components/3dCard";
 import { video } from "framer-motion/client";
 import { Link } from "react-router";
+import graphic from '../images/Graphic/graphic.jpg'
 
 const Services = () => {
   const services = [
@@ -13,6 +14,7 @@ const Services = () => {
       link: "/services/website-development",
       image:
         "https://i.pinimg.com/1200x/bf/d8/9e/bfd89ebf40141163f30ffefcdde45aeb.jpg",
+      link:'webdev',
     },
     {
       title: "Graphic Design",
@@ -20,8 +22,8 @@ const Services = () => {
         "Creative visuals and brand assets designed to captivate and communicate.",
       icon: "ri-palette-line",
       link: "/services/graphic-design",
-      image:
-        "https://i.pinimg.com/1200x/6d/01/81/6d0181c5295ca415de604c9f41c4cd71.jpg",
+      image: graphic,
+      link:"graphic",
     },
     {
       title: "Video Editing",
@@ -100,7 +102,7 @@ const Services = () => {
               viewport={{ once: true }}
               className=""
             >
-              <Link to='./graphic'>
+              <Link to={`./${service.link}`} className="group/card">
                 <CardContainer className="">
                   <CardBody className="bg-white shadow-xl relative rounded-2xl p-6 hover:shadow-2xl w-full h-full">
                     <CardItem translateZ="60" className="mb-4 h-48 overflow-hidden flex items-center justify-center rounded-2xl">

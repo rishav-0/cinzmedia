@@ -5,7 +5,7 @@ import { CoolMode } from "../components/CoolMode";
 import { IconCloud } from "../components/IconCloud";
 import Marquee from "react-fast-marquee";
 import { img } from "framer-motion/client";
-
+import gemini from '../images/cloud/gemini.png'
 
 const About = () => {
 
@@ -27,6 +27,8 @@ const icons = [
   // ChatGPT (logo)
   "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1051px-Adobe_Photoshop_CC_icon.svg.png",
+  
+  {gemini}
 ];
 
 const images = [
@@ -52,18 +54,18 @@ const images = [
             <br /> Your <span className="mr-2"></span>
             <Highlighter
               action="underline"
-              color="#e62715"
-              strokeWidth={2}
+              color="#2675f4"
+              strokeWidth={2.5}
               padding={5}
               loopDelay={2000}
             >
-              Creative
+              CreativeC
               <span className="mr-2"> </span>
             </Highlighter>
             Digital <span className="mr-2"></span>
             <Highlighter
               action="highlight"
-              color="#2776f5b9"
+              color="#e6a800"
               strokeWidth={1.5}
               loopDelay={2000}
             >
@@ -149,7 +151,10 @@ const images = [
             transition={{ duration: 0.6 }}
           >
             <div className="flex item-center h-full justify-center">
-              <IconCloud images={icons} />
+              <IconCloud
+                images={icons}
+                
+              />
             </div>
             {/* Optional decorative gradient shape */}
             <div className="absolute -z-10 top-0 left-0 w-full h-full bg-gradient-to-tr from-pink-100 via-transparent to-purple-100 rounded-2xl"></div>

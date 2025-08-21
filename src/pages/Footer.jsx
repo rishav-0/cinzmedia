@@ -1,14 +1,14 @@
+import transparant from '../images/logo/transparant.png'
+
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="md:col-span-2">
-            <div className="font-['Pacifico'] text-3xl text-blue-400 mb-4">
-              Cinzmedia
-            </div>
+            <img className='h-18 mb-4' src={transparant} alt="" />
             <p className="text-gray-300 mb-6 max-w-md">
               Your creative powerhouse for digital transformation. We build
               brands that turn heads and campaigns that convert.

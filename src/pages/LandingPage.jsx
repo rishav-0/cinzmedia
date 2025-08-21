@@ -10,13 +10,14 @@ import {
   FaPinterestP,
   FaSnapchatGhost,
 } from "react-icons/fa";
-
+import { RiPerplexityLine } from "react-icons/ri";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { SiAdobephotoshop, SiCanva } from "react-icons/si";
 import TextType from "../components/TextType";
 import AnimatedContent from "../components/AnimatedContent";
 import { CoolMode } from "../components/CoolMode";
-
+import gpt from '../images/icon/gpt.png'
+import gemini from '../images/icon/gemini.png'
 const words = ["Clicks & Conversions", "Followers", "Views", "Leads", "Sales"];
 
 export default function LandingPage() {
@@ -52,9 +53,12 @@ export default function LandingPage() {
       <SocialIcon Icon={SiCanva} bottom="10%" left="40%" delay={8} />
       <SocialIcon Icon={FaGoogle} bottom="5%" right="10%" delay={10} />
       <SocialIcon Icon={FaLinkedin} top="15%" left="30%" delay={12} />
-      <SocialIcon Icon={FaPinterestP} top="50%" right="10%" delay={14} />
-      <SocialIcon Icon={FaSnapchatGhost} bottom="20%" left="10%" delay={16} />
-      <SocialIcon Icon={SiAdobephotoshop} top="15%" right="30%" delay={18} />
+      <SocialIcon Icon={FaPinterestP} top="50%" right="10%" delay={3} />
+      <SocialIcon Icon={FaSnapchatGhost} bottom="20%" left="10%" delay={9} />
+      <SocialIcon Icon={SiAdobephotoshop} top="15%" right="30%" delay={7} />
+      <SocialIcon Icon={RiPerplexityLine} top="18%" right="10%" delay={7} />
+      <SocialIcon img={gpt} bottom="15%" right="35%" delay={11} />
+      <SocialIcon img={gemini} top="35%" left="20%" delay={11} />
 
       {/* Content */}
       <AnimatedContent>
@@ -94,7 +98,7 @@ export default function LandingPage() {
   );
 }
 
-function SocialIcon({ Icon, top, bottom, left, right, delay }) {
+function SocialIcon({ Icon, top, bottom, left, right, delay, img }) {
   return (
     <motion.div
       className="absolute text-white/20 text-5xl md:text-7xl lg:text-8xl"
@@ -107,9 +111,14 @@ function SocialIcon({ Icon, top, bottom, left, right, delay }) {
         delay,
       }}
     >
-      <Icon />
+      {
+        img ? (
+          <img src={img} alt="icon" className="w-14 h-14 opacity-10 md:w-20 md:h-20" />
+        ) : (
+          <Icon />
+        ) 
+      }
+      
     </motion.div>
   );
 }
-
-// Tailwind custom animation (add in globals.css or tailwind config)

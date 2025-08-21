@@ -6,6 +6,7 @@ import Index from './components/graphic/Index';
 import Footer from './pages/Footer';
 import Services from './pages/Service';
 import ScrollToTop from './utils/ScrollToTop';
+import WebDevelopmentServices from './components/webdev/WebDevlopmentServices';
 
 function App() {
 
@@ -17,8 +18,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/graphic" element={<Index />} />
+        <Route path="/webdev" element={<WebDevelopmentServices />} />
       </Routes>
       <Footer />
+      
     </>
   );
 }
