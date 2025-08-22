@@ -1,5 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import facebook from "../../images/float/facebook.png";
+import instagram from "../../images/float/instagram.png";
+import pinterest from "../../images/float/pinterest.png";
+import telegram from "../../images/float/telegram.png";
+import tiktok from "../../images/float/tiktok.png";
+import whatsapp from "../../images/float/whatsapp.png";
+import x from "../../images/float/x.png";
+import youtube from "../../images/float/youtube.png";
+import shorts from "../../images/float/shorts.png";
+import reddit from "../../images/float/reddit.png";
+import linkedin from "../../images/float/linkedin.png";
 
 const SocialMediaMarketingPage = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -107,17 +118,31 @@ const SocialMediaMarketingPage = () => {
   ];
 
   const floatingIcons = [
-    "💫",
-    "🚀",
+    "❤️",
+    "😍",
     "✨",
     "🔥",
-    "💎",
+    "👍",
     "🌟",
-    "⚡",
-    "🎯",
+    "🎉",
+    "😂",
     "💜",
-    "🌈",
+    "❤️",
   ];
+
+  const images = [
+    facebook,
+    instagram,
+    pinterest,
+    telegram,
+    tiktok,
+    whatsapp,
+    x,
+    youtube,
+    shorts,
+    reddit,
+    linkedin,
+  ]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50">
@@ -220,7 +245,7 @@ const SocialMediaMarketingPage = () => {
                 delay: Math.random() * 5,
                 ease: "easeInOut",
               }}
-              className="absolute text-2xl pointer-events-none"
+              className="absolute text-4xl pointer-events-none"
               style={{
                 left: `${10 + ((index * 8) % 80)}%`,
                 top: `${15 + ((index * 12) % 70)}%`,
@@ -229,6 +254,48 @@ const SocialMediaMarketingPage = () => {
               {icon}
             </motion.div>
           ))}
+          {/* Floating images */}
+          {images.map((src, index) => {
+            const randomX = Math.random() * windowDimensions.width;
+            const randomY = Math.random() * windowDimensions.height;
+            const randomDuration = 10 + Math.random() * 5; // Adjust speed
+            const randomDelay = Math.random() * 5;
+            const randomSize = 40 + Math.random() * 60; // Image size between 40px and 100px
+            const randomOpacity = 0.4 + Math.random() * 0.8; // Opacity between 0.4 and 1
+
+            return (
+              <motion.img
+                key={index}
+                src={src}
+                initial={{
+                  x: randomX,
+                  y: randomY,
+                  opacity: 0,
+                }}
+                animate={{
+                  x: [randomX, Math.random() * windowDimensions.width, randomX],
+                  y: [
+                    randomY,
+                    Math.random() * windowDimensions.height,
+                    randomY,
+                  ],
+                  opacity: [0, randomOpacity, 0],
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  duration: randomDuration,
+                  repeat: Infinity,
+                  delay: randomDelay,
+                  ease: "easeInOut",
+                }}
+                className="absolute pointer-events-none"
+                style={{
+                  width: `${randomSize}px`,
+                  height: `${randomSize}px`,
+                }}
+              />
+            );
+          })}
 
           {/* Animated grid pattern */}
           <div className="absolute inset-0 opacity-10">
@@ -340,8 +407,11 @@ const SocialMediaMarketingPage = () => {
                 key={index}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.8 + index * 0.1, duration: 0.6 }}
-                whileHover={{ scale: 1.05 }}
+                transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.5, ease: "linear" }, // almost instant
+                }}
                 className="text-center bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/30"
               >
                 <div className={`text-3xl font-bold ${stat.color} mb-2`}>

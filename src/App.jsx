@@ -8,6 +8,7 @@ import Services from './pages/Service';
 import ScrollToTop from './utils/ScrollToTop';
 import WebDevelopmentServices from './components/webdev/WebDevlopmentServices';
 import SocialMediaMarketingPage from './components/socialmedia/SocialMediaMarketingPage';
+import VideoEditing from './components/video/VideoEditing';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Services" element={<Services />} />
         <Route path="/graphic" element={<Index />} />
         <Route path="/webdev" element={<WebDevelopmentServices />} />
+        <Route path="/videoediting" element={<VideoEditing/>} />
         <Route
           path="/socialmediamarketing"
           element={<SocialMediaMarketingPage />}

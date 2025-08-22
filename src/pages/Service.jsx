@@ -33,7 +33,7 @@ const Services = () => {
       description:
         "High-impact videos crafted to engage audiences and drive action.",
       icon: "ri-film-line",
-      link: "/services/video-editing",
+      link: "videoediting",
       image: videoe,
       // video:
       // "https://video-previews.elements.envatousercontent.com/8470c3f0-6ad1-4e05-a809-8ea8680612f4/watermarked_preview/watermarked_preview.mp4",

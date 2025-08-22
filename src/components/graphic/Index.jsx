@@ -60,11 +60,11 @@ export default function Index() {
         {!isMobile ? ( // Ballpit only on desktop
           <div id="bubble" className="absolute inset-0 z-0">
             <Ballpit
-              count={60}
+              count={40}
               gravity={0.01}
               friction={0.9975}
               wallBounce={0.95}
-              maxSize={.90}
+              maxSize={.70}
               followCursor={true}
               colors={["#3B82F6", "#60A5FA", "#9333EA", "#C084FC"]}
             />
