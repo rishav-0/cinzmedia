@@ -110,7 +110,10 @@ const Services = () => {
               <Link to={`./${service.link}`} className="group/card">
                 <CardContainer className="">
                   <CardBody className="bg-white shadow-xl relative rounded-2xl p-6 hover:shadow-2xl w-full h-full">
-                    <CardItem translateZ="60" className="mb-4 h-48 overflow-hidden flex items-center justify-center rounded-2xl">
+                    <CardItem
+                      translateZ="60"
+                      className="mb-4 h-48 overflow-hidden flex items-center justify-center rounded-2xl"
+                    >
                       {service.image ? (
                         <img
                           src={service.image}
@@ -134,11 +137,11 @@ const Services = () => {
                     <CardItem
                       translateZ="50"
                       as="h3"
-                      className="text-xl font-semibold text-gray-900"
+                      className="text-xl font-semibold text-gray-900 !no-underline"
                     >
-                      <div className="flex items-center gap-3 mb-3">
+                      <div className="flex items-center gap-3 mb-3 !no-underline">
                         <i
-                          className={`${service.icon} text-2xl text-blue-600`}
+                          className={`${service.icon} text-2xl !no-underline text-blue-600`}
                         ></i>
 
                         {service.title}
@@ -147,7 +150,7 @@ const Services = () => {
                     <CardItem
                       translateZ="40"
                       as="p"
-                      className="text-gray-600 mb-4 text-sm leading-relaxed"
+                      className="text-gray-600 mb-4 text-sm leading-relaxed !no-underline"
                     >
                       {service.description}
                     </CardItem>
@@ -155,7 +158,7 @@ const Services = () => {
                       translateZ="30"
                       as="a"
                       href={service.link}
-                      className="inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold hover:scale-105 transition-transform"
+                      className="inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 !text-white text-sm font-semibold hover:scale-105 !no-underline transition-transform"
                     >
                       Explore →
                     </CardItem>

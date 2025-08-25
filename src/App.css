@@ -185,6 +185,9 @@
 video {
   pointer-events: none;
 }
+a{
+    text-decoration: none !important;
+}
 
 /* @media  (max-width: px) {
     #bubble {
