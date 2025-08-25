@@ -27,6 +27,7 @@ function App() {
         <Route path="/graphic" element={<Index />} />
         <Route path="/webdev" element={<WebDevelopmentServices />} />
         <Route path="/videoediting" element={<VideoEditing />} />
+        <Route path="/brandbuilding" element={<Brand />} />
         <Route
           path="/socialmediamarketing"
           element={<SocialMediaMarketingPage />}
@@ -36,7 +37,7 @@ function App() {
         className="bg-white"
         style={{ width: "100%", height: "600px", position: "relative" }}
       >
-        <Prism
+        {/* <Prism
           animationType="hover"
           timeScale={0.5}
           height={3.6}
@@ -46,10 +47,9 @@ function App() {
           colorFrequency={1}
           noise={0}
           glow={1}
-        />
+        /> */}
       </div>
       <BrandBuildingPage />
-      <Brand />
       <MarketingLandingPage />
       <Footer />
     </>
