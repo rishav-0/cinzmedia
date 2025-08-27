@@ -26,7 +26,7 @@ export default function Navbar() {
 
   // Service links (display names mapped to your slugs; no /services prefix)
   const serviceLinks = [
-    { slug: "webdv", label: "Web Development" },
+    { slug: "webdev", label: "Web Development" },
     { slug: "graphic", label: "Graphic Design" },
     { slug: "videoediting", label: "Video Editing" },
     { slug: "brandbuilding", label: "Brand Building" },
