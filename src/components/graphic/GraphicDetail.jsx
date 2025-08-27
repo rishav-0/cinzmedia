@@ -7,6 +7,7 @@ import {
   useSpring,
 } from "framer-motion";
 
+import { useNavigate } from "react-router"; 
 
 const services = [
   {
@@ -130,7 +131,55 @@ const colorPalettes = [
   { name: "Rose Garden", colors: ["#EC4899", "#DB2777", "#BE185D", "#9D174D"] },
 ];
 
+// New: Portfolio items
+const portfolio = [
+  {
+    key: "aurora",
+    title: "Aurora Analytics",
+    category: "Brand Identity",
+    tags: ["Logo", "Guidelines", "Icons"],
+    coverClass: "bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600",
+  },
+  {
+    key: "ember",
+    title: "Ember Coffee Co.",
+    category: "Packaging",
+    tags: ["Packaging", "Illustration", "Mockups"],
+    coverClass: "bg-gradient-to-br from-orange-500 via-rose-500 to-amber-500",
+  },
+  {
+    key: "solstice",
+    title: "Solstice Studio",
+    category: "Digital",
+    tags: ["Hero Graphics", "Social Kit", "Web"],
+    coverClass: "bg-gradient-to-br from-fuchsia-500 via-pink-500 to-rose-500",
+  },
+  {
+    key: "harbor",
+    title: "Harbor Health",
+    category: "Collateral",
+    tags: ["Stationery", "Deck", "Print"],
+    coverClass: "bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500",
+  },
+  {
+    key: "nova",
+    title: "Nova Finance",
+    category: "Identity",
+    tags: ["Logo System", "Typography", "Color"],
+    coverClass:
+      "bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-500",
+  },
+  {
+    key: "ripple",
+    title: "Ripple Rides",
+    category: "Campaign",
+    tags: ["Ads", "OOH", "Social"],
+    coverClass: "bg-gradient-to-br from-sky-500 via-blue-500 to-cyan-500",
+  },
+];
+
 export default function GraphicDetail() {
+  const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const [openService, setOpenService] = useState(null);
 
@@ -180,7 +229,6 @@ export default function GraphicDetail() {
 
   return (
     <>
-      
       <div className="min-h-screen bg-gray-50 text-gray-900 antialiased overflow-x-hidden">
         {/* Animated Background Elements */}
         <div className="fixed inset-0 pointer-events-none overflow-hidden">
@@ -277,26 +325,27 @@ export default function GraphicDetail() {
                   transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 >
                   <button
-                    onClick={() => setOpenModal(true)}
+                    onClick={() =>
+                      navigate("/", { state: { scrollTo: "contact" } })
+                    }
                     className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold shadow-lg shadow-blue-600/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-50"
                     aria-label="Get a Free Design Consultation"
                   >
                     Get a Free Design Consultation
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="w-5 h-5"
-                      aria-hidden="true"
-                    >
-                      <path d="M13.5 4.5a.75.75 0 0 0 0 1.5h5.69l-7.72 7.72a.75.75 0 1 0 1.06 1.06l7.72-7.72v5.69a.75.75 0 0 0 1.5 0v-9a.75.75 0 0 0-.75-.75h-9z" />
-                    </svg>
+                 
                   </button>
                   <a
                     href="#services"
                     className="inline-flex items-center rounded-full px-5 py-3 font-semibold text-gray-900 ring-1 ring-gray-300 transition hover:bg-gray-100"
                   >
                     View Services
+                  </a>
+                  {/* New: View Work CTA */}
+                  <a
+                    href="#portfolio"
+                    className="inline-flex items-center rounded-full px-5 py-3 font-semibold text-blue-700 ring-1 ring-blue-200 transition hover:bg-blue-50"
+                  >
+                    View Work
                   </a>
                 </motion.div>
               </div>
@@ -502,13 +551,26 @@ export default function GraphicDetail() {
               {services.map((svc, i) => (
                 <motion.article
                   key={svc.key}
-                  className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200 transition hover:shadow-md"
+                  className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200 "
                   variants={cardVariants}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.4 }}
                   custom={i}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                    boxShadow:
+                      "0 18px 40px -20px rgba(2,132,199,0.28), 0 10px 20px -15px rgba(2,132,199,0.18)",
+                  }}
+                  whileTap={{ scale: 0.99 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
+                  {/* Hover glow */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/0 via-purple-500/0 to-pink-500/0 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:from-blue-500/[0.06] group-hover:via-purple-500/[0.06] group-hover:to-pink-500/[0.06]"
+                  />
                   <div className="flex items-center gap-3">
                     <span className="text-3xl" aria-hidden="true">
                       {svc.icon}
@@ -598,10 +660,16 @@ export default function GraphicDetail() {
                     aria-label={`${svc.title} color palette`}
                   >
                     {svc.colors.map((color) => (
-                      <span
+                      <motion.span
                         key={color}
                         className="block rounded-full w-6 h-6"
                         style={{ backgroundColor: color }}
+                        whileHover={{ scale: 1.1 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 15,
+                        }}
                       />
                     ))}
                   </div>
@@ -617,7 +685,114 @@ export default function GraphicDetail() {
           </div>
         </section>
 
-        {/* WHY CHOOSE US SECTION (replaces testimonials) */}
+        {/* PORTFOLIO SECTION */}
+        <section id="portfolio" className="relative py-24 md:py-28">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0"
+          >
+            <div className="absolute left-10 top-10 h-44 w-44 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 opacity-10 blur-3xl" />
+            <div className="absolute right-12 bottom-8 h-52 w-52 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-500 opacity-10 blur-3xl" />
+          </div>
+          <div className="relative max-w-7xl mx-auto px-6">
+            <header className="mb-10">
+              <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
+                Portfolio
+              </p>
+              <h3 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+                Selected Work & Case Studies
+              </h3>
+              <p className="mt-3 text-gray-700 max-w-3xl">
+                A peek into recent identity systems, packaging, and digital
+                assets crafted for ambitious brands.
+              </p>
+            </header>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {portfolio.map((proj, i) => (
+                <motion.article
+                  key={proj.key}
+                  className="group relative overflow-hidden rounded-2xl bg-white p-4 ring-1 ring-gray-200 shadow-sm"
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.35 }}
+                  custom={i}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                    boxShadow:
+                      "0 18px 40px -20px rgba(79,70,229,0.28), 0 10px 20px -15px rgba(79,70,229,0.18)",
+                  }}
+                  whileTap={{ scale: 0.99 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  {/* Cover */}
+                  <div className="relative overflow-hidden rounded-xl">
+                    <div
+                      className={`h-44 sm:h-48 md:h-56 ${proj.coverClass}`}
+                      role="img"
+                      aria-label={`${proj.title} cover`}
+                      title={`${proj.title} cover`}
+                    />
+                    {/* Hover overlay */}
+                    <motion.div
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100"
+                      initial={false}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                    />
+                    <motion.div
+                      className="pointer-events-none absolute bottom-3 left-3 right-3 flex items-center justify-between text-white opacity-0 group-hover:opacity-100"
+                      initial={false}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                    >
+                      <span className="text-sm font-medium">View project</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d="M13.5 4.5a.75.75 0 0 0 0 1.5h5.69l-7.72 7.72a.75.75 0 1 0 1.06 1.06l7.72-7.72v5.69a.75.75 0 0 0 1.5 0v-9a.75.75 0 0 0-.75-.75h-9z" />
+                      </svg>
+                    </motion.div>
+                  </div>
+
+                  {/* Meta */}
+                  <div className="mt-4">
+                    <div className="flex items-center justify-between">
+                      <h4 className="text-lg font-semibold text-gray-900">
+                        {proj.title}
+                      </h4>
+                      <span className="text-xs font-medium rounded-full bg-gray-100 px-2 py-1 text-gray-700">
+                        {proj.category}
+                      </span>
+                    </div>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {proj.tags.map((t) => (
+                        <span
+                          key={t}
+                          className="text-xs rounded-full bg-gray-100 px-2 py-1 text-gray-600"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Hover glow */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-500/[0.05] via-purple-500/[0.04] to-fuchsia-500/[0.05] opacity-0 transition duration-300 group-hover:opacity-100"
+                  />
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* WHY CHOOSE US SECTION */}
         <section className="relative py-24 md:py-28 bg-white">
           <div className="relative max-w-7xl mx-auto px-6">
             <header className="mb-10 text-center">
@@ -672,20 +847,13 @@ export default function GraphicDetail() {
                 </p>
                 <div className="mt-8">
                   <button
-                    onClick={() => setOpenModal(true)}
+                    onClick={() =>
+                      navigate("/", { state: { scrollTo: "contact" } })
+                    }
                     className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold shadow-lg shadow-blue-600/30 transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-900"
                     aria-label="Let’s Start Designing"
                   >
                     Let’s Start Designing
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="w-5 h-5"
-                      aria-hidden="true"
-                    >
-                      <path d="M13.5 4.5a.75.75 0 0 0 0 1.5h5.69l-7.72 7.72a.75.75 0 1 0 1.06 1.06l7.72-7.72v5.69a.75.75 0 0 0 1.5 0v-9a.75.75 0 0 0-.75-.75h-9z" />
-                    </svg>
                   </button>
                 </div>
               </div>
