@@ -14,8 +14,10 @@ import {
   FaBullseye,
   FaLayerGroup,
 } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 const Brand = () => {
+  const navigate = useNavigate();
   // Animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -482,6 +484,7 @@ const Brand = () => {
           </motion.p>
 
           <motion.button
+            onClick={() => navigate("/", { state: { scrollTo: "contact" } })}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}

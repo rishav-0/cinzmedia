@@ -3,13 +3,13 @@ import { useEffect, useRef, useState } from "react";
 const Chooseus = () => {
   const stats = [
     {
-      value: 15,
+      value: 6,
       suffix: "+",
       title: "Years Experience",
       description: "Industry expertise",
     },
     {
-      value: 200,
+      value: 2000,
       suffix: "+",
       title: "Projects Completed",
       description: "Successful deliveries",

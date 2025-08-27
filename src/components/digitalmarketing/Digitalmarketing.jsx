@@ -199,7 +199,7 @@ export default function Digitalmarketing() {
       iconLabel: "Social Media Marketing icon",
     },
     {
-      title: "Paid Ads (PPC/Google Ads)",
+      title: "Paid Ads (Meta/Google Ads)",
       desc: "High-intent campaigns with AI bidding insights to reduce CAC and scale qualified leads.",
       Icon: IconPPC,
       iconLabel: "Paid Ads PPC icon",
@@ -553,7 +553,7 @@ export default function Digitalmarketing() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold">
-                    B2B SaaS — Paid Ads Scale
+                    Paid Ads Scale
                   </h3>
                   <p className="mt-1 text-sm text-indigo-100/80">
                     Scaled Google Ads with AI bidding insights + creative

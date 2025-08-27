@@ -12,9 +12,11 @@ import {
 } from "react-icons/fa";
 import { RiFilmLine } from "react-icons/ri";
 import { HiSparkles } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 
 export default function FilmoraInterface() {
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Simulate loading
@@ -175,6 +177,9 @@ export default function FilmoraInterface() {
               {/* Action buttons styled as transport controls */}
               <div className="flex gap-4 justify-center">
                 <motion.button
+                  onClick={() =>
+                    navigate("/", { state: { scrollTo: 'contact' } })
+                  }
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg font-semibold text-lg shadow-lg shadow-red-500/25 flex items-center gap-2"

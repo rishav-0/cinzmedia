@@ -33,8 +33,10 @@ const icons = [
 
 const images = [
   "https://assamdigital.com/wp-content/uploads/2022/09/google-ads-certified.png",
-  "https://assets.goodfirms.co/badges/color-badge/top-digital-marketing-companies.svg",
-  "https://assamdigital.com/wp-content/uploads/2022/09/adobe-certified-1024x153.png",
+  "https://i0.wp.com/nvpita.com/wp-content/uploads/2022/08/acp-logo-bigger.png?fit=290%2C100&ssl=1",
+  "https://www.clickreturn.co.uk/wp-content/uploads/2016/09/Google-Certified-Company.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlmyavktvdODbDeryLGo8uw6FV3KFZ851iFCqnjPPNnxEYnejjaqU3PFA8ECBOfwSpunI&usqp=CAU",
+  "https://upload.wikimedia.org/wikipedia/commons/5/5a/Microsoft_Certified_Professional.png",
 ];
 
 
@@ -163,7 +165,7 @@ const images = [
       </div>
       <Marquee pauseOnHover={true} autoFill={true}>
         {images.map((i) => (
-          <img src={i} className="h-12 px-10" key={i} alt="" />
+          <img src={i} className="h-16 px-10" key={i} alt="" />
         ))}
       </Marquee>
     </section>

@@ -25,6 +25,7 @@ import { BsRecordCircle, BsSkipEnd, BsSkipStart } from "react-icons/bs";
 import VideoGrid from "./VideoGrid";
 import TimecodeDisplay from "./TimecodeDisplay";
 import FilmoraInterface from "./FilmoraInterface";
+import { useNavigate } from "react-router";
 
 const projects = [
   {
@@ -70,6 +71,9 @@ const projects = [
 ];
 
 const VideoEditorLanding = () => {
+
+  const navigate = useNavigate();
+
   const [isLoading, setIsLoading] = useState(true);
   const [activeProject, setActiveProject] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -257,7 +261,6 @@ const VideoEditorLanding = () => {
       </div>
 
       {/* Hero Section - Video Preview Window */}
-      
 
       <FilmoraInterface />
 
@@ -431,6 +434,9 @@ const VideoEditorLanding = () => {
               </div>
 
               <motion.button
+                onClick={() =>
+                  navigate("/", { state: { scrollTo: "contact" } })
+                }
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg font-bold text-xl shadow-xl shadow-purple-500/25 flex items-center gap-3 mx-auto"
@@ -447,7 +453,7 @@ const VideoEditorLanding = () => {
       <footer className="py-10 px-6 bg-black border-t border-gray-800">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-500 font-mono text-sm">
-            © 2024 CINEMATIC POST-PRODUCTION | TIMELINE
+            © 2025 CINEMATIC POST-PRODUCTION | TIMELINE
           </p>
         </div>
       </footer>

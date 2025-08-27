@@ -18,7 +18,9 @@ import AnimatedContent from "../components/AnimatedContent";
 import { CoolMode } from "../components/CoolMode";
 import gpt from '../images/icon/gpt.png'
 import gemini from '../images/icon/gemini.png'
+import { scrollToSection } from "../utils/scrollToSection";
 const words = ["Clicks & Conversions", "Followers", "Views", "Leads", "Sales"];
+
 
 export default function LandingPage() {
   const [index, setIndex] = useState(0);
@@ -82,12 +84,18 @@ export default function LandingPage() {
           </p>
           <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center">
             <CoolMode>
-              <button className="px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform">
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform"
+              >
                 Get Your Free Strategy Plan
               </button>
             </CoolMode>
             <CoolMode>
-              <button className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-black transition-colors">
+              <button
+                onClick={() => scrollToSection("portfolio")}
+                className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-black transition-colors"
+              >
                 See Our Creative Work
               </button>
             </CoolMode>

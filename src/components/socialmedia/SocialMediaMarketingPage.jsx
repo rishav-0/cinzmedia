@@ -11,8 +11,12 @@ import youtube from "../../images/float/youtube.png";
 import shorts from "../../images/float/shorts.png";
 import reddit from "../../images/float/reddit.png";
 import linkedin from "../../images/float/linkedin.png";
+import { useNavigate } from "react-router";
+import { scrollToSection } from "../../utils/scrollToSection";
 
 const SocialMediaMarketingPage = () => {
+
+  const navigate = useNavigate();
   const [hoveredCard, setHoveredCard] = useState(null);
   const [windowDimensions, setWindowDimensions] = useState({
     width: typeof window !== "undefined" ? window.innerWidth : 1200,
@@ -361,6 +365,7 @@ const SocialMediaMarketingPage = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
             <motion.button
+              onClick={() => navigate("/", { state: { scrollTo: "contact" } })}
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(236, 72, 153, 0.3)",
@@ -372,6 +377,7 @@ const SocialMediaMarketingPage = () => {
               <span className="relative z-10">Start Going Viral 🔥</span>
             </motion.button>
             <motion.button
+              onClick={() => scrollToSection("testimonials")}
               whileHover={{
                 scale: 1.05,
                 backgroundColor: "rgba(147, 51, 234, 0.1)",
@@ -570,7 +576,12 @@ const SocialMediaMarketingPage = () => {
                 </div>
               </div>
 
-              <button className="w-full mt-6 bg-gradient-to-r from-pink-500 to-purple-600 text-white py-4 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300">
+              <button
+                onClick={() =>
+                  navigate("/", { state: { scrollTo: "contact" } })
+                }
+                className="w-full mt-6 bg-gradient-to-r from-pink-500 to-purple-600 text-white py-4 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300"
+              >
                 Let's Get Viral!
               </button>
             </motion.div>
@@ -586,10 +597,10 @@ const SocialMediaMarketingPage = () => {
         viewport={{ once: true }}
         className="py-20 px-4 sm:px-6 lg:px-8"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto" id="testimonials">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Success Stories That Inspire{" "}
+              Success Stories That Inspire
               <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
                 🔥
               </span>

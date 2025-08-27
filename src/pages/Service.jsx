@@ -9,7 +9,11 @@ import socialmedia from '../images/services/socialmedia.png';
 import digitalmarketing from '../images/services/digitalmarketing.png';
 import videoe from '../images/services/video.png';
 
+
 const Services = () => {
+
+ 
+
   const services = [
     {
       title: "Website Development",
