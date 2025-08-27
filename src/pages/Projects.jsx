@@ -154,7 +154,7 @@ const Projects = () => {
 
         <h1
           id="portfolio-title"
-          className="text-center mb-10 text-3xl md:text-5xl font-bold  text-gray-900 mb-4"
+          className="text-center mb-10 text-3xl md:text-5xl font-bold  text-gray-900 "
         >
           Our Trusted Partners
         </h1>
