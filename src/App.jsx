@@ -9,6 +9,8 @@ import ScrollToTop from './utils/ScrollToTop';
 import WebDevelopmentServices from './components/webdev/WebDevlopmentServices';
 import SocialMediaMarketingPage from './components/socialmedia/SocialMediaMarketingPage';
 import VideoEditing from './components/video/VideoEditing';
+import Digitalmarketing from './components/digitalmarketing/Digitalmarketing';
+import Brand from './components/brandbuilding/Brand';
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
         <Route path="/graphic" element={<Index />} />
         <Route path="/webdev" element={<WebDevelopmentServices />} />
         <Route path="/videoediting" element={<VideoEditing/>} />
+        <Route path="/digitalmarketing" element={<Digitalmarketing/>} />
+        <Route path="/brandbuilding" element={<Brand/>} />
         <Route
           path="/socialmediamarketing"
           element={<SocialMediaMarketingPage />}

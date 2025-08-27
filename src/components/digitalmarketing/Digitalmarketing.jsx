@@ -177,7 +177,7 @@ const IconAI = ({ className = "", label = "AI Analytics & Insights icon" }) => (
   </svg>
 );
 
-export default function MarketingLandingPage() {
+export default function Digitalmarketing() {
   const siteTitle =
     "AI-Powered Digital Marketing Services | Business Growth Strategies";
   const siteDescription =
