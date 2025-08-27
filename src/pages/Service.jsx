@@ -45,7 +45,7 @@ const Services = () => {
       description:
         "Develop a strong, memorable identity that resonates with your customers.",
       icon: "ri-trophy-line",
-      link: "/services/brand-building",
+      link: "brandbuilding",
       image: brand,
       // image:       "https://images.unsplash.com/photo-1504384308090-c
       // image:       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -64,7 +64,7 @@ const Services = () => {
       description:
         "Performance-focused campaigns delivering measurable ROI every time.",
       icon: "ri-rocket-line",
-      link: "/services/digital-marketing",
+      link: "digitalmarketing",
       image: digitalmarketing,
       // image:        "https://media.istockphoto.com/id/625727674/photo/marketing-strategy-business-concept.jpg?s=2048x2048&w=is&k=20&c=pSCaaFy2p8IWhd2dwmtPVH8LMyT_vcprIQmcOTAX_kc=",
     },
