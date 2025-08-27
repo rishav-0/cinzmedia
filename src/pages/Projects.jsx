@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Marquee from "react-fast-marquee";
 import ScrollReveal from "scrollreveal";
 
 const Projects = () => {
@@ -114,6 +115,14 @@ const Projects = () => {
       "https://readdy.ai/api/search-image?query=business%20growth%20success%20story%2C%20professional%20team%20celebrating%2C%20upward%20trending%20charts%20and%20graphs%2C%20successful%20business%20transformation%2C%20modern%20office%20celebration%2C%20achievement%20and%20success%20visualization&width=600&height=400&seq=case-study-success-1&orientation=landscape",
   };
 
+  const partners = [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/800px-Google_2015_logo.svg.png",
+    "https://upload.wikimedia.org/wikipedia/commons/e/e3/Bing_Fluent_Logo_Text.svg",
+    "https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Canva_Logo.svg/557px-Canva_Logo.svg.png",
+    "https://upload.wikimedia.org/wikipedia/commons/8/8d/Adobe_Corporate_Logo.png",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToJYtPvckdMXR_0meTlA2hVx-L93tSyTT7t4W6Y1W3nSNv_WUb9KnKfdt5QYEkDzyY9cY&usqp=CAU",
+  ];
+
   return (
     <section id="portfolio" className="py-20 px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
@@ -143,11 +152,25 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Featured Case Study */}
-        <div
-          id="featured-case-study"
-          className="bg-white rounded-3xl p-12 shadow-xl"
+        <h1
+          id="portfolio-title"
+          className="text-center mb-10 text-3xl md:text-5xl font-bold  text-gray-900 mb-4"
         >
+          Our Trusted Partners
+        </h1>
+        <Marquee pauseOnHover={true} autoFill={true}>
+          {partners.map((logo, index) => (
+            <img
+              src={logo}
+              alt={`Partner logo ${index + 1}`}
+              className="h-12 mx-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              key={index}
+            />
+          ))}
+        </Marquee>
+
+        {/* Featured Case Study */}
+        {/* <div id="featured-case-study" className="bg-white rounded-3xl p-12 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-blue-600 font-semibold text-lg">
@@ -184,7 +207,7 @@ const Projects = () => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
