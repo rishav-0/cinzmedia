@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 
 import { useNavigate } from "react-router"; 
+import Marquee from "react-fast-marquee";
 
 const services = [
   {
@@ -227,6 +228,25 @@ export default function GraphicDetail() {
     }),
   };
 
+  const graphicDesignImages1 = [
+    "https://images.unsplash.com/photo-1678138091332-432d4a1ac407?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGh1bWJuYWlsfGVufDB8fDB8fHww", // Workspace with digital tablet & laptop
+    "https://plus.unsplash.com/premium_photo-1664008628916-3b72a2136e22?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Abstract geometric shapes against pastel backdrop
+    "https://plus.unsplash.com/premium_photo-1661943659036-aa040d92ee64?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Person sketching design
+    "https://images.unsplash.com/photo-1527772291563-41d27d5052ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Stylized color gradient on a designer desk
+    "https://images.unsplash.com/photo-1533619043865-1c2e2f32ff2f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Creative flat lay with tools and sketches
+    "https://images.unsplash.com/photo-1692090383808-84faed4b35a5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ];
+
+  const graphicDesignImages2 = [
+    "https://images.unsplash.com/photo-1678138091332-432d4a1ac407?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGh1bWJuYWlsfGVufDB8fDB8fHww", // Workspace with digital tablet & laptop
+    "https://plus.unsplash.com/premium_photo-1664008628916-3b72a2136e22?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Abstract geometric shapes against pastel backdrop
+    "https://plus.unsplash.com/premium_photo-1661943659036-aa040d92ee64?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Person sketching design
+    "https://images.unsplash.com/photo-1527772291563-41d27d5052ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Stylized color gradient on a designer desk
+    "https://images.unsplash.com/photo-1533619043865-1c2e2f32ff2f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Creative flat lay with tools and sketches
+    "https://images.unsplash.com/photo-1692090383808-84faed4b35a5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ];
+
+
   return (
     <>
       <div className="min-h-screen bg-gray-50 text-gray-900 antialiased overflow-x-hidden">
@@ -332,7 +352,6 @@ export default function GraphicDetail() {
                     aria-label="Get a Free Design Consultation"
                   >
                     Get a Free Design Consultation
-                 
                   </button>
                   <a
                     href="#services"
@@ -522,7 +541,41 @@ export default function GraphicDetail() {
             </div>
           </div>
         </header>
-
+        <section className="my-24 md:my-28 max-w-7xl mx-auto rounded-lg overflow-hidden">
+          <h2 className="text-center text-xl font-semibold">THUMBNAILS THAT</h2>
+          <h1 className="text-center text-[60px] mb-10 font-bold">ENGAGE</h1>
+          <Marquee
+            className="mb-4"
+            autoFill={false}
+            speed={40}
+            pauseOnHover={true}
+          >
+            {graphicDesignImages1.map((src, i) => (
+              <img
+                src={src}
+                className="h-40 w-auto px-2 object-contain rounded-lg shadow-lg"
+                key={i}
+                alt=""
+              />
+            ))}
+          </Marquee>
+          <Marquee
+            className=""
+            direction="right"
+            autoFill={false}
+            speed={40}
+            pauseOnHover={true}
+          >
+            {graphicDesignImages2.map((src, i) => (
+              <img
+                src={src}
+                className="h-40 w-auto px-2 object-contain rounded-lg shadow-lg"
+                key={i}
+                alt=""
+              />
+            ))}
+          </Marquee>
+        </section>
         {/* SERVICES SECTION */}
         <section id="services" className="relative py-24 md:py-28">
           <div

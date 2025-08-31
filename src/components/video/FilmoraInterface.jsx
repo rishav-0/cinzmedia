@@ -13,6 +13,10 @@ import {
 import { RiFilmLine } from "react-icons/ri";
 import { HiSparkles } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
+import square from "../../images/videoediting/square.png";
+import rectangle from "../../images/videoediting/rectangle.png";
+import vertical from "../../images/videoediting/vertical.png";
+import horizontal from "../../images/videoediting/horizontal.png";
 
 export default function FilmoraInterface() {
   const [isLoading, setIsLoading] = useState(true);
@@ -62,12 +66,11 @@ export default function FilmoraInterface() {
             animate={{ y: [0, -20, 0], rotateZ: [-1, 1, -1] }}
             transition={{ duration: 8, repeat: Infinity }}
           >
-            <div className="bg-gray-800 border-2 border-gray-700 rounded-lg shadow-2xl p-2">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-24" />
-              <div className="text-xs text-gray-400 mt-1 text-center">
-                CLIP_001.MOV
-              </div>
-            </div>
+            <img
+              className="rounded-xl w-40 border-gray-600"
+              src={square}
+              alt=""
+            />
           </motion.div>
 
           <motion.div
@@ -75,12 +78,11 @@ export default function FilmoraInterface() {
             animate={{ y: [0, -15, 0], rotateZ: [1, -1, 1] }}
             transition={{ duration: 9, repeat: Infinity }}
           >
-            <div className="bg-gray-800 border-2 border-gray-700 rounded-lg shadow-2xl p-2">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-[200px] h-[100px]" />
-              <div className="text-xs text-gray-400 mt-1 text-center">
-                CLIP_002.MOV
-              </div>
-            </div>
+            <img
+              className="rounded-xl w-40 border-gray-600"
+              src={vertical}
+              alt=""
+            />
           </motion.div>
 
           <motion.div
@@ -88,12 +90,11 @@ export default function FilmoraInterface() {
             animate={{ y: [0, 15, 0], rotateZ: [1, -1, 1] }}
             transition={{ duration: 10, repeat: Infinity }}
           >
-            <div className="bg-gray-800 border-2 border-gray-700 rounded-lg shadow-2xl p-2">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-24" />
-              <div className="text-xs text-gray-400 mt-1 text-center">
-                CLIP_003.MOV
-              </div>
-            </div>
+            <img
+              className="rounded-xl w-40 border-gray-600"
+              src={horizontal}
+              alt=""
+            />
           </motion.div>
 
           <motion.div
@@ -101,12 +102,11 @@ export default function FilmoraInterface() {
             animate={{ y: [0, 20, 0], rotateZ: [-1, 1, -1] }}
             transition={{ duration: 11, repeat: Infinity }}
           >
-            <div className="bg-gray-800 border-2 border-gray-700 rounded-lg shadow-2xl p-2">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-24" />
-              <div className="text-xs text-gray-400 mt-1 text-center">
-                CLIP_004.MOV
-              </div>
-            </div>
+            <img
+              className="rounded-xl w-40 border-gray-600"
+              src={rectangle}
+              alt=""
+            />
           </motion.div>
 
           {/* Mac-style window header */}
@@ -178,7 +178,7 @@ export default function FilmoraInterface() {
               <div className="flex gap-4 justify-center">
                 <motion.button
                   onClick={() =>
-                    navigate("/", { state: { scrollTo: 'contact' } })
+                    navigate("/", { state: { scrollTo: "contact" } })
                   }
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
