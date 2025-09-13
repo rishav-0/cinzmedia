@@ -1,7 +1,45 @@
 import transparant from '../images/logo/transparant.png'
 
 
+const socialMediaLinks = [
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/cinzmedia",
+    icon: "ri-facebook-fill",
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/cinzmedia",
+    icon: "ri-twitter-x-line",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/cinzmedia",
+    icon: "ri-instagram-line",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/cinzmedia",
+    icon: "ri-linkedin-fill",
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/@cinzmedia",
+    icon: "ri-youtube-fill",
+  },
+];
+
 const Footer = () => {
+  const quickLinks = [
+    { name: "Home", link: "/" },
+    { name: "About", link: "#about" },
+    { name: "Services", link: "#services" },
+    { name: "Portfolio", link: "#portfolio" },
+    { name: "Contact", link: "#contact" },
+  ];
+
+  console.log("Quick Links:", quickLinks);
+
   return (
     <footer className="bg-gray-900 text-white py-16 px-6">
       <div className="max-w-7xl mx-auto">
@@ -14,41 +52,32 @@ const Footer = () => {
               brands that turn heads and campaigns that convert.
             </p>
             <div className="flex space-x-4">
-              {[
-                "ri-facebook-fill",
-                "ri-twitter-x-line",
-                "ri-instagram-line",
-                "ri-linkedin-fill",
-                "ri-youtube-fill",
-              ].map((icon, index) => (
-                <div
+              {socialMediaLinks.map((social, index) => (
+                <a
                   key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer"
                 >
-                  <i className={`${icon} text-lg`}></i>
-                </div>
+                  <i className={`${social.icon} text-lg`}></i>
+                </a>
               ))}
             </div>
           </div>
-
+              
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {[
-                "Home",
-                "About",
-                "Services",
-                "Portfolio",
-                "Blog",
-                "Contact",
-              ].map((link, index) => (
+              {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a
-                    href="#"
+                    href={link.link}
                     className="text-gray-300 hover:text-blue-400 transition-colors cursor-pointer"
+                    onClick={() => console.log(`Link clicked: ${link.name}`)}
                   >
-                    {link}
+                    {link.name}
                   </a>
                 </li>
               ))}

@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 
 const ContactSection = () => {
-
-
   const handleSubmit = (e) => {
-    e.preventDefault(); }
+    e.preventDefault();
+  };
 
   const inputCls =
     "w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-blue-100 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent";
@@ -48,7 +47,6 @@ const ContactSection = () => {
               id="contact-form"
               className="space-y-6"
               onSubmit={handleSubmit}
-         
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
@@ -127,7 +125,10 @@ const ContactSection = () => {
                 className={`${inputCls} resize-none`}
               ></textarea>
 
-              <button type="submit" className="w-full bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-2xl hover:bg-blue-50 transition-all duration-300 cursor-pointer whitespace-nowrap">
+              <button
+                type="submit"
+                className="w-full bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-2xl hover:bg-blue-50 transition-all duration-300 cursor-pointer whitespace-nowrap"
+              >
                 Send Project Brief
               </button>
             </form>
@@ -158,7 +159,14 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="text-white font-semibold">Email</div>
-                  <div className="text-blue-100">hello@cinzmedia.com</div>
+                  <div className="text-blue-100">
+                    <a
+                      href="mailto:hello@cinzmedia.com"
+                      className="hover:text-white transition-colors"
+                    >
+                      hello@cinzmedia.com
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -168,7 +176,14 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="text-white font-semibold">Phone</div>
-                  <div className="text-blue-100">+1 (555) 123-4567</div>
+                  <div className="text-blue-100">
+                    <a
+                      href="tel:+919365046638"
+                      className="hover:text-white transition-colors"
+                    >
+                      +91 9365046638
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -179,34 +194,16 @@ const ContactSection = () => {
                 <div>
                   <div className="text-white font-semibold">Office</div>
                   <div className="text-blue-100">
-                    123 Creative Street, Design District, NY 10001
+                    <a
+                      href="https://maps.app.goo.gl/Xfzz6DwLMKKrB5Uh9"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors"
+                    >
+                      Arunodaya Path, Hegrabari, Kamrup Metro, Assaam
+                    </a>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Socials */}
-            <div className="mt-8">
-              <h4 className="text-lg font-semibold text-white mb-4">
-                Follow Us
-              </h4>
-              <div className="flex space-x-4">
-                {[
-                  "facebook-fill",
-                  "twitter-fill",
-                  "instagram-line",
-                  "linkedin-fill",
-                  "youtube-fill",
-                ].map((icon, idx) => (
-                  <div
-                    key={idx}
-                    className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors cursor-pointer group"
-                  >
-                    <i
-                      className={`ri-${icon} text-lg text-white group-hover:scale-110 transition-transform`}
-                    ></i>
-                  </div>
-                ))}
               </div>
             </div>
 
@@ -214,7 +211,7 @@ const ContactSection = () => {
             <div className="mt-8">
               <div className="bg-white/10 rounded-2xl p-1 h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878459418!3d40.74844097932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sDesign%20District%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1629789493076!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d434.9354083505507!2d91.79728053482229!3d26.14979984111857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1757787861492!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0, borderRadius: "12px" }}

@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   motion,
   AnimatePresence,
@@ -71,7 +71,6 @@ const projects = [
 ];
 
 const VideoEditorLanding = () => {
-
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(true);
@@ -104,28 +103,28 @@ const VideoEditorLanding = () => {
 
   const services = [
     {
-      icon: <FaFilm />,
-      title: "Color Grading",
-      timeline: "█▓▒░░░▒▓█",
-      color: "from-purple-600 to-pink-600",
+      icon: <FaVideo />,
+      title: "YouTube Video Optimization",
+      timeline: "█▓▒░SEO░▒▓█",
+      color: "from-red-600 to-yellow-500",
     },
     {
-      icon: <FaCut />,
-      title: "VFX & Compositing",
-      timeline: "▓█▓░░░▓█▓",
-      color: "from-cyan-600 to-blue-600",
+      icon: <HiSparkles />,
+      title: "Social Media Video Editing",
+      timeline: "▓█▓SM░░▓█▓",
+      color: "from-blue-600 to-pink-500",
     },
     {
       icon: <FaVolumeUp />,
-      title: "Audio Post",
-      timeline: "░▒▓█▓▒░",
+      title: "Captioning & Subtitles",
+      timeline: "░▒▓CC▓▒░",
       color: "from-green-600 to-emerald-600",
     },
     {
-      icon: <BiMoviePlay />,
-      title: "Motion Graphics",
-      timeline: "█░█░█░█",
-      color: "from-orange-600 to-red-600",
+      icon: <FaFilm />,
+      title: "Video Thumbnails Design",
+      timeline: "█░THUMB░█",
+      color: "from-purple-600 to-pink-600",
     },
   ];
 

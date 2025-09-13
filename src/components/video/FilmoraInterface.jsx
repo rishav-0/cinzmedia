@@ -13,10 +13,16 @@ import {
 import { RiFilmLine } from "react-icons/ri";
 import { HiSparkles } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
+
 import square from "../../images/videoediting/square.png";
 import rectangle from "../../images/videoediting/rectangle.png";
 import vertical from "../../images/videoediting/vertical.png";
 import horizontal from "../../images/videoediting/horizontal.png";
+
+import prIcon from "../../images/videoediting/logo/pr.png"; // Premiere Pro
+import fcIcon from "../../images/videoediting/logo/fc.png"; // Final Cut Pro
+import dvIcon from "../../images/videoediting/logo/dv.png"; // DaVinci Resolve
+import filIcon from "../../images/videoediting/logo/fil.png"; // Filmora
 
 export default function FilmoraInterface() {
   const [isLoading, setIsLoading] = useState(true);
@@ -109,15 +115,15 @@ export default function FilmoraInterface() {
             />
           </motion.div>
 
-          {/* Mac-style window header */}
-          <div className="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
+          {/*  Mac-style window header */}
+          <div className="flex items-center rounded-t-lg justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-red-500 rounded-full" />
               <div className="w-3 h-3 bg-yellow-500 rounded-full" />
               <div className="w-3 h-3 bg-green-500 rounded-full" />
             </div>
             <div className="text-sm font-medium text-gray-300">
-              Filmora - Untitled Project
+              Professional Video Editing & Post-Production Services
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-gray-600 rounded-full" />
@@ -163,7 +169,13 @@ export default function FilmoraInterface() {
           {/* Main content area */}
           <div className="p-8">
             <div className="text-center">
-              <HiSparkles className="text-5xl text-cyan-400 mx-auto mb-6" />
+              <div className="flex items-center justify-center gap-6 mb-6">
+                {/* Video editing software icons */}
+                <img src={prIcon} alt="Premiere Pro" className="w-12 h-12" />
+                <img src={fcIcon} alt="Final Cut Pro" className="w-12 h-12" />
+                <img src={dvIcon} alt="DaVinci Resolve" className="w-12 h-12" />
+                <img src={filIcon} alt="Filmora" className="w-12 h-12" />
+              </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Cinematic Post-Production
@@ -218,7 +230,7 @@ export default function FilmoraInterface() {
           </div>
 
           {/* Timeline area */}
-          <div className="px-4 py-3 bg-gray-800 border-t border-gray-700 flex items-center">
+          <div className="px-4 py-3 rounded-b-lg bg-gray-800 border-t border-gray-700 flex items-center">
             <div className="text-xs text-gray-400 mr-4">00:00:00:00</div>
             <div className="flex-1 h-1 bg-gray-700 rounded-full overflow-hidden">
               <div className="h-full bg-cyan-500 w-1/3"></div>

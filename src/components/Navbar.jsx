@@ -31,6 +31,7 @@ export default function Navbar() {
     { slug: "videoediting", label: "Video Editing" },
     { slug: "brandbuilding", label: "Brand Building" },
     { slug: "socialmediamarketing", label: "Social Media Marketing" },
+    { slug: "digitalmarketing", label: "Digital Marketing" },
   ];
 
   const handleNavClick = (sectionId) => {
