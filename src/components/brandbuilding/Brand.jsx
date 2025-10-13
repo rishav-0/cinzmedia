@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   FaChevronRight,
@@ -50,7 +49,7 @@ const Brand = () => {
       {/* SEO Meta would go in the head - using React Helmet or Next.js Head */}
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-slate-800 to-gray-700 text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-900 via-slate-900 to-gray-800 text-white">
         {/* Animated background shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -262,8 +261,8 @@ const Brand = () => {
                 Mid-Sized Companies
               </h3>
               <p className="text-gray-700 mb-6">
-                We refine your existing identity, align teams, and implement
-                brand systems to support expansion.
+                We refine your identity, align teams, and implement brand
+                systems that support measurable growth.
               </p>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-2">
@@ -281,33 +280,33 @@ const Brand = () => {
               </ul>
             </motion.div>
 
-            {/* Enterprise */}
+            {/* Agencies & Partners (replaces Enterprise) */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-gray-50 to-slate-100 rounded-2xl p-8 border border-gray-200"
+              className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 border border-cyan-100"
             >
-              <div className="bg-gray-800 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <FaGlobe className="w-6 h-6 text-white" />
+              <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                <FaUsers className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Enterprises & Corporates
+                Agencies & Partners
               </h3>
               <p className="text-gray-700 mb-6">
-                We ensure your brand stays consistent across regions, product
-                lines, and thousands of touchpoints.
+                We collaborate with agencies and product teams — white-label
+                support, creative partnerships, and overflow capacity.
               </p>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0" />
-                  <span>Global brand governance</span>
+                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
+                  <span>White-label design & production</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0" />
-                  <span>Multi-market adaptation</span>
+                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
+                  <span>Dedicated partner workflows</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-gray-700 mt-0.5 flex-shrink-0" />
-                  <span>Enterprise-wide adoption</span>
+                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
+                  <span>Flexible resourcing for peaks</span>
                 </li>
               </ul>
             </motion.div>
@@ -460,7 +459,7 @@ const Brand = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-navy-900 to-slate-800 text-white">
+      <section className="py-20 bg-gradient-to-br from-indigo-900 to-slate-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}

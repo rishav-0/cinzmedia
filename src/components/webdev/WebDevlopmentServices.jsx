@@ -504,7 +504,7 @@ export default function WebDevelopmentServices() {
         </section>
 
         {/* Minimal but larger Best Work Section with more detail */}
-        <section id="work" className="mx-auto max-w-7xl px-6 pb-20">
+        {/* <section id="work" className="mx-auto max-w-7xl px-6 pb-20">
           <div className="flex items-end justify-between">
             <div>
               <h2 className="text-2xl font-semibold text-white md:text-3xl">
@@ -534,7 +534,7 @@ export default function WebDevelopmentServices() {
               />
             ))}
           </div>
-        </section>
+        </section> */}
       </main>
     </>
   );

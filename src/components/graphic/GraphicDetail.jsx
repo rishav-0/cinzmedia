@@ -7,7 +7,7 @@ import {
   useSpring,
 } from "framer-motion";
 
-import { useNavigate } from "react-router"; 
+import { useNavigate } from "react-router";
 import Marquee from "react-fast-marquee";
 
 const services = [
@@ -245,7 +245,6 @@ export default function GraphicDetail() {
     "https://images.unsplash.com/photo-1533619043865-1c2e2f32ff2f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Creative flat lay with tools and sketches
     "https://images.unsplash.com/photo-1692090383808-84faed4b35a5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
-
 
   return (
     <>
@@ -634,41 +633,55 @@ export default function GraphicDetail() {
                   </div>
                   <p className="mt-2 text-gray-700">{svc.description}</p>
 
-                  {/* Process: Sketch -> Digital -> Final */}
+                  {/* Process - tailored per service */}
                   <div className="mt-5">
                     <div className="text-sm font-medium text-gray-900">
                       Process
                     </div>
                     <div className="mt-3 grid grid-cols-3 gap-4">
-                      <div className="text-center">
-                        <div
-                          role="img"
-                          aria-label="logo sketch step"
-                          title="logo sketch step"
-                          className="mx-auto bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl w-16 h-16 border-2 border-dashed"
-                        />
-                        <div className="mt-2 text-xs text-gray-600">Sketch</div>
-                      </div>
-                      <div className="text-center">
-                        <div
-                          role="img"
-                          aria-label="digital design step"
-                          title="digital design step"
-                          className="mx-auto bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl w-16 h-16 border-2 border-dashed"
-                        />
-                        <div className="mt-2 text-xs text-gray-600">
-                          Digital
-                        </div>
-                      </div>
-                      <div className="text-center">
-                        <div
-                          role="img"
-                          aria-label="final design presentation"
-                          title="final design presentation"
-                          className="mx-auto bg-gradient-to-br from-pink-500 to-pink-700 rounded-xl w-16 h-16 border-2 border-dashed"
-                        />
-                        <div className="mt-2 text-xs text-gray-600">Final</div>
-                      </div>
+                      {(() => {
+                        // Define per-service step labels based on key
+                        const stepSets = {
+                          logo: ["Research", "Sketch", "Vectorize"],
+                          identity: ["Audit", "Systemize", "Guidebook"],
+                          collateral: ["Concept", "Layout", "Print-ready"],
+                          digital: ["Wireframe", "Pixel-design", "Export"],
+                          packaging: ["Dielines", "Mockup", "Production"],
+                          illustration: ["Concept", "Draft", "Finished"],
+                        };
+
+                        const steps = stepSets[svc.key] || [
+                          "Sketch",
+                          "Digital",
+                          "Final",
+                        ];
+
+                        return steps.map((label, idx) => (
+                          <div className="text-center" key={label}>
+                            <div
+                              role="img"
+                              aria-label={`${svc.title} step ${label}`}
+                              title={`${svc.title} step ${label}`}
+                              className="mx-auto rounded-xl w-16 h-16 border-2 border-dashed flex items-center justify-center"
+                              style={{
+                                background: `linear-gradient(135deg, ${
+                                  svc.colors[0]
+                                } 0%, ${svc.colors[1] || svc.colors[0]} 100%)`,
+                                boxShadow: `0 6px 18px ${
+                                  svc.colors[2] || "rgba(0,0,0,0.12)"
+                                }`,
+                              }}
+                            >
+                              <span className="text-white text-sm font-semibold">
+                                {label[0]}
+                              </span>
+                            </div>
+                            <div className="mt-2 text-xs text-gray-600">
+                              {label}
+                            </div>
+                          </div>
+                        ));
+                      })()}
                     </div>
                   </div>
 

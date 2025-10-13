@@ -316,121 +316,189 @@ const SocialMediaMarketingPage = () => {
           </div>
 
           {/* Radial gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-white/20"></div>
-        </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-white/20"></div>
+              </div>
 
-        <div className="relative max-w-7xl mx-auto text-center z-10">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="mb-8"
-          >
-            <motion.h1
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
-              animate={{
-                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              style={{
-                background:
-                  "linear-gradient(45deg, #ec4899, #8b5cf6, #3b82f6, #ec4899)",
-                backgroundSize: "300% 300%",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Go Viral.
-              <br />
-              <span className="text-4xl sm:text-5xl lg:text-6xl">
-                Get Famous.
-              </span>
-            </motion.h1>
-            <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Transform your social media presence with strategies that create
-              viral moments, build massive followings, and turn likes into
-              revenue 🚀
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-          >
-            <motion.button
-              onClick={() => navigate("/", { state: { scrollTo: "contact" } })}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(236, 72, 153, 0.3)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transform transition-all duration-300 relative overflow-hidden"
-            >
-              <motion.div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10">Start Going Viral 🔥</span>
-            </motion.button>
-            <motion.button
-              onClick={() => scrollToSection("testimonials")}
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "rgba(147, 51, 234, 0.1)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="border-2 border-purple-500 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-50 transition-all duration-300"
-            >
-              See Our Success Stories
-            </motion.button>
-          </motion.div>
-
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-4xl mx-auto"
-          >
-            {[
-              {
-                value: "500M+",
-                label: "Views Generated",
-                color: "text-purple-600",
-              },
-              { value: "10K+", label: "Viral Posts", color: "text-pink-600" },
-              {
-                value: "2M+",
-                label: "Followers Gained",
-                color: "text-indigo-600",
-              },
-              { value: "98%", label: "Success Rate", color: "text-purple-600" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 20, opacity: 0 }}
+              <div className="relative max-w-7xl mx-auto text-center z-10">
+                <motion.div
+                initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.5, ease: "linear" }, // almost instant
-                }}
-                className="text-center bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/30"
-              >
-                <div className={`text-3xl font-bold ${stat.color} mb-2`}>
-                  {stat.value}
-                </div>
-                <div className="text-gray-700 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.section>
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="mb-8"
+                >
+                <motion.h1
+                  className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6"
+                  animate={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "linear",
+                  }}
+                  style={{
+                  background:
+                    "linear-gradient(45deg, #ec4899, #8b5cf6, #3b82f6, #ec4899)",
+                  backgroundSize: "300% 300%",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  }}
+                >
+                  Go Viral.
+                  <br />
+                  <span className="text-4xl sm:text-5xl lg:text-6xl">
+                  Get Famous.
+                  </span>
+                </motion.h1>
+                <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                  Transform your social media presence with strategies that create
+                  viral moments, build massive followings, and turn likes into
+                  revenue 🚀
+                </p>
+                </motion.div>
 
-      {/* Services Section */}
+                <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+                >
+                <motion.button
+                  onClick={() => navigate("/", { state: { scrollTo: "contact" } })}
+                  whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px rgba(236, 72, 153, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transform transition-all duration-300 relative overflow-hidden"
+                >
+                  <motion.div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                  <span className="relative z-10">Start Going Viral 🔥</span>
+                </motion.button>
+                <motion.button
+                  onClick={() => scrollToSection("testimonials")}
+                  whileHover={{
+                  scale: 1.05,
+                  backgroundColor: "rgba(147, 51, 234, 0.1)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-purple-500 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-50 transition-all duration-300"
+                >
+                  See Our Success Stories
+                </motion.button>
+                </motion.div>
+
+                {/* CountUp component */}
+                {/*
+                Simple CountUp implementation using React hooks.
+                For more advanced features, consider using 'react-countup' package.
+                */}
+                {(() => {
+                const stats = [
+                  {
+                  value: 500_000_000,
+                  display: "500M+",
+                  label: "Views Generated",
+                  color: "text-purple-600",
+                  duration: 2,
+                  },
+                  {
+                  value: 10_000,
+                  display: "10K+",
+                  label: "Viral Posts",
+                  color: "text-pink-600",
+                  duration: 2,
+                  },
+                  {
+                  value: 2_000_000,
+                  display: "2M+",
+                  label: "Followers Gained",
+                  color: "text-indigo-600",
+                  duration: 2,
+                  },
+                  {
+                  value: 98,
+                  display: "98%",
+                  label: "Success Rate",
+                  color: "text-purple-600",
+                  duration: 2,
+                  isPercent: true,
+                  },
+                ];
+
+                // CountUp component
+                function CountUp({ end, duration = 2, isPercent, display }) {
+                  const [count, setCount] = React.useState(0);
+
+                  useEffect(() => {
+                  let start = 0;
+                  let raf;
+                  const startTime = performance.now();
+
+                  function animate(now) {
+                    const elapsed = (now - startTime) / 1000;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const value = Math.floor(progress * (end - start) + start);
+                    setCount(value);
+                    if (progress < 1) {
+                    raf = requestAnimationFrame(animate);
+                    } else {
+                    setCount(end);
+                    }
+                  }
+                  raf = requestAnimationFrame(animate);
+                  return () => cancelAnimationFrame(raf);
+                  }, [end, duration]);
+
+                  // If display is provided, show it after animation
+                  if (display && count === end) return display;
+                  if (isPercent) return `${count}%`;
+                  if (end >= 1_000_000 && count === end) return display;
+                  if (end >= 1_000_000) return `${Math.floor(count / 1_000_000)}M+`;
+                  if (end >= 1_000 && count === end) return display;
+                  if (end >= 1_000) return `${Math.floor(count / 1_000)}K+`;
+                  return count;
+                }
+
+                return (
+                  <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                  className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-4xl mx-auto"
+                  >
+                  {stats.map((stat, index) => (
+                    <mdiv
+                    key={index}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
+                    whileHover={{
+                      scale: 1.05,
+                      transition: { duration: 0.5, ease: "linear" },
+                    }}
+                    className="text-center bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/30"
+                    >
+                    <div className={`text-3xl font-bold ${stat.color} mb-2`}>
+                      <CountUp
+                      end={stat.value}
+                      duration={stat.duration}
+                      isPercent={stat.isPercent}
+                      display={stat.display}
+                      />
+                    </div>
+                    <div className="text-gray-700 font-medium">{stat.label}</div>
+                    </mdiv>
+                  ))}
+                  </motion.div>
+                );
+                })()}
+
+              </div>
+              </motion.section>
+
+              {/* Services Section */}
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

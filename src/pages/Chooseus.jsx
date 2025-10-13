@@ -1,4 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+import {
+  FaShieldAlt,
+  FaRocket,
+  FaUsers,
+  FaClock,
+  FaEnvelope,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const Chooseus = () => {
   const stats = [
@@ -52,12 +60,70 @@ const Chooseus = () => {
           </p>
         </div>
 
+        {/* Creative reasons row + CTAs */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            {[
+              {
+                icon: <FaShieldAlt className="text-2xl text-cyan-400" />,
+                title: "Trusted & Secure",
+                desc: "Data-driven, privacy-first workflows",
+              },
+              {
+                icon: <FaRocket className="text-2xl text-purple-400" />,
+                title: "Fast Turnaround",
+                desc: "Rapid edits without compromise",
+              },
+              {
+                icon: <FaUsers className="text-2xl text-pink-400" />,
+                title: "Collaborative",
+                desc: "Work with a dedicated creative team",
+              },
+              {
+                icon: <FaClock className="text-2xl text-emerald-400" />,
+                title: "Always On-Time",
+                desc: "Milestone-driven delivery",
+              },
+            ].map((r, i) => (
+              <div
+                key={i}
+                className="bg-white/6 backdrop-blur-sm rounded-xl p-4 flex gap-3 items-start hover:scale-105 transform transition"
+              >
+                <div className="p-3 rounded-md bg-gradient-to-br from-gray-800 to-gray-700">
+                  {r.icon}
+                </div>
+                <div>
+                  <div className="font-semibold text-white">{r.title}</div>
+                  <div className="text-sm text-gray-300">{r.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-center gap-4">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg font-semibold text-white shadow-lg"
+            >
+              <FaEnvelope /> Contact Us
+            </a>
+            <a
+              href="https://wa.me/9365046638?text=Hi%20there!%20I%20would%20like%20to%20discuss%20a%20project"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 border-2 border-green-500 rounded-lg font-semibold text-white"
+            >
+              <FaWhatsapp /> WhatsApp
+            </a>
+          </div>
+        </div>
+
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <StatCard key={index} stat={stat} index={index} />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -124,4 +190,3 @@ const StatCard = ({ stat, index }) => {
 };
 
 export default Chooseus;
-
