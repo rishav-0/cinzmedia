@@ -13,28 +13,28 @@ import { useNavigate } from "react-router";
 import Marquee from "react-fast-marquee";
 
 // Local graphic images
-import g1 from "../../images/Graphic/g1.png";
-import g2 from "../../images/Graphic/g2.png";
-import g3 from "../../images/Graphic/g3.png";
-import g4 from "../../images/Graphic/g4.png";
-import g5 from "../../images/Graphic/g5.png";
-import g6 from "../../images/Graphic/g6.png";
-import g7 from "../../images/Graphic/g7.png";
-import g8 from "../../images/Graphic/g8.png";
-import g9 from "../../images/Graphic/g9.png";
-import g10 from "../../images/Graphic/g10.png";
-import g11 from "../../images/Graphic/g11.png";
-import g12 from "../../images/Graphic/g12.png";
-import g13 from "../../images/Graphic/g13.png";
-import g14 from "../../images/Graphic/g14.png";
-import g15 from "../../images/Graphic/g15.png";
-import g16 from "../../images/Graphic/g16.png";
-import g17 from "../../images/Graphic/g17.png";
-import g18 from "../../images/Graphic/g18.png";
-import g19 from "../../images/Graphic/g19.png";
-import g20 from "../../images/Graphic/g20.png";
-import g21 from "../../images/Graphic/g21.png";
-import g22 from "../../images/Graphic/g22.png";
+import g1 from "../../images/Graphic/g1.jpg";
+import g2 from "../../images/Graphic/g2.jpg";
+import g3 from "../../images/Graphic/g3.jpg";
+import g4 from "../../images/Graphic/g4.jpg";
+import g5 from "../../images/Graphic/g5.jpg";
+import g6 from "../../images/Graphic/g6.jpg";
+import g7 from "../../images/Graphic/g7.jpg";
+import g8 from "../../images/Graphic/g8.jpg";
+import g9 from "../../images/Graphic/g9.jpg";
+import g10 from "../../images/Graphic/g10.jpg";
+import g11 from "../../images/Graphic/g11.jpg";
+import g12 from "../../images/Graphic/g12.jpg";
+import g13 from "../../images/Graphic/g13.jpg";
+import g14 from "../../images/Graphic/g14.jpg";
+import g15 from "../../images/Graphic/g15.jpg";
+import g16 from "../../images/Graphic/g16.jpg";
+import g17 from "../../images/Graphic/g17.jpg";
+import g18 from "../../images/Graphic/g18.jpg";
+import g19 from "../../images/Graphic/g19.jpg";
+import g20 from "../../images/Graphic/g20.jpg";
+import g21 from "../../images/Graphic/g21.jpg";
+
 
 
 
@@ -282,9 +282,22 @@ export default function GraphicDetail() {
     return Lucide.Image;
   };
 
-  const graphicDesignImages1 = [g1, g2, g3, g4, g5, g6];
+  const graphicDesignImages1 = [
+    g1,
+    g2,
+    g3,
+    g4,
+    g5,
+    g6,
+    g7,
+    g17,
+    g18,
+    g19,
+    g20,
+ 
+  ];
 
-  const graphicDesignImages2 = [g7, g8, g9, g10, g11, g12];
+  const graphicDesignImages2 = [ g8, g9, g10, g11, g12, g13, g14, g15, g16, g21];
 
   return (
     <>
