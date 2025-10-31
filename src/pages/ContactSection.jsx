@@ -161,10 +161,10 @@ const ContactSection = () => {
                   <div className="text-white font-semibold">Email</div>
                   <div className="text-blue-100">
                     <a
-                      href="mailto:hello@cinzmedia.com"
+                      href="mailto:cinzmedia@outlook.com"
                       className="hover:text-white transition-colors"
                     >
-                      hello@cinzmedia.com
+                      cinzmedia@outlook.com
                     </a>
                   </div>
                 </div>

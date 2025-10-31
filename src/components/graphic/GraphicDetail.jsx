@@ -326,7 +326,7 @@ export default function GraphicDetail() {
 
           {/* Gradient orbs */}
           <motion.div
-            className="absolute top-20 left-20 w-96 h-96 rounded-full bg-gradient-to-r from-blue-400 to-purple-600 opacity-10 blur-3xl"
+            className="absolute top-20 left-20 w-96 h-96 rounded-full bg-linear-to-rrom-blue-400 to-purple-600 opacity-10 blur-3xl"
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.1, 0.15, 0.1],
@@ -984,8 +984,8 @@ export default function GraphicDetail() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-0"
           >
-            <div className="absolute -top-10 -left-10 h-64 w-64 rounded-full bg-gradient-to-br from-blue-600 to-blue-400 opacity-20 blur-3xl" />
-            <div className="absolute -bottom-10 -right-10 h-80 w-80 rounded-full bg-gradient-to-tr from-blue-600 to-gray-800 opacity-25 blur-3xl" />
+            <div className="absolute -top-10 -left-10 h-64 w-64 rounded-full bg-linear-to-br from-blue-600 to-blue-400 opacity-20 blur-3xl" />
+            <div className="absolute -bottom-10 -right-10 h-80 w-80 rounded-full bg-linear-to-tr from-blue-600 to-gray-800 opacity-25 blur-3xl" />
           </div>
           <div className="relative max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-10 items-center">

@@ -1,13 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import {
-  FaShieldAlt,
-  FaRocket,
-  FaUsers,
-  FaClock,
-  FaEnvelope,
-  FaWhatsapp,
-} from "react-icons/fa";
-
+import { Shield, Rocket, Users, Clock, Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 const Chooseus = () => {
   const stats = [
     {
@@ -65,22 +58,22 @@ const Chooseus = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             {[
               {
-                icon: <FaShieldAlt className="text-2xl text-cyan-400" />,
+                icon: <Shield className="text-2xl text-cyan-400" />,
                 title: "Trusted & Secure",
                 desc: "Data-driven, privacy-first workflows",
               },
               {
-                icon: <FaRocket className="text-2xl text-purple-400" />,
+                icon: <Rocket className="text-2xl text-purple-400" />,
                 title: "Fast Turnaround",
                 desc: "Rapid edits without compromise",
               },
               {
-                icon: <FaUsers className="text-2xl text-pink-400" />,
+                icon: <Users className="text-2xl text-pink-400" />,
                 title: "Collaborative",
                 desc: "Work with a dedicated creative team",
               },
               {
-                icon: <FaClock className="text-2xl text-emerald-400" />,
+                icon: <Clock className="text-2xl text-emerald-400" />,
                 title: "Always On-Time",
                 desc: "Milestone-driven delivery",
               },
@@ -105,7 +98,7 @@ const Chooseus = () => {
               href="#contact"
               className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg font-semibold text-white shadow-lg"
             >
-              <FaEnvelope /> Contact Us
+              <Mail /> Contact Us
             </a>
             <a
               href="https://wa.me/9365046638?text=Hi%20there!%20I%20would%20like%20to%20discuss%20a%20project"
@@ -113,7 +106,7 @@ const Chooseus = () => {
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 border-2 border-green-500 rounded-lg font-semibold text-white"
             >
-              <FaWhatsapp /> WhatsApp
+              <FaWhatsapp size={22}/> WhatsApp
             </a>
           </div>
         </div>
