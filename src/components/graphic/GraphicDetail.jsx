@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   motion,
   useScroll,
@@ -7,8 +7,39 @@ import {
   useSpring,
 } from "framer-motion";
 
+import * as Lucide from "lucide-react";
+
 import { useNavigate } from "react-router";
 import Marquee from "react-fast-marquee";
+
+// Local graphic images
+import g1 from "../../images/Graphic/g1.png";
+import g2 from "../../images/Graphic/g2.png";
+import g3 from "../../images/Graphic/g3.png";
+import g4 from "../../images/Graphic/g4.png";
+import g5 from "../../images/Graphic/g5.png";
+import g6 from "../../images/Graphic/g6.png";
+import g7 from "../../images/Graphic/g7.png";
+import g8 from "../../images/Graphic/g8.png";
+import g9 from "../../images/Graphic/g9.png";
+import g10 from "../../images/Graphic/g10.png";
+import g11 from "../../images/Graphic/g11.png";
+import g12 from "../../images/Graphic/g12.png";
+import g13 from "../../images/Graphic/g13.png";
+import g14 from "../../images/Graphic/g14.png";
+import g15 from "../../images/Graphic/g15.png";
+import g16 from "../../images/Graphic/g16.png";
+import g17 from "../../images/Graphic/g17.png";
+import g18 from "../../images/Graphic/g18.png";
+import g19 from "../../images/Graphic/g19.png";
+import g20 from "../../images/Graphic/g20.png";
+import g21 from "../../images/Graphic/g21.png";
+import g22 from "../../images/Graphic/g22.png";
+
+
+
+// Array of imported local graphic images
+const graphicPortfolio = [g1, g2, g6, g17, g18, g21];
 
 const services = [
   {
@@ -16,7 +47,7 @@ const services = [
     title: "Logo Design",
     description:
       "Custom logo design that's strategic, versatile, and instantly recognizable.",
-    icon: "🎨",
+    icon: "PenTool",
     colors: ["#3B82F6", "#1E40AF", "#60A5FA"],
     bullets: [
       "Discovery & brand strategy workshop",
@@ -29,7 +60,7 @@ const services = [
     title: "Brand Identity",
     description:
       "Cohesive visual identity systems that build strong brand recall.",
-    icon: "🎭",
+    icon: "Layers",
     colors: ["#EF4444", "#DC2626", "#F87171"],
     bullets: [
       "Typography pairing & color palette",
@@ -42,7 +73,7 @@ const services = [
     title: "Brand Collateral",
     description:
       "Beautiful, on-brand assets for print and digital touchpoints.",
-    icon: "📄",
+    icon: "FileText",
     colors: ["#10B981", "#059669", "#34D399"],
     bullets: [
       "Business cards, letterheads, and stationery",
@@ -54,7 +85,7 @@ const services = [
     key: "digital",
     title: "Digital Assets",
     description: "Pixel-perfect creatives for social, web, and campaigns.",
-    icon: "💻",
+    icon: "Monitor",
     colors: ["#8B5CF6", "#7C3AED", "#A78BFA"],
     bullets: [
       "Social media kits & ad creatives",
@@ -67,7 +98,7 @@ const services = [
     title: "Packaging Design",
     description:
       "Premium packaging that stands out on the shelf and on screen.",
-    icon: "📦",
+    icon: "Package",
     colors: ["#F59E0B", "#D97706", "#FCD34D"],
     bullets: [
       "Structural dielines & mockups",
@@ -80,7 +111,7 @@ const services = [
     title: "Custom Illustrations",
     description:
       "Hand-crafted illustrations that bring your brand story to life.",
-    icon: "✏️",
+    icon: "PaintBrush",
     colors: ["#EC4899", "#DB2777", "#F472B6"],
     bullets: [
       "Character design & mascot creation",
@@ -95,25 +126,25 @@ const whyChooseUs = [
     title: "Strategic Design Approach",
     description:
       "Every design decision is backed by research and brand strategy to ensure maximum impact.",
-    icon: "🎯",
+    icon: "Target",
   },
   {
     title: "Fast Turnaround Time",
     description:
       "Get your designs delivered quickly without compromising on quality or creativity.",
-    icon: "⚡",
+    icon: "Zap",
   },
   {
     title: "Unlimited Revisions",
     description:
       "We work with you until you're 100% satisfied with the final design outcome.",
-    icon: "🔄",
+    icon: "RefreshCw",
   },
   {
     title: "Industry Expertise",
     description:
       "Years of experience across various industries and design disciplines.",
-    icon: "🏆",
+    icon: "Award",
   },
 ];
 
@@ -228,23 +259,32 @@ export default function GraphicDetail() {
     }),
   };
 
-  const graphicDesignImages1 = [
-    "https://images.unsplash.com/photo-1678138091332-432d4a1ac407?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGh1bWJuYWlsfGVufDB8fDB8fHww", // Workspace with digital tablet & laptop
-    "https://plus.unsplash.com/premium_photo-1664008628916-3b72a2136e22?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Abstract geometric shapes against pastel backdrop
-    "https://plus.unsplash.com/premium_photo-1661943659036-aa040d92ee64?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Person sketching design
-    "https://images.unsplash.com/photo-1527772291563-41d27d5052ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Stylized color gradient on a designer desk
-    "https://images.unsplash.com/photo-1533619043865-1c2e2f32ff2f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Creative flat lay with tools and sketches
-    "https://images.unsplash.com/photo-1692090383808-84faed4b35a5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ];
+  // helper to resolve icon component from lucide namespace with fallbacks
+  const resolveIcon = (name) => {
+    if (!name) return null;
+    // try direct lookup
+    if (Lucide[name]) return Lucide[name];
+    // try PascalCase with first letter upper, rest as-is
+    const pascal = name.charAt(0).toUpperCase() + name.slice(1);
+    if (Lucide[pascal]) return Lucide[pascal];
+    // try common alternative lowercasing second word (e.g., Paintbrush)
+    const alt = pascal.replace(
+      /([A-Z])([A-Z][a-z])/g,
+      (m, a, b) => a + b.toLowerCase()
+    );
+    if (Lucide[alt]) return Lucide[alt];
+    // try all-lower then capitalize
+    const lowerCap = name
+      .toLowerCase()
+      .replace(/(^|\s)(\w)/g, (_, p1, p2) => p2.toUpperCase());
+    if (Lucide[lowerCap]) return Lucide[lowerCap];
+    // last resort: return a generic icon
+    return Lucide.Image;
+  };
 
-  const graphicDesignImages2 = [
-    "https://images.unsplash.com/photo-1678138091332-432d4a1ac407?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGh1bWJuYWlsfGVufDB8fDB8fHww", // Workspace with digital tablet & laptop
-    "https://plus.unsplash.com/premium_photo-1664008628916-3b72a2136e22?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Abstract geometric shapes against pastel backdrop
-    "https://plus.unsplash.com/premium_photo-1661943659036-aa040d92ee64?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Person sketching design
-    "https://images.unsplash.com/photo-1527772291563-41d27d5052ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Stylized color gradient on a designer desk
-    "https://images.unsplash.com/photo-1533619043865-1c2e2f32ff2f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Creative flat lay with tools and sketches
-    "https://images.unsplash.com/photo-1692090383808-84faed4b35a5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ];
+  const graphicDesignImages1 = [g1, g2, g3, g4, g5, g6];
+
+  const graphicDesignImages2 = [g7, g8, g9, g10, g11, g12];
 
   return (
     <>
@@ -540,6 +580,7 @@ export default function GraphicDetail() {
             </div>
           </div>
         </header>
+
         <section className="my-24 md:my-28 max-w-7xl mx-auto rounded-lg overflow-hidden">
           <h2 className="text-center text-xl font-semibold">THUMBNAILS THAT</h2>
           <h1 className="text-center text-[60px] mb-10 font-bold">ENGAGE</h1>
@@ -624,9 +665,30 @@ export default function GraphicDetail() {
                     className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/0 via-purple-500/0 to-pink-500/0 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:from-blue-500/[0.06] group-hover:via-purple-500/[0.06] group-hover:to-pink-500/[0.06]"
                   />
                   <div className="flex items-center gap-3">
-                    <span className="text-3xl" aria-hidden="true">
-                      {svc.icon}
-                    </span>
+                    {(() => {
+                      const IconComp = resolveIcon(svc.icon);
+                      return (
+                        IconComp &&
+                        React.createElement(IconComp, {
+                          className: `w-6 h-6 ${
+                            svc.key === "logo"
+                              ? "text-blue-600"
+                              : svc.key === "identity"
+                              ? "text-red-500"
+                              : svc.key === "collateral"
+                              ? "text-green-600"
+                              : svc.key === "digital"
+                              ? "text-violet-600"
+                              : svc.key === "packaging"
+                              ? "text-yellow-500"
+                              : svc.key === "illustration"
+                              ? "text-pink-500"
+                              : ""
+                          }`,
+                        })
+                      );
+                    })()}
+
                     <h4 className="text-xl font-semibold tracking-tight text-gray-900">
                       {svc.title}
                     </h4>
@@ -662,12 +724,12 @@ export default function GraphicDetail() {
                               role="img"
                               aria-label={`${svc.title} step ${label}`}
                               title={`${svc.title} step ${label}`}
-                              className="mx-auto rounded-xl w-16 h-16 border-2 border-dashed flex items-center justify-center"
+                              className="mx-auto rounded-xl w-8 h-8 border-2 border-dashed flex items-center justify-center"
                               style={{
                                 background: `linear-gradient(135deg, ${
                                   svc.colors[0]
                                 } 0%, ${svc.colors[1] || svc.colors[0]} 100%)`,
-                                boxShadow: `0 6px 18px ${
+                                boxShadow: `0 2px 10px ${
                                   svc.colors[2] || "rgba(0,0,0,0.12)"
                                 }`,
                               }}
@@ -766,7 +828,7 @@ export default function GraphicDetail() {
                 Portfolio
               </p>
               <h3 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
-                Selected Work & Case Studies
+                Selected Work 
               </h3>
               <p className="mt-3 text-gray-700 max-w-3xl">
                 A peek into recent identity systems, packaging, and digital
@@ -774,7 +836,14 @@ export default function GraphicDetail() {
               </p>
             </header>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {
+                  graphicPortfolio.map((i, index)=>(
+                    <img src={i} key={index} alt="" />
+                  ))
+                }
+              </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 hidden">
               {portfolio.map((proj, i) => (
                 <motion.article
                   key={proj.key}
@@ -874,14 +943,31 @@ export default function GraphicDetail() {
               </p>
             </header>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {whyChooseUs.map(({ title, description, icon }) => (
+              {whyChooseUs?.map(({ title, description, icon }) => (
                 <article
                   key={title}
                   className="flex flex-col items-center text-center"
                 >
-                  <span className="text-4xl mb-4" aria-hidden="true">
-                    {icon}
-                  </span>
+                  {(() => {
+                    const IconComp = resolveIcon(icon);
+                    return (
+                      IconComp &&
+                      React.createElement(IconComp, {
+                        className: `w-8 h-8 ${
+                          icon === "Target"
+                            ? "text-cyan-500"
+                            : icon === "Zap"
+                            ? "text-yellow-400"
+                            : icon === "RefreshCw"
+                            ? "text-green-400"
+                            : icon === "Award"
+                            ? "text-amber-400"
+                            : ""
+                        }`,
+                      })
+                    );
+                  })()}
+
                   <h4 className="text-xl font-semibold text-gray-900">
                     {title}
                   </h4>
