@@ -11,6 +11,7 @@ import VideoEditing from './components/video/VideoEditing';
 import Digitalmarketing from './components/digitalmarketing/Digitalmarketing';
 import Brand from './components/brandbuilding/Brand';
 import GraphicDetail from './components/graphic/GraphicDetail';
+import Portfolio from './components/portfolio/Portfolio';
 
 function App() {
 
@@ -21,11 +22,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Services" element={<Services />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/graphic" element={<GraphicDetail />} />
         <Route path="/webdev" element={<WebDevelopmentServices />} />
-        <Route path="/videoediting" element={<VideoEditing/>} />
-        <Route path="/digitalmarketing" element={<Digitalmarketing/>} />
-        <Route path="/brandbuilding" element={<Brand/>} />
+        <Route path="/videoediting" element={<VideoEditing />} />
+        <Route path="/digitalmarketing" element={<Digitalmarketing />} />
+        <Route path="/brandbuilding" element={<Brand />} />
         <Route
           path="/socialmediamarketing"
           element={<SocialMediaMarketingPage />}

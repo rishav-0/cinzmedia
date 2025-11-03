@@ -21,7 +21,6 @@ export default function Navbar() {
   const navItems = [
     { id: "home", label: "Home" },
     { id: "services", label: "Services" },
-    { id: "portfolio", label: "Portfolio" },
   ];
 
   // Service links (display names mapped to your slugs; no /services prefix)
@@ -190,13 +189,40 @@ export default function Navbar() {
               </li>
             )
           )}
-
+          <GlareHover
+            glareColor="#ed3ba8"
+            glareOpacity={0.7}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            height="40px"
+            background="white"
+            width="100px"
+            borderRadius="full"
+            className="border-0 hover:border bg-none hover:bg-black/10 rounded-full cursor-pointer"
+            as="div"
+          >
+            <span
+              style={{
+                fontWeight: "700",
+                color: "#333",
+                margin: 0,
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleServiceClick("portfolio");
+              }}
+            >
+              Portfolio
+            </span>
+          </GlareHover>
           {/* Get in Touch */}
           <li onClick={() => handleNavClick("contact")}>
             <CoolMode>
               <button
                 type="button"
-                className="relative inline-block px-5 py-2 rounded-full text-white font-semibold overflow-hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transition-all duration-300 hover:scale-105"
+                className="relative inline-block px-5 py-2 rounded-full text-white font-semibold overflow-hidden bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 transition-all duration-300 hover:scale-105"
               >
                 <span className="relative z-10">Get in Touch</span>
                 <span className="absolute inset-0">
@@ -300,7 +326,7 @@ export default function Navbar() {
           <CoolMode>
             <button
               type="button"
-              className="relative z-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-5 py-2 rounded-full font-semibold shadow-lg transition-all duration-300 ease-in-out hover:scale-105 w-full"
+              className="relative z-10 bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-5 py-2 rounded-full font-semibold shadow-lg transition-all duration-300 ease-in-out hover:scale-105 w-full"
             >
               Get in Touch
             </button>

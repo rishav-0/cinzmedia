@@ -143,7 +143,9 @@ const BlogSection = () => {
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mt-2 mb-4">
                 {featuredArticle.title}
               </h3>
-              <p className="text-gray-600 mb-6 line-clamp-1">{featuredArticle.excerpt}</p>
+              <p className="text-gray-600 mb-6 line-clamp-1">
+                {featuredArticle.excerpt}
+              </p>
               <div className="flex items-center mb-6">
                 <img
                   src={featuredArticle.author.image}
@@ -187,7 +189,7 @@ const BlogSection = () => {
 
         {/* Newsletter Subscription */}
         <motion.div
-          className="bg-gradient-to-r from-blue-600 to-purple-700 rounded-3xl p-12 text-center"
+          className="bg-linear-to-r from-blue-600 to-purple-700 rounded-3xl p-12 text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -206,10 +208,9 @@ const BlogSection = () => {
               className="flex-1 px-6 py-3 rounded-full border outline-0 text-white border-white "
             />
             <CoolMode>
-
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors cursor-pointer whitespace-nowrap">
-              Subscribe
-            </button>
+              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors cursor-pointer whitespace-nowrap">
+                Subscribe
+              </button>
             </CoolMode>
           </div>
         </motion.div>

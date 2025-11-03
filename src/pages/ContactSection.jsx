@@ -1,8 +1,48 @@
 import { motion } from "framer-motion";
 
 const ContactSection = () => {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+
+    const action = form.action;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch(action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        alert(
+          "Thanks — we received your message. We will contact you shortly."
+        );
+        form.reset();
+      } else {
+        // try to parse JSON error response from Formspree
+        try {
+          const data = await res.json();
+          if (data && data.errors) {
+            alert(
+              data.errors.map((err) => err.message).join("\n") ||
+                "Submission failed."
+            );
+          } else {
+            alert("Submission failed. Please try again later.");
+          }
+        } catch (err) {
+          alert("Submission failed. Please try again later.");
+        }
+      }
+    } catch (err) {
+      alert("Network error. Please check your connection and try again.");
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
   };
 
   const inputCls =
@@ -11,7 +51,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="py-20 px-6 bg-gradient-to-br from-blue-600 to-purple-700"
+      className="py-20 px-6 bg-linear-to-br from-blue-600 to-purple-700"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -47,74 +87,38 @@ const ContactSection = () => {
               id="contact-form"
               className="space-y-6"
               onSubmit={handleSubmit}
+              action="https://formspree.io/f/mkgpapvn"
+              method="POST"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="">
                 <input
                   type="text"
-                  placeholder="First Name"
+                  placeholder="Name"
                   className={inputCls}
-                  name="firstName"
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className={inputCls}
-                  name="lastName"
+                  name="name"
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className={inputCls}
-                  name="email"
-                />
                 <input
                   type="tel"
                   placeholder="Phone Number"
                   className={inputCls}
                   name="phone"
                 />
-              </div>
-
-              {/* Styled select with custom arrow (keeps native dropdown) */}
-              <div className="relative">
-                <select
-                  name="service"
-                  className={`${inputCls} pr-10 appearance-none`}
-                >
-                  <option value="">Select Service</option>
-                  <option value="web">Website Development</option>
-                  <option value="design">Graphic Design</option>
-                  <option value="video">Video Editing</option>
-                  <option value="brand">Brand Building</option>
-                  <option value="social">Social Media Management</option>
-                  <option value="marketing">Digital Marketing</option>
-                </select>
-
-                {/* custom arrow */}
-                <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 text-white opacity-90"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.51a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
+                <input
+                  type="text"
+                  placeholder="Project Budget"
+                  className={inputCls}
+                  name="budget"
+                />
               </div>
 
               <input
-                type="text"
-                placeholder="Project Budget"
+                type="email"
+                placeholder="Email Address"
                 className={inputCls}
-                name="budget"
+                name="email"
               />
 
               <textarea
@@ -127,7 +131,7 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                className="w-full bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-2xl hover:bg-blue-50 transition-all duration-300 cursor-pointer whitespace-nowrap"
+                className="w-full bg-white text-blue-600 px-8 py-4 rounded-lg  font-semibold hover:shadow-2xl hover:bg-blue-50 transition-all duration-300 cursor-pointer whitespace-nowrap"
               >
                 Send Project Brief
               </button>

@@ -49,7 +49,7 @@ const Brand = () => {
       {/* SEO Meta would go in the head - using React Helmet or Next.js Head */}
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-900 via-slate-900 to-gray-800 text-white">
+      <section className="relative overflow-hidden bg-linear-to-br from-indigo-900 via-slate-900 to-gray-800 text-white">
         {/* Animated background shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -159,7 +159,7 @@ const Brand = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl p-8 shadow-xl">
+              <div className="bg-linear-to-br from-blue-100 to-indigo-100 rounded-2xl p-8 shadow-xl">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-white rounded-lg p-6 shadow-md">
                     <FaShieldAlt className="w-10 h-10 text-blue-600 mb-3" />
@@ -221,7 +221,7 @@ const Brand = () => {
             {/* Startups */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100"
+              className="bg-linear-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100"
             >
               <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
                 <FaRocket className="w-6 h-6 text-white" />
@@ -235,15 +235,15 @@ const Brand = () => {
               </p>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <FaChevronRight className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
                   <span>Clear market positioning</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <FaChevronRight className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
                   <span>Memorable visual identity</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <FaChevronRight className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
                   <span>Agile brand foundation</span>
                 </li>
               </ul>
@@ -252,7 +252,7 @@ const Brand = () => {
             {/* Mid-sized */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100"
+              className="bg-linear-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100"
             >
               <div className="bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
                 <FaLayerGroup className="w-6 h-6 text-white" />
@@ -266,15 +266,15 @@ const Brand = () => {
               </p>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                  <FaChevronRight className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                   <span>Brand system optimization</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                  <FaChevronRight className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                   <span>Cross-team alignment</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                  <FaChevronRight className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                   <span>Scalable guidelines</span>
                 </li>
               </ul>
@@ -283,7 +283,7 @@ const Brand = () => {
             {/* Agencies & Partners (replaces Enterprise) */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 border border-cyan-100"
+              className="bg-linear-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 border border-cyan-100"
             >
               <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
                 <FaUsers className="w-6 h-6 text-white" />
@@ -297,15 +297,15 @@ const Brand = () => {
               </p>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
+                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
                   <span>White-label design & production</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
+                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
                   <span>Dedicated partner workflows</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
+                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
                   <span>Flexible resourcing for peaks</span>
                 </li>
               </ul>
@@ -389,11 +389,11 @@ const Brand = () => {
               >
                 <div className="p-8 flex items-center gap-8">
                   <div
-                    className={`bg-${step.color}-100 w-20 h-20 rounded-2xl flex items-center justify-center flex-shrink-0`}
+                    className={`bg-${step.color}-100 w-20 h-20 rounded-2xl flex items-center justify-center shrink-0`}
                   >
                     <step.icon className={`w-10 h-10 text-${step.color}-600`} />
                   </div>
-                  <div className="flex-grow">
+                  <div className="grow">
                     <div className="flex items-baseline gap-4 mb-2">
                       <span
                         className={`text-${step.color}-600 font-bold text-sm`}
@@ -444,7 +444,7 @@ const Brand = () => {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 border border-gray-200"
+                className="bg-linear-to-br from-gray-50 to-gray-100 rounded-xl p-6 border border-gray-200"
               >
                 <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
                   <span className="text-white font-bold text-xl">
@@ -459,7 +459,7 @@ const Brand = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-indigo-900 to-slate-800 text-white">
+      <section className="py-20 bg-linear-to-br from-indigo-900 to-slate-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}

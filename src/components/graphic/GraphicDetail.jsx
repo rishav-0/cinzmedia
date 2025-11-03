@@ -35,9 +35,6 @@ import g19 from "../../images/Graphic/g19.jpg";
 import g20 from "../../images/Graphic/g20.jpg";
 import g21 from "../../images/Graphic/g21.jpg";
 
-
-
-
 // Array of imported local graphic images
 const graphicPortfolio = [g1, g2, g6, g17, g18, g21];
 
@@ -170,43 +167,42 @@ const portfolio = [
     title: "Aurora Analytics",
     category: "Brand Identity",
     tags: ["Logo", "Guidelines", "Icons"],
-    coverClass: "bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600",
+    coverClass: "bg-linear-to-br from-blue-500 via-indigo-500 to-purple-600",
   },
   {
     key: "ember",
     title: "Ember Coffee Co.",
     category: "Packaging",
     tags: ["Packaging", "Illustration", "Mockups"],
-    coverClass: "bg-gradient-to-br from-orange-500 via-rose-500 to-amber-500",
+    coverClass: "bg-linear-to-br from-orange-500 via-rose-500 to-amber-500",
   },
   {
     key: "solstice",
     title: "Solstice Studio",
     category: "Digital",
     tags: ["Hero Graphics", "Social Kit", "Web"],
-    coverClass: "bg-gradient-to-br from-fuchsia-500 via-pink-500 to-rose-500",
+    coverClass: "bg-linear-to-br from-fuchsia-500 via-pink-500 to-rose-500",
   },
   {
     key: "harbor",
     title: "Harbor Health",
     category: "Collateral",
     tags: ["Stationery", "Deck", "Print"],
-    coverClass: "bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500",
+    coverClass: "bg-linear-to-br from-emerald-500 via-teal-500 to-cyan-500",
   },
   {
     key: "nova",
     title: "Nova Finance",
     category: "Identity",
     tags: ["Logo System", "Typography", "Color"],
-    coverClass:
-      "bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-500",
+    coverClass: "bg-linear-to-br from-violet-500 via-purple-500 to-indigo-500",
   },
   {
     key: "ripple",
     title: "Ripple Rides",
     category: "Campaign",
     tags: ["Ads", "OOH", "Social"],
-    coverClass: "bg-gradient-to-br from-sky-500 via-blue-500 to-cyan-500",
+    coverClass: "bg-linear-to-br from-sky-500 via-blue-500 to-cyan-500",
   },
 ];
 
@@ -282,22 +278,9 @@ export default function GraphicDetail() {
     return Lucide.Image;
   };
 
-  const graphicDesignImages1 = [
-    g1,
-    g2,
-    g3,
-    g4,
-    g5,
-    g6,
-    g7,
-    g17,
-    g18,
-    g19,
-    g20,
- 
-  ];
+  const graphicDesignImages1 = [g1, g2, g3, g4, g5, g6, g7, g17, g18, g19, g20];
 
-  const graphicDesignImages2 = [ g8, g9, g10, g11, g12, g13, g14, g15, g16, g21];
+  const graphicDesignImages2 = [g8, g9, g10, g11, g12, g13, g14, g15, g16, g21];
 
   return (
     <>
@@ -351,7 +334,7 @@ export default function GraphicDetail() {
             }}
           />
           <motion.div
-            className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-gradient-to-r from-pink-400 to-orange-600 opacity-10 blur-3xl"
+            className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-linear-to-r from-pink-400 to-orange-600 opacity-10 blur-3xl"
             animate={{
               scale: [1.2, 1, 1.2],
               opacity: [0.15, 0.1, 0.15],
@@ -445,7 +428,7 @@ export default function GraphicDetail() {
                         role="img"
                         aria-label="custom logo design mockup"
                         title="custom logo design mockup"
-                        className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl w-16 h-16 mt-2"
+                        className="bg-linear-to-br from-blue-500 to-blue-700 rounded-xl w-16 h-16 mt-2"
                       />
                     </div>
                     <div className="col-span-1">
@@ -478,7 +461,7 @@ export default function GraphicDetail() {
                         role="img"
                         aria-label="branding guideline layout"
                         title="branding guideline layout"
-                        className="bg-gradient-to-tr from-blue-400 to-blue-600 rounded-xl w-16 h-16 mt-2"
+                        className="bg-linear-to-tr from-blue-400 to-blue-600 rounded-xl w-16 h-16 mt-2"
                       />
                     </div>
                     <div className="col-span-1">
@@ -499,7 +482,7 @@ export default function GraphicDetail() {
                         role="img"
                         aria-label="brand application mockup"
                         title="brand application mockup"
-                        className="bg-gradient-to-tr from-blue-400 to-blue-600 rounded-xl w-16 h-16 mt-2"
+                        className="bg-linear-to-tr from-blue-400 to-blue-600 rounded-xl w-16 h-16 mt-2"
                       />
                     </div>
                   </div>
@@ -526,7 +509,7 @@ export default function GraphicDetail() {
                       role="img"
                       aria-label="logo sketch concept"
                       title="logo sketch concept"
-                      className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl w-16 h-16 border-2 border-dashed"
+                      className="bg-linear-to-br from-blue-400 to-blue-600 rounded-xl w-16 h-16 border-2 border-dashed"
                     />
                     <div className="space-y-2">
                       <div className="h-2 w-24 rounded bg-gray-200" />
@@ -552,7 +535,7 @@ export default function GraphicDetail() {
                       role="img"
                       aria-label="premium packaging mockup"
                       title="premium packaging mockup"
-                      className="bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl w-16 h-16 border-2 border-dashed"
+                      className="bg-linear-to-br from-yellow-400 to-yellow-600 rounded-xl w-16 h-16 border-2 border-dashed"
                     />
                     <div className="space-y-2">
                       <div className="h-2 w-20 rounded bg-gray-200" />
@@ -635,8 +618,8 @@ export default function GraphicDetail() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-0"
           >
-            <div className="absolute left-6 top-10 h-40 w-40 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 opacity-10 blur-2xl" />
-            <div className="absolute right-8 bottom-10 h-48 w-48 rounded-full bg-gradient-to-tr from-gray-900 to-blue-600 opacity-5 blur-3xl" />
+            <div className="absolute left-6 top-10 h-40 w-40 rounded-full bg-linear-to-br from-blue-500 to-blue-700 opacity-10 blur-2xl" />
+            <div className="absolute right-8 bottom-10 h-48 w-48 rounded-full bg-linear-to-tr from-gray-900 to-blue-600 opacity-5 blur-3xl" />
           </div>
           <div className="relative max-w-7xl mx-auto px-6">
             <header className="mb-10">
@@ -675,7 +658,7 @@ export default function GraphicDetail() {
                   {/* Hover glow */}
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/0 via-purple-500/0 to-pink-500/0 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:from-blue-500/[0.06] group-hover:via-purple-500/[0.06] group-hover:to-pink-500/[0.06]"
+                    className="pointer-events-none absolute inset-0 rounded-2xl bg-linear-to-br from-blue-500/0 via-purple-500/0 to-pink-500/0 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:from-blue-500/6 group-hover:via-purple-500/6 group-hover:to-pink-500/6"
                   />
                   <div className="flex items-center gap-3">
                     {(() => {
@@ -818,7 +801,7 @@ export default function GraphicDetail() {
                   {/* Decorative brush/shape */}
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute -right-6 -bottom-6 h-20 w-20 rounded-full bg-gradient-to-tr from-blue-600 to-blue-400 opacity-10 blur-2xl"
+                    className="pointer-events-none absolute -right-6 -bottom-6 h-20 w-20 rounded-full bg-linear-to-tr from-blue-600 to-blue-400 opacity-10 blur-2xl"
                   />
                 </motion.article>
               ))}
@@ -832,8 +815,8 @@ export default function GraphicDetail() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-0"
           >
-            <div className="absolute left-10 top-10 h-44 w-44 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 opacity-10 blur-3xl" />
-            <div className="absolute right-12 bottom-8 h-52 w-52 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-500 opacity-10 blur-3xl" />
+            <div className="absolute left-10 top-10 h-44 w-44 rounded-full bg-linear-to-br from-purple-500 to-pink-600 opacity-10 blur-3xl" />
+            <div className="absolute right-12 bottom-8 h-52 w-52 rounded-full bg-linear-to-tr from-blue-600 to-cyan-500 opacity-10 blur-3xl" />
           </div>
           <div className="relative max-w-7xl mx-auto px-6">
             <header className="mb-10">
@@ -841,7 +824,7 @@ export default function GraphicDetail() {
                 Portfolio
               </p>
               <h3 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
-                Selected Work 
+                Selected Work
               </h3>
               <p className="mt-3 text-gray-700 max-w-3xl">
                 A peek into recent identity systems, packaging, and digital
@@ -849,14 +832,12 @@ export default function GraphicDetail() {
               </p>
             </header>
 
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {
-                  graphicPortfolio.map((i, index)=>(
-                    <img src={i} key={index} alt="" />
-                  ))
-                }
-              </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 hidden">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {graphicPortfolio.map((i, index) => (
+                <img src={i} key={index} alt="" />
+              ))}
+            </div>
+            <div className=" hidden">
               {portfolio.map((proj, i) => (
                 <motion.article
                   key={proj.key}
@@ -885,7 +866,7 @@ export default function GraphicDetail() {
                     />
                     {/* Hover overlay */}
                     <motion.div
-                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100"
+                      className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100"
                       initial={false}
                       transition={{ duration: 0.25, ease: "easeOut" }}
                     />
@@ -932,7 +913,7 @@ export default function GraphicDetail() {
                   {/* Hover glow */}
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-500/[0.05] via-purple-500/[0.04] to-fuchsia-500/[0.05] opacity-0 transition duration-300 group-hover:opacity-100"
+                    className="pointer-events-none absolute inset-0 rounded-2xl bg-linear-to-br from-violet-500/5 via-purple-500/4 to-fuchsia-500/5 opacity-0 transition duration-300 group-hover:opacity-100"
                   />
                 </motion.article>
               ))}

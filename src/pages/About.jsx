@@ -5,40 +5,38 @@ import { CoolMode } from "../components/CoolMode";
 import { IconCloud } from "../components/IconCloud";
 import Marquee from "react-fast-marquee";
 import { img } from "framer-motion/client";
-import gemini from '../images/cloud/gemini.png'
+import gemini from "../images/cloud/gemini.png";
 
 const About = () => {
+  const icons = [
+    // Instagram
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/960px-Instagram_logo_2022.svg.png",
+    // YouTube
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtSsD_I85MznoyUIZXUHaRBzfiRPL4DNZhjw&s",
+    // Google (G icon)
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/800px-Google_%22G%22_logo.svg.png",
+    // Facebook
+    "https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png",
+    // X (Twitter)
+    "https://thumbs.dreamstime.com/b/twitter-new-logo-app-icon-logo-social-media-platform-logo-icon-new-twitter-logo-twitter-new-logo-app-icon-logo-social-305511833.jpg",
+    // WhatsApp
+    "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
+    // LinkedIn
+    "https://upload.wikimedia.org/wikipedia/commons/f/f8/LinkedIn_icon_circle.svg",
+    // ChatGPT (logo)
+    "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1051px-Adobe_Photoshop_CC_icon.svg.png",
 
-const icons = [
-  // Instagram
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/960px-Instagram_logo_2022.svg.png",
-  // YouTube
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtSsD_I85MznoyUIZXUHaRBzfiRPL4DNZhjw&s",
-  // Google (G icon)
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/800px-Google_%22G%22_logo.svg.png",
-  // Facebook
-  "https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png",
-  // X (Twitter)
-  "https://thumbs.dreamstime.com/b/twitter-new-logo-app-icon-logo-social-media-platform-logo-icon-new-twitter-logo-twitter-new-logo-app-icon-logo-social-305511833.jpg",
-  // WhatsApp
-  "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
-  // LinkedIn
-  "https://upload.wikimedia.org/wikipedia/commons/f/f8/LinkedIn_icon_circle.svg",
-  // ChatGPT (logo)
-  "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1051px-Adobe_Photoshop_CC_icon.svg.png",
-  
-  {gemini}
-];
+    { gemini },
+  ];
 
-const images = [
-  "https://assamdigital.com/wp-content/uploads/2022/09/google-ads-certified.png",
-  "https://i0.wp.com/nvpita.com/wp-content/uploads/2022/08/acp-logo-bigger.png?fit=290%2C100&ssl=1",
-  "https://www.clickreturn.co.uk/wp-content/uploads/2016/09/Google-Certified-Company.jpg",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlmyavktvdODbDeryLGo8uw6FV3KFZ851iFCqnjPPNnxEYnejjaqU3PFA8ECBOfwSpunI&usqp=CAU",
-  "https://upload.wikimedia.org/wikipedia/commons/5/5a/Microsoft_Certified_Professional.png",
-];
-
+  const images = [
+    "https://assamdigital.com/wp-content/uploads/2022/09/google-ads-certified.png",
+    "https://i0.wp.com/nvpita.com/wp-content/uploads/2022/08/acp-logo-bigger.png?fit=290%2C100&ssl=1",
+    "https://www.clickreturn.co.uk/wp-content/uploads/2016/09/Google-Certified-Company.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlmyavktvdODbDeryLGo8uw6FV3KFZ851iFCqnjPPNnxEYnejjaqU3PFA8ECBOfwSpunI&usqp=CAU",
+    "https://upload.wikimedia.org/wikipedia/commons/5/5a/Microsoft_Certified_Professional.png",
+  ];
 
   return (
     <section id="about" className="py-20 px-6 bg-white">
@@ -135,7 +133,7 @@ const images = [
             <CoolMode>
               <motion.a
                 href="#contact"
-                className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition"
+                className="inline-block bg-linear-to-r from-pink-500 to-purple-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -153,13 +151,10 @@ const images = [
             transition={{ duration: 0.6 }}
           >
             <div className="flex item-center h-full justify-center">
-              <IconCloud
-                images={icons}
-                
-              />
+              <IconCloud images={icons} />
             </div>
             {/* Optional decorative gradient shape */}
-            <div className="absolute -z-10 top-0 left-0 w-full h-full bg-gradient-to-tr from-pink-100 via-transparent to-purple-100 rounded-2xl"></div>
+            <div className="absolute -z-10 top-0 left-0 w-full h-full bg-linear-to-tr from-pink-100 via-transparent to-purple-100 rounded-2xl"></div>
           </motion.div>
         </div>
       </div>

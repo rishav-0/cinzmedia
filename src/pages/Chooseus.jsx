@@ -82,7 +82,7 @@ const Chooseus = () => {
                 key={i}
                 className="bg-white/6 backdrop-blur-sm rounded-xl p-4 flex gap-3 items-start hover:scale-105 transform transition"
               >
-                <div className="p-3 rounded-md bg-gradient-to-br from-gray-800 to-gray-700">
+                <div className="p-3 rounded-md bg-linear-to-br from-gray-800 to-gray-700">
                   {r.icon}
                 </div>
                 <div>
@@ -96,7 +96,7 @@ const Chooseus = () => {
           <div className="flex items-center justify-center gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg font-semibold text-white shadow-lg"
+              className="inline-flex items-center gap-2 px-5 py-3 bg-linear-to-r from-cyan-500 to-purple-500 rounded-lg font-semibold text-white shadow-lg"
             >
               <Mail /> Contact Us
             </a>
@@ -106,7 +106,7 @@ const Chooseus = () => {
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 border-2 border-green-500 rounded-lg font-semibold text-white"
             >
-              <FaWhatsapp size={22}/> WhatsApp
+              <FaWhatsapp size={22} /> WhatsApp
             </a>
           </div>
         </div>
