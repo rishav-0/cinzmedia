@@ -383,21 +383,21 @@ export default function GraphicDetail() {
                     onClick={() =>
                       navigate("/", { state: { scrollTo: "contact" } })
                     }
-                    className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold shadow-lg shadow-blue-600/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-50"
+                    className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold shadow-lg text-sm shadow-blue-600/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-50"
                     aria-label="Get a Free Design Consultation"
                   >
                     Get a Free Design Consultation
                   </button>
                   <a
                     href="#services"
-                    className="inline-flex items-center rounded-full px-5 py-3 font-semibold text-gray-900 ring-1 ring-gray-300 transition hover:bg-gray-100"
+                    className="inline-flex text-sm items-center rounded-full px-5 py-3 font-semibold text-gray-900 ring-1 ring-gray-300 transition hover:bg-gray-100"
                   >
                     View Services
                   </a>
                   {/* New: View Work CTA */}
                   <a
                     href="#portfolio"
-                    className="inline-flex items-center rounded-full px-5 py-3 font-semibold text-blue-700 ring-1 ring-blue-200 transition hover:bg-blue-50"
+                    className="inline-flex text-sm items-center rounded-full px-5 py-3 font-semibold text-blue-700 ring-1 ring-blue-200 transition hover:bg-blue-50"
                   >
                     View Work
                   </a>
@@ -622,14 +622,14 @@ export default function GraphicDetail() {
             <div className="absolute right-8 bottom-10 h-48 w-48 rounded-full bg-linear-to-tr from-gray-900 to-blue-600 opacity-5 blur-3xl" />
           </div>
           <div className="relative max-w-7xl mx-auto px-6">
-            <header className="mb-10">
+            <header className="mb-10 text-center">
               <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
                 Services
               </p>
               <h3 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
                 Design capabilities for every brand touchpoint
               </h3>
-              <p className="mt-3 text-gray-700 max-w-3xl">
+              <p className="mt-3 text-gray-700 ">
                 From foundational logos and identity systems to
                 conversion-focused campaign assets, we deliver design that feels
                 crafted and consistent.
@@ -818,15 +818,15 @@ export default function GraphicDetail() {
             <div className="absolute left-10 top-10 h-44 w-44 rounded-full bg-linear-to-br from-purple-500 to-pink-600 opacity-10 blur-3xl" />
             <div className="absolute right-12 bottom-8 h-52 w-52 rounded-full bg-linear-to-tr from-blue-600 to-cyan-500 opacity-10 blur-3xl" />
           </div>
-          <div className="relative max-w-7xl mx-auto px-6">
-            <header className="mb-10">
+          <div className="relative max-w-7xl mx-auto  px-6">
+            <header className="mb-10 text-center">
               <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
                 Portfolio
               </p>
               <h3 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
                 Selected Work
               </h3>
-              <p className="mt-3 text-gray-700 max-w-3xl">
+              <p className="mt-3 text-gray-700  text-center">
                 A peek into recent identity systems, packaging, and digital
                 assets crafted for ambitious brands.
               </p>
@@ -940,32 +940,14 @@ export default function GraphicDetail() {
               {whyChooseUs?.map(({ title, description, icon }) => (
                 <article
                   key={title}
-                  className="flex flex-col items-center text-center"
+                  className="flex flex-col shadow-sm p-4 rounded-xl items-center text-center"
                 >
-                  {(() => {
-                    const IconComp = resolveIcon(icon);
-                    return (
-                      IconComp &&
-                      React.createElement(IconComp, {
-                        className: `w-8 h-8 ${
-                          icon === "Target"
-                            ? "text-cyan-500"
-                            : icon === "Zap"
-                            ? "text-yellow-400"
-                            : icon === "RefreshCw"
-                            ? "text-green-400"
-                            : icon === "Award"
-                            ? "text-amber-400"
-                            : ""
-                        }`,
-                      })
-                    );
-                  })()}
+                 
 
-                  <h4 className="text-xl font-semibold text-gray-900">
+                  <h4 className="text-lg font-semibold text-gray-900">
                     {title}
                   </h4>
-                  <p className="mt-2 text-gray-700 max-w-xs">{description}</p>
+                  <p className="mt-2 text-gray-700 max-w-xs text-sm">{description}</p>
                 </article>
               ))}
             </div>
@@ -996,7 +978,7 @@ export default function GraphicDetail() {
                     onClick={() =>
                       navigate("/", { state: { scrollTo: "contact" } })
                     }
-                    className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold shadow-lg shadow-blue-600/30 transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-900"
+                    className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm text-white font-semibold shadow-lg shadow-blue-600/30 transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-900"
                     aria-label="Let’s Start Designing"
                   >
                     Let’s Start Designing

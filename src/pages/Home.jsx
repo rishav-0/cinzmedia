@@ -13,11 +13,16 @@ export default function Home() {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.state?.scrollTo) {
-      const element = document.getElementById(location.state.scrollTo);
+    // Check for scrollTo in query params
+    const searchParams = new URLSearchParams(location.search);
+    const scrollToId = searchParams.get("scrollTo");
+
+    if (scrollToId || location.state?.scrollTo) {
+      const id = scrollToId || location.state.scrollTo;
+      const element = document.getElementById(id);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth" });
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 100); // small delay to ensure render
       }
     }

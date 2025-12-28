@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import gpt from '../../images/icon/gpt.png'
-import perlexity from '../../images/icon/perplexity.png'
-import figma from '../../images/icon/figma.png'
+import gpt from "../../images/icon/gpt.png";
+import perlexity from "../../images/icon/perplexity.png";
+import figma from "../../images/icon/figma.png";
 import react from "../../images/icon/react.png";
 import deepseek from "../../images/icon/deepseek.png";
 import copilot from "../../images/icon/copilot.png";
 import { motion } from "framer-motion";
+import { Puzzle, Zap, Search, ShoppingCart } from "lucide-react";
 
 // Interactive holographic showcase (custom, not from any UI library)
 function HoloShowcase({ className = "" }) {
@@ -109,8 +110,16 @@ function HoloShowcase({ className = "" }) {
                 />
               </div>
               <div className="h-16 rounded-lg bg-gradient-to-b flex justify-around items-center sm:px-4 from-slate-800 to-slate-900 ring-1 ring-white/5">
-                <img src={figma} className="opacity-45 h-8 invert sm:h-auto" alt="figma" />
-                <img src={react} className="opacity-45 h-8 invert sm:h-auto" alt="react" />
+                <img
+                  src={figma}
+                  className="opacity-45 h-8 invert sm:h-auto"
+                  alt="figma"
+                />
+                <img
+                  src={react}
+                  className="opacity-45 h-8 invert sm:h-auto"
+                  alt="react"
+                />
               </div>
               <div className="h-16 rounded-lg bg-gradient-to-b flex justify-around items-center sm:px-4 from-slate-800 to-slate-900 ring-1 ring-white/5">
                 <img
@@ -268,22 +277,22 @@ export default function WebDevelopmentServices() {
   const services = useMemo(
     () => [
       {
-        icon: "🧩",
+        icon: <Puzzle className="h-6 w-6 text-white" />,
         title: "Custom Websites",
         desc: "Conversion-focused React/Next.js builds with clean IA and brand-first UX.",
       },
       {
-        icon: "⚡",
+        icon: <Zap className="h-6 w-6 text-white" />,
         title: "Performance First",
         desc: "Core Web Vitals optimization for speed, stability, and accessibility.",
       },
       {
-        icon: "🔍",
+        icon: <Search className="h-6 w-6 text-white" />,
         title: "Technical SEO",
         desc: "Schema, sitemaps, clean URLs, and scalable content architecture.",
       },
       {
-        icon: "🛍️",
+        icon: <ShoppingCart className="h-6 w-6 text-white" />,
         title: "CMS & Commerce",
         desc: "Headless CMS and modern storefronts that are easy to manage.",
       },
@@ -413,7 +422,7 @@ export default function WebDevelopmentServices() {
                 custom={0}
                 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl"
               >
-                <span className="bg-gradient-to-r from-indigo-300 via-cyan-200 to-white bg-clip-text text-transparent">
+                <span className="text-white">
                   SEO‑friendly Web Development
                 </span>
               </motion.h1>

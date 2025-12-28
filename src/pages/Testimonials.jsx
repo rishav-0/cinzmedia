@@ -3,7 +3,7 @@ const Testimonials = () => {
     {
       quote:
         "Sales grew 250% after Cinzmedia redesigned our website and marketing strategy. Their team truly understands what drives conversions!",
-      name: "Sarah Johnson",
+      name: "Shruti Kapoor",
       role: "CEO, TechStart Solutions",
       image:
         "https://readdy.ai/api/search-image?query=professional%20businesswoman%20CEO%20smiling%20confidently%2C%20corporate%20headshot%2C%20modern%20office%20background%2C%20professional%20attire%2C%20warm%20lighting%2C%20approachable%20executive%20portrait&width=200&height=200&seq=client-1&orientation=squarish",
@@ -12,7 +12,7 @@ const Testimonials = () => {
     {
       quote:
         "The brand identity they created perfectly captured our vision. We've seen a 180% increase in brand recognition since the launch.",
-      name: "Michael Chen",
+      name: "Vishal Mishra",
       role: "Founder, Green Energy Co",
       image:
         "https://readdy.ai/api/search-image?query=professional%20businessman%20founder%2C%20confident%20smile%2C%20modern%20business%20attire%2C%20clean%20office%20environment%2C%20professional%20headshot%20photography%2C%20approachable%20entrepreneur&width=200&height=200&seq=client-2&orientation=squarish",
@@ -21,7 +21,7 @@ const Testimonials = () => {
     {
       quote:
         "Their video marketing campaign generated over 2 million views and brought us 500+ new customers in just 3 months. Incredible ROI!",
-      name: "Emily Rodriguez",
+      name: "Anjali Verma",
       role: "Marketing Director, FitLife",
       image:
         "https://readdy.ai/api/search-image?query=professional%20marketing%20director%20woman%2C%20confident%20expression%2C%20modern%20business%20environment%2C%20professional%20corporate%20headshot%2C%20stylish%20business%20attire%2C%20warm%20professional%20lighting&width=200&height=200&seq=client-3&orientation=squarish",

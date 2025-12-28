@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Mail, Phone, MapPin } from "lucide-react";
+import Button from "../components/button";
 
 const ContactSection = () => {
   const handleSubmit = async (e) => {
@@ -128,13 +130,13 @@ const ContactSection = () => {
                 maxLength="500"
                 className={`${inputCls} resize-none`}
               ></textarea>
-
-              <button
-                type="submit"
-                className="w-full bg-white text-blue-600 px-8 py-4 rounded-lg  font-semibold hover:shadow-2xl hover:bg-blue-50 transition-all duration-300 cursor-pointer whitespace-nowrap"
-              >
-                Send Project Brief
-              </button>
+              <div className="flex justify-center">
+                <Button
+                  text="Send Project Brief"
+                  type="submit"
+                  className="bg-[#e72615] rounded-lg!"
+                />
+              </div>
             </form>
           </motion.div>
 
@@ -159,7 +161,7 @@ const ContactSection = () => {
             <div className="space-y-6">
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                  <i className="ri-mail-line text-xl text-white"></i>
+                  <Mail className="h-5 w-5 text-white" />
                 </div>
                 <div>
                   <div className="text-white font-semibold">Email</div>
@@ -176,16 +178,22 @@ const ContactSection = () => {
 
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                  <i className="ri-phone-line text-xl text-white"></i>
+                  <Phone className="h-5 w-5 text-white" />
                 </div>
                 <div>
                   <div className="text-white font-semibold">Phone</div>
-                  <div className="text-blue-100">
+                  <div className="text-blue-100 flex gap-4 flex-wrap">
                     <a
                       href="tel:+919365046638"
                       className="hover:text-white transition-colors"
                     >
-                      +91 9365046638
+                      +91 93650 46638
+                    </a>
+                    <a
+                      href="tel:+918474044296"
+                      className="hover:text-white transition-colors"
+                    >
+                      +91 84740 44296
                     </a>
                   </div>
                 </div>
@@ -193,7 +201,7 @@ const ContactSection = () => {
 
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                  <i className="ri-map-pin-line text-xl text-white"></i>
+                  <MapPin className="h-5 w-5 text-white" />
                 </div>
                 <div>
                   <div className="text-white font-semibold">Office</div>
@@ -204,7 +212,7 @@ const ContactSection = () => {
                       rel="noopener noreferrer"
                       className="hover:text-white transition-colors"
                     >
-                      Arunodaya Path, Hegrabari, Kamrup Metro, Assaam
+                      Arunodaya Path, Hegrabari, Kamrup Metro, Assam
                     </a>
                   </div>
                 </div>

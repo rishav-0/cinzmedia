@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import {
-  FaChevronRight,
-  FaRocket,
-  FaGlobe,
-  FaSearch,
-  FaCompass,
-  FaPalette,
-  FaChartBar,
-  FaUsers,
-  FaShieldAlt,
-  FaChartLine,
-  FaBullseye,
-  FaLayerGroup,
-} from "react-icons/fa";
+  ChevronRight,
+  Rocket,
+  Globe,
+  Search,
+  Compass,
+  Palette,
+  BarChart2,
+  Users,
+  Shield,
+  TrendingUp,
+  Target,
+  Layers,
+} from "lucide-react";
 import { useNavigate } from "react-router";
+import Button from "../button";
+import { scrollToSection } from "../../utils/scrollToSection";
 
 const Brand = () => {
   const navigate = useNavigate();
@@ -49,7 +51,7 @@ const Brand = () => {
       {/* SEO Meta would go in the head - using React Helmet or Next.js Head */}
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-linear-to-br from-indigo-900 via-slate-900 to-gray-800 text-white">
+      <section className="relative overflow-hidden  text-white">
         {/* Animated background shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -78,12 +80,12 @@ const Brand = () => {
           />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:h-screen md:py-32">
           <motion.h1
             {...fadeInUp}
             initial="initial"
             animate="animate"
-            className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl"
+            className="text-4xl md:text-6xl text-[#2675f4] font-bold mb-6 max-w-4xl"
           >
             We Build Brands That Win Trust and Drive Growth
           </motion.h1>
@@ -93,24 +95,17 @@ const Brand = () => {
             initial="initial"
             animate="animate"
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl"
+            className="text-xl md:text-2xl text-gray-900 mb-8 max-w-3xl"
           >
             From strategy to execution, we create brands for startups, SMBs, and
             enterprises — tailored to scale.
           </motion.p>
 
-          <motion.button
-            {...scaleIn}
-            initial="initial"
-            animate="animate"
-            transition={{ delay: 0.4 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 flex items-center gap-2"
-          >
-            Get Your Free Brand Strategy Call
-            <FaChevronRight className="w-5 h-5" />
-          </motion.button>
+          <Button
+            text={"Get free strategy plan"}
+            onClick={() => scrollToSection("contact")}
+            className={"bg-[#e7a800]  text-lg"}
+          />
         </div>
       </section>
 
@@ -162,25 +157,25 @@ const Brand = () => {
               <div className="bg-linear-to-br from-blue-100 to-indigo-100 rounded-2xl p-8 shadow-xl">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-white rounded-lg p-6 shadow-md">
-                    <FaShieldAlt className="w-10 h-10 text-blue-600 mb-3" />
+                    <Shield className="w-10 h-10 text-blue-600 mb-3" />
                     <h4 className="font-semibold text-gray-900">
                       Trust Builder
                     </h4>
                   </div>
                   <div className="bg-white rounded-lg p-6 shadow-md">
-                    <FaChartLine className="w-10 h-10 text-indigo-600 mb-3" />
+                    <TrendingUp className="w-10 h-10 text-indigo-600 mb-3" />
                     <h4 className="font-semibold text-gray-900">
                       Growth Driver
                     </h4>
                   </div>
                   <div className="bg-white rounded-lg p-6 shadow-md">
-                    <FaUsers className="w-10 h-10 text-purple-600 mb-3" />
+                    <Users className="w-10 h-10 text-purple-600 mb-3" />
                     <h4 className="font-semibold text-gray-900">
                       Talent Magnet
                     </h4>
                   </div>
                   <div className="bg-white rounded-lg p-6 shadow-md">
-                    <FaBullseye className="w-10 h-10 text-pink-600 mb-3" />
+                    <Target className="w-10 h-10 text-pink-600 mb-3" />
                     <h4 className="font-semibold text-gray-900">
                       Market Leader
                     </h4>
@@ -224,7 +219,7 @@ const Brand = () => {
               className="bg-linear-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100"
             >
               <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <FaRocket className="w-6 h-6 text-white" />
+                <Rocket className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Startups & Small Businesses
@@ -235,15 +230,15 @@ const Brand = () => {
               </p>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
                   <span>Clear market positioning</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
                   <span>Memorable visual identity</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
                   <span>Agile brand foundation</span>
                 </li>
               </ul>
@@ -255,7 +250,7 @@ const Brand = () => {
               className="bg-linear-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100"
             >
               <div className="bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <FaLayerGroup className="w-6 h-6 text-white" />
+                <Layers className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Mid-Sized Companies
@@ -266,15 +261,15 @@ const Brand = () => {
               </p>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                   <span>Brand system optimization</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                   <span>Cross-team alignment</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-purple-600 mt-0.5 shrink-0" />
                   <span>Scalable guidelines</span>
                 </li>
               </ul>
@@ -286,7 +281,7 @@ const Brand = () => {
               className="bg-linear-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 border border-cyan-100"
             >
               <div className="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                <FaUsers className="w-6 h-6 text-white" />
+                <Users className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Agencies & Partners
@@ -297,15 +292,15 @@ const Brand = () => {
               </p>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
                   <span>White-label design & production</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
                   <span>Dedicated partner workflows</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FaChevronRight className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
+                  <ChevronRight className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
                   <span>Flexible resourcing for peaks</span>
                 </li>
               </ul>
@@ -342,7 +337,7 @@ const Brand = () => {
           >
             {[
               {
-                icon: FaSearch,
+                icon: Search,
                 number: "01",
                 title: "Research & Audit",
                 description:
@@ -350,7 +345,7 @@ const Brand = () => {
                 color: "blue",
               },
               {
-                icon: FaCompass,
+                icon: Compass,
                 number: "02",
                 title: "Strategy & Positioning",
                 description:
@@ -358,7 +353,7 @@ const Brand = () => {
                 color: "indigo",
               },
               {
-                icon: FaPalette,
+                icon: Palette,
                 number: "03",
                 title: "Identity Design",
                 description:
@@ -366,7 +361,7 @@ const Brand = () => {
                 color: "purple",
               },
               {
-                icon: FaRocket,
+                icon: Rocket,
                 number: "04",
                 title: "Implementation",
                 description:
@@ -374,7 +369,7 @@ const Brand = () => {
                 color: "pink",
               },
               {
-                icon: FaChartBar,
+                icon: BarChart2,
                 number: "05",
                 title: "Monitoring & Optimization",
                 description:
@@ -481,20 +476,11 @@ const Brand = () => {
             Whether you're a startup or a global enterprise, our branding
             experts are ready to help you grow.
           </motion.p>
-
-          <motion.button
-            onClick={() => navigate("/", { state: { scrollTo: "contact" } })}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors duration-200 flex items-center gap-2 mx-auto"
-          >
-            Book Your Free Strategy Call
-            <FaChevronRight className="w-5 h-5" />
-          </motion.button>
+          <Button
+            text={"Get free strategy plan"}
+            onClick={() => scrollToSection("contact")}
+            className={"bg-[#e7a800]  text-lg"}
+          />
 
           <motion.p
             initial={{ opacity: 0 }}

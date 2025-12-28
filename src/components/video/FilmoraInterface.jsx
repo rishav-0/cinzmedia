@@ -177,13 +177,12 @@ export default function FilmoraInterface() {
                 <img src={filIcon} alt="Filmora" className="w-12 h-12" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Cinematic Post-Production
-                </span>
+                <span className=" ">Cinzmedia Video Editing</span>
               </h1>
-              <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-                Professional video editing, color grading, and VFX that
-                transforms raw footage into compelling visual stories
+              <p className="text-sm text-gray-300 mb-10 max-w-3xl mx-auto">
+                Cinzmedia delivers professional video editing, color grading,
+                sound design and VFX to transform raw footage into compelling
+                visual stories for brands, filmmakers, and creators.
               </p>
 
               {/* Action buttons styled as transport controls */}
@@ -194,16 +193,16 @@ export default function FilmoraInterface() {
                   }
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg font-semibold text-lg shadow-lg shadow-red-500/25 flex items-center gap-2"
+                  className="px-4 py-2 text-sm bg-[#e6a800] rounded-lg font-semibold shadow-lg shadow-red-500/25 flex items-center gap-2"
                 >
                   <FaPlay /> Start Project
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-cyan-500 rounded-lg font-semibold text-lg hover:bg-cyan-500/10 flex items-center gap-2"
+                  className="px-4 py-2 border-2 text-sm border-cyan-500 rounded-lg font-semibold  hover:bg-cyan-500/10 flex items-center gap-2"
                 >
-                  <RiFilmLine /> View Reel
+                  <RiFilmLine size={"22"} /> View Reel
                 </motion.button>
               </div>
             </div>
@@ -214,7 +213,7 @@ export default function FilmoraInterface() {
                 {[...Array(50)].map((_, i) => (
                   <motion.div
                     key={i}
-                    className="w-1 bg-gradient-to-t from-cyan-500 to-purple-500 rounded"
+                    className="w-1 bg-[#e72615] rounded"
                     initial={{ height: 4 }}
                     animate={{ height: Math.random() * 32 + 8 }}
                     transition={{

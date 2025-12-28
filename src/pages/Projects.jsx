@@ -1,8 +1,15 @@
 import { useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import ScrollReveal from "scrollreveal";
+import { usePortfolio } from "../context/PortfolioContext";
 
 const Projects = () => {
+  const { getAllPortfolio } = usePortfolio();
+
+  // Get portfolio data from context
+  const allPortfolioData = getAllPortfolio();
+  const portfolioItems = Object.values(allPortfolioData).flat().slice(0, 6);
+
   useEffect(() => {
     const sr = ScrollReveal({
       origin: "bottom",
@@ -10,7 +17,7 @@ const Projects = () => {
       duration: 1000,
       delay: 200,
       easing: "cubic-bezier(0.5, 0, 0, 1)",
-       // 👈 appear/disappear when scrolling
+      // appear/disappear when scrolling
       viewFactor: 0.2,
       cleanup: true,
     });
@@ -55,53 +62,7 @@ const Projects = () => {
   ];
 
   // Portfolio items data
-  const portfolioItems = [
-    {
-      title: "TechFlow E-commerce Platform",
-      category: "Website Development",
-      description: "Complete e-commerce solution with 40% conversion increase",
-      image:
-        "https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20interface%20on%20laptop%20and%20mobile%20devices%2C%20clean%20product%20catalog%2C%20shopping%20cart%20functionality%2C%20professional%20online%20store%20design%2C%20blue%20and%20white%20color%20scheme&width=400&height=300&seq=portfolio-techflow-1&orientation=landscape",
-    },
-    {
-      title: "GreenLife Brand Identity",
-      category: "Branding",
-      description: "Sustainable brand identity increasing recognition by 180%",
-      image:
-        "https://readdy.ai/api/search-image?query=eco-friendly%20brand%20identity%20package%2C%20green%20logo%20designs%2C%20sustainable%20packaging%20mockups%2C%20natural%20color%20palette%2C%20environmental%20branding%20materials%2C%20organic%20business%20identity&width=400&height=300&seq=portfolio-greenlife-1&orientation=landscape",
-    },
-    {
-      title: "FitZone Marketing Campaign",
-      category: "Digital Marketing",
-      description:
-        "Social media campaign generating 2M+ views and 500+ customers",
-      image:
-        "https://readdy.ai/api/search-image?query=fitness%20marketing%20campaign%20mockups%2C%20social%20media%20posts%20for%20gym%2C%20workout%20videos%2C%20fitness%20app%20promotions%2C%20energetic%20marketing%20materials%2C%20health%20and%20wellness%20branding&width=400&height=300&seq=portfolio-fitzone-1&orientation=landscape",
-    },
-    {
-      title: "Innovation Summit 2024",
-      category: "Video Production",
-      description: "Corporate event video series with 95% engagement rate",
-      image:
-        "https://readdy.ai/api/search-image?query=professional%20conference%20video%20production%2C%20event%20videography%20setup%2C%20corporate%20summit%20footage%2C%20professional%20speakers%20on%20stage%2C%20high-quality%20video%20production%20equipment&width=400&height=300&seq=portfolio-summit-1&orientation=landscape",
-    },
-    {
-      title: "RestaurantHub App",
-      category: "Mobile App",
-      description: "Food delivery app design increasing orders by 220%",
-      image:
-        "https://readdy.ai/api/search-image?query=food%20delivery%20mobile%20app%20interface%2C%20restaurant%20app%20design%20on%20smartphones%2C%20menu%20browsing%2C%20order%20tracking%2C%20modern%20app%20UI%20design%2C%20food%20photography%20integration&width=400&height=300&seq=portfolio-restaurant-1&orientation=landscape",
-    },
-    {
-      title: "ArtSpace Gallery Rebrand",
-      category: "Branding",
-      description: "Gallery rebrand attracting 60% more visitors",
-      image:
-        "https://readdy.ai/api/search-image?query=art%20gallery%20branding%20materials%2C%20elegant%20logo%20design%2C%20exhibition%20posters%2C%20cultural%20institution%20identity%2C%20sophisticated%20art%20gallery%20branding%2C%20minimalist%20design%20aesthetic&width=400&height=300&seq=portfolio-artspace-1&orientation=landscape",
-    },
-  ];
 
-  // Featured case study data
   const featuredCaseStudy = {
     title: "TechStart Solutions: 250% Sales Growth",
     description:
@@ -226,19 +187,37 @@ const PortfolioItem = ({ item, index }) => {
           alt={item.title}
           className="w-full h-48 object-cover object-top group-hover:scale-110 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
           {item.category}
         </div>
       </div>
-      <div className="p-6">
+      <div className="p-3">
+        <p className="text-sm text-gray-500 mb-2 font-medium">{item.company}</p>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
           {item.title}
         </h3>
         <p className="text-gray-600 mb-4">{item.description}</p>
-        <button className="text-blue-600 font-semibold hover:text-purple-600 transition-colors cursor-pointer whitespace-nowrap">
-          View Case Study →
-        </button>
+
+        {item.tags && item.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {item.tags.map((tag, idx) => (
+              <span
+                key={idx}
+                className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {item.results && (
+          <p className="text-sm font-semibold text-green-600 ">
+            {item.results}
+          </p>
+        )}
+
+        
       </div>
     </div>
   );

@@ -82,9 +82,7 @@ const Chooseus = () => {
                 key={i}
                 className="bg-white/6 backdrop-blur-sm rounded-xl p-4 flex gap-3 items-start hover:scale-105 transform transition"
               >
-                <div className="p-3 rounded-md bg-linear-to-br from-gray-800 to-gray-700">
-                  {r.icon}
-                </div>
+                <div className="p-3 rounded-md bg-gray-900/20">{r.icon}</div>
                 <div>
                   <div className="font-semibold text-white">{r.title}</div>
                   <div className="text-sm text-gray-300">{r.desc}</div>
@@ -96,7 +94,7 @@ const Chooseus = () => {
           <div className="flex items-center justify-center gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-3 bg-linear-to-r from-cyan-500 to-purple-500 rounded-lg font-semibold text-white shadow-lg"
+              className="inline-flex items-center gap-2 px-5 py-3 bg-[#2675f4] rounded-lg font-semibold text-white shadow-lg"
             >
               <Mail /> Contact Us
             </a>

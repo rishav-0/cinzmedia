@@ -106,25 +106,25 @@ const VideoEditorLanding = () => {
       icon: <FaVideo />,
       title: "YouTube Video Optimization",
       timeline: "█▓▒░SEO░▒▓█",
-      color: "from-red-600 to-yellow-500",
+      color: "bg-[#e72615]",
     },
     {
       icon: <HiSparkles />,
       title: "Social Media Video Editing",
       timeline: "▓█▓SM░░▓█▓",
-      color: "from-blue-600 to-pink-500",
+      color: "bg-[#2675f4]",
     },
     {
       icon: <FaVolumeUp />,
       title: "Captioning & Subtitles",
       timeline: "░▒▓CC▓▒░",
-      color: "from-green-600 to-emerald-600",
+      color: "bg-[#099b54]",
     },
     {
       icon: <FaFilm />,
       title: "Video Thumbnails Design",
       timeline: "█░THUMB░█",
-      color: "from-purple-600 to-pink-600",
+      color: "bg-[#e6a800]",
     },
   ];
 
@@ -142,73 +142,6 @@ const VideoEditorLanding = () => {
       />
 
       {/* Loading Sequence */}
-      <AnimatePresence>
-        {isLoading && (
-          <motion.div
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black flex items-center justify-center"
-          >
-            <div className="relative">
-              {/* Film countdown */}
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: [0, 1.2, 1] }}
-                transition={{ duration: 0.5 }}
-                className="text-9xl font-bold"
-              >
-                {[3, 2, 1].map((num, i) => (
-                  <motion.span
-                    key={num}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: [0, 1, 0] }}
-                    transition={{ delay: i * 1, duration: 1 }}
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
-                    {num}
-                  </motion.span>
-                ))}
-              </motion.div>
-
-              {/* Film perforations */}
-              <div className="absolute -left-20 -top-20 bottom-0 w-8">
-                {[...Array(5)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="w-4 h-6 bg-white mb-4 rounded-sm"
-                  />
-                ))}
-              </div>
-              <div className="absolute -right-20 -top-20 bottom-0 w-8">
-                {[...Array(5)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="w-4 h-6 bg-white mb-4 rounded-sm"
-                  />
-                ))}
-              </div>
-
-              {/* Glitch effect */}
-              <motion.div
-                animate={{ opacity: [0, 1, 0] }}
-                transition={{ duration: 0.1, repeat: 3, delay: 2.5 }}
-                className="absolute inset-0 bg-red-500 mix-blend-screen"
-              />
-              <motion.div
-                animate={{ opacity: [0, 1, 0] }}
-                transition={{ duration: 0.1, repeat: 3, delay: 2.6 }}
-                className="absolute inset-0 bg-cyan-500 mix-blend-screen translate-x-1"
-              />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Film grain overlay */}
       <div className="fixed inset-0 pointer-events-none opacity-30 mix-blend-overlay z-40">
@@ -276,9 +209,7 @@ const VideoEditorLanding = () => {
               <span className="text-sm font-mono">EDITING SUITE</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Post-Production Pipeline
-              </span>
+              <span className="text-[#2675f4]">Our Services</span>
             </h2>
           </motion.div>
 
@@ -298,12 +229,14 @@ const VideoEditorLanding = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <div
-                        className={`p-3 rounded bg-gradient-to-r ${service.color} bg-opacity-20`}
+                        className={`p-3 rounded  ${service.color} bg-opacity-20`}
                       >
                         <span className="text-2xl">{service.icon}</span>
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold">{service.title}</h3>
+                        <h3 className="text-lg font-semibold">
+                          {service.title}
+                        </h3>
                         <span className="text-xs font-mono text-gray-500">
                           TRACK {index + 1}
                         </span>
@@ -359,9 +292,7 @@ const VideoEditorLanding = () => {
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h2 className="text-4xl font-bold mb-2">
-                  <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                    Project Library
-                  </span>
+                  <span className="text-[#2675f4]">Project Library</span>
                 </h2>
                 <p className="text-gray-400">
                   Recent exports from our editing bay
@@ -405,7 +336,7 @@ const VideoEditorLanding = () => {
 
             <div className="p-8 text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="text-[#2675f4]">
                   Ready to Export Your Vision?
                 </span>
               </h2>
@@ -438,9 +369,9 @@ const VideoEditorLanding = () => {
                 }
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg font-bold text-xl shadow-xl shadow-purple-500/25 flex items-center gap-3 mx-auto"
+                className="px-10 py-4 bg-[#2675f4] rounded-lg font-bold text-xl shadow-xl  flex items-center gap-3 mx-auto"
               >
-                <BsRecordCircle className="text-2xl" />
+                <BsRecordCircle className="text-lg" />
                 Start Rendering
               </motion.button>
             </div>
@@ -449,13 +380,13 @@ const VideoEditorLanding = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-10 px-6 bg-black border-t border-gray-800">
+      {/* <footer className="py-10 px-6 bg-black border-t border-gray-800">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-500 font-mono text-sm">
             © 2025 CINEMATIC POST-PRODUCTION | TIMELINE
           </p>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };

@@ -10,8 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { useNavigate } from "react-router";
-
-
+import { usePortfolio } from "../../context/PortfolioContext";
 
 const services = [
   {
@@ -55,7 +54,7 @@ const services = [
     icon: Sparkles,
   },
   {
-    id: "graphic-design",
+    id: "graphic",
     name: "Graphic Design",
     description: "Elegant, purposeful visuals.",
     detail:
@@ -111,22 +110,25 @@ const sectionVariant = {
 };
 
 export default function HomePage() {
-
-  const  navigate = useNavigate();
-  const [activeServiceId, setActiveServiceId] = useState(
-    services[0]?.id ?? "web-dev"
-  );
-
-  // Metadata moved to index.html for better SEO (static HTML)
+  const { getCategoriesWithData, getPortfolioByCategory, getAllPortfolio } =
+    usePortfolio();
+    console.log(getAllPortfolio());
+  const navigate = useNavigate();
+  const [activeServiceId, setActiveServiceId] = useState("web-dev");
   const [activeProjectFilter, setActiveProjectFilter] = useState("All");
+
+  const categoriesData = getCategoriesWithData();
 
   const activeService =
     services.find((s) => s.id === activeServiceId) ?? services[0];
 
-  const filteredProjects = projects.filter((project) => {
-    if (activeProjectFilter === "All") return true;
-    return project.category === activeProjectFilter;
-  });
+  // Get all portfolio items - flatten the entire portfolio data
+  const allPortfolioItems = Object.values(getAllPortfolio()).flat();
+
+  const filteredProjects =
+    activeProjectFilter === "All"
+      ? allPortfolioItems
+      : getPortfolioByCategory(activeProjectFilter) || [];
 
   const scrollToSection = (sectionId) => {
     if (typeof window === "undefined") return;
@@ -246,9 +248,9 @@ export default function HomePage() {
         <motion.section
           id="projects"
           variants={sectionVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
+          // initial="hidden"
+          // whileInView="show"
+          // viewport={{ once: true, amount: 0.25 }}
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16"
         >
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
@@ -265,8 +267,12 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["All", "Web", "Marketing", "Branding", "Video", "Graphic"].map(
-                (filter) => (
+              {["All", ...categoriesData.map((cat) => cat.id)].map((filter) => {
+                const categoryName =
+                  filter === "All"
+                    ? "All"
+                    : services.find((s) => s.id === filter)?.name || filter;
+                return (
                   <button
                     key={filter}
                     onClick={() => setActiveProjectFilter(filter)}
@@ -277,47 +283,77 @@ export default function HomePage() {
                         : "bg-white/40 text-gray-700 border-white/60 hover:bg-white")
                     }
                   >
-                    {filter}
+                    {categoryName}
                   </button>
-                )
-              )}
+                );
+              })}
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {filteredProjects.map((project, index) => (
-              <motion.article
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                whileHover={{ y: -4 }}
-                className="bg-white/80 border border-white/70 rounded-2xl p-5 flex flex-col gap-4 shadow-sm cursor-pointer hover:shadow-md transition"
-              >
-                <div className="rounded-xl overflow-hidden bg-gray-50">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
-                </div>
-                <div className="flex items-center gap-2 text-xs text-gray-500">
-                  <span className="inline-flex items-center gap-1 bg-indigo-50 text-indigo-700 px-2 py-1 rounded-full capitalize">
-                    {project.category} project
-                  </span>
-                  <span>Premium creative build</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 mt-1">
-                    {project.summary}
-                  </p>
-                </div>
-                <div className="flex items-center justify-between text-sm text-gray-500 mt-auto pt-2">
-                  <p>UX Strategy • UI Design • Launch Ready</p>
-                  <ArrowRight className="w-4 h-4 text-gray-400" />
-                </div>
-              </motion.article>
-            ))}
+            {filteredProjects && filteredProjects.length > 0 ? (
+              filteredProjects.map((project, index) => (
+                <motion.article
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  whileHover={{ y: -4 }}
+                  className="bg-white/80 border border-white/70 rounded-2xl p-5 flex flex-col gap-4 shadow-sm cursor-pointer hover:shadow-md transition overflow-hidden"
+                >
+                  <div className="rounded-xl overflow-hidden h-48 bg-indigo-100 flex items-center justify-center">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.currentTarget.src = "/placeholder.jpg";
+                        }}
+                      />
+                    ) : (
+                      <span className="text-sm text-gray-500">No image</span>
+                    )}
+                  </div>
+
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="inline-flex items-center gap-1 bg-indigo-50 text-indigo-700 px-2 py-1 rounded-full">
+                      {project.category}
+                    </span>
+                    <span>{project.company}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mt-1">
+                      {project.description}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {project.tags.map((tag, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-between text-sm text-gray-500 mt-auto pt-2 border-t border-gray-100">
+                    <p className="font-medium text-green-600">
+                      {project.results}
+                    </p>
+                    <ArrowRight className="w-4 h-4 text-gray-400" />
+                  </div>
+                </motion.article>
+              ))
+            ) : (
+              <div className="col-span-2 text-center py-12">
+                <p className="text-gray-500">No projects found</p>
+              </div>
+            )}
           </div>
         </motion.section>
 

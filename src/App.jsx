@@ -1,22 +1,22 @@
-import { Route, Routes } from 'react-router';
-import './App.css'
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Footer from './pages/Footer';
-import Services from './pages/Service';
-import ScrollToTop from './utils/ScrollToTop';
-import WebDevelopmentServices from './components/webdev/WebDevlopmentServices';
-import SocialMediaMarketingPage from './components/socialmedia/SocialMediaMarketingPage';
-import VideoEditing from './components/video/VideoEditing';
-import Digitalmarketing from './components/digitalmarketing/Digitalmarketing';
-import Brand from './components/brandbuilding/Brand';
-import GraphicDetail from './components/graphic/GraphicDetail';
-import Portfolio from './components/portfolio/Portfolio';
+import { Route, Routes } from "react-router";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Footer from "./pages/Footer";
+import Services from "./pages/Service";
+import ScrollToTop from "./utils/ScrollToTop";
+import WebDevelopmentServices from "./components/webdev/WebDevlopmentServices";
+import SocialMediaMarketingPage from "./components/socialmedia/SocialMediaMarketingPage";
+import VideoEditing from "./components/video/VideoEditing";
+import Digitalmarketing from "./components/digitalmarketing/Digitalmarketing";
+import Brand from "./components/brandbuilding/Brand";
+import GraphicDetail from "./components/graphic/GraphicDetail";
+import Portfolio from "./components/portfolio/Portfolio";
+import { PortfolioProvider } from "./context/PortfolioContext";
 
 function App() {
-
   return (
-    <>
+    <PortfolioProvider>
       <Navbar />
       <ScrollToTop />
       <Routes>
@@ -34,8 +34,8 @@ function App() {
         />
       </Routes>
       <Footer />
-    </>
+    </PortfolioProvider>
   );
 }
 
-export default App
+export default App;

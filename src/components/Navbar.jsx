@@ -321,6 +321,15 @@ export default function Navbar() {
             </li>
           )
         )}
+        <li
+          onClick={(e) => {
+            e.stopPropagation();
+            handleServiceClick("portfolio");
+          }}
+          className="py-2 cursor-pointer hover:text-blue-500"
+        >
+          Portfolio
+        </li>
 
         <li className="mt-4" onClick={() => handleNavClick("contact")}>
           <CoolMode>

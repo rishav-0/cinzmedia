@@ -6,6 +6,7 @@ import { IconCloud } from "../components/IconCloud";
 import Marquee from "react-fast-marquee";
 import { img } from "framer-motion/client";
 import gemini from "../images/cloud/gemini.png";
+import Button from "../components/button";
 
 const About = () => {
   const icons = [
@@ -131,14 +132,7 @@ const About = () => {
 
             {/* CTA Button */}
             <CoolMode>
-              <motion.a
-                href="#contact"
-                className="inline-block bg-linear-to-r from-pink-500 to-purple-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Work With Us
-              </motion.a>
+              <Button text={"Work with us"} className={"bg-[#2675f4]"} />
             </CoolMode>
           </motion.div>
 

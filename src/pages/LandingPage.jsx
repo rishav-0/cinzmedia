@@ -19,6 +19,7 @@ import { CoolMode } from "../components/CoolMode";
 import gpt from '../images/icon/gpt.png'
 import gemini from '../images/icon/gemini.png'
 import { scrollToSection } from "../utils/scrollToSection";
+import Button from "../components/button";
 const words = ["Clicks & Conversions", "Followers", "Views", "Leads", "Sales"];
 
 
@@ -64,7 +65,7 @@ export default function LandingPage() {
 
       {/* Content */}
       <AnimatedContent>
-        <div className="relative z-10 text-center max-w-3xl px-4">
+        <div className="relative z-10 text-center max-w-3xl px-4 md:px-0">
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
             We Build Brands That Get{" "}
             {/* <span className="text-yellow-300">{words[index]}</span> */}
@@ -84,20 +85,18 @@ export default function LandingPage() {
           </p>
           <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center">
             <CoolMode>
-              <button
+              <Button
+                text={"Get free strategy plan"}
                 onClick={() => scrollToSection("contact")}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform"
-              >
-                Get Your Free Strategy Plan
-              </button>
+                className={"bg-[#e7a800]  text-lg"}
+              />
             </CoolMode>
             <CoolMode>
-              <button
+              <Button
+                text={"See our work"}
                 onClick={() => scrollToSection("portfolio")}
-                className="px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-black transition-colors"
-              >
-                See Our Creative Work
-              </button>
+                className={"bg-[#2675f4]  text-lg"}
+              />
             </CoolMode>
           </div>
         </div>
