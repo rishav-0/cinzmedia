@@ -27,6 +27,11 @@ import TimecodeDisplay from "./TimecodeDisplay";
 import FilmoraInterface from "./FilmoraInterface";
 import { useNavigate } from "react-router";
 
+function VideoEditing() {
+  useEffect(() => {
+    document.title = "Video Editing Services | Cinzmedia";
+  }, []);}
+
 const projects = [
   {
     id: 1,
@@ -36,7 +41,7 @@ const projects = [
     codec: "ProRes 422",
     resolution: "4K",
     video:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
   },
   {
     id: 2,
@@ -46,7 +51,7 @@ const projects = [
     codec: "H.264",
     resolution: "2K",
     video:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
   },
   {
     id: 3,
@@ -56,7 +61,7 @@ const projects = [
     codec: "ProRes 4444",
     resolution: "8K",
     video:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
   },
   {
     id: 4,
@@ -66,7 +71,7 @@ const projects = [
     codec: "DNxHD",
     resolution: "4K",
     video:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
   },
 ];
 
@@ -372,7 +377,7 @@ const VideoEditorLanding = () => {
                 className="px-10 py-4 bg-[#2675f4] rounded-lg font-bold text-xl shadow-xl  flex items-center gap-3 mx-auto"
               >
                 <BsRecordCircle className="text-lg" />
-                Start Rendering
+                Start Your Project
               </motion.button>
             </div>
           </div>

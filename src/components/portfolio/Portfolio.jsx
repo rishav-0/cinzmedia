@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   Code2,
@@ -11,6 +11,11 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router";
 import { usePortfolio } from "../../context/PortfolioContext";
+
+function Portfolio() {
+  useEffect(() => {
+    document.title = "Our Portfolio | Cinzmedia";
+  }, []);}
 
 const services = [
   {

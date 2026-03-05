@@ -50,27 +50,26 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold  text-gray-900 mb-4 leading-tight">
-            <span className="text-2xl ">About Cinzmedia </span>
-            <br /> Your <span className="mr-2"></span>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            <span className="text-2xl">About Cinzmedia</span>
+            <br />
             <Highlighter
-              action="underline"
+              action=""
               color="#2675f4"
               strokeWidth={2.5}
               padding={5}
               loopDelay={2000}
             >
-              CreativeC
-              <span className="mr-2"> </span>
+              Creative Digital Solutions
             </Highlighter>
-            Digital <span className="mr-2"></span>
+            <br />
             <Highlighter
               action="highlight"
               color="#e6a800"
               strokeWidth={1.5}
               loopDelay={2000}
             >
-              Marketing Agency
+              Marketing That Matters
             </Highlighter>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

@@ -1,5 +1,16 @@
+import Marquee from "react-fast-marquee";
+
 const Testimonials = () => {
   const testimonials = [
+     {
+      quote:
+        "The digital marketing campaigns crafted by Cinzmedia significantly boosted our online presence and lead generation. Highly recommend their expertise!",
+      name: "Sanjay Singh",
+      role: "Director of Operations, Global Exports",
+      image:
+        "https://imgs.search.brave.com/9joXt0bUGPvx7afFCa5ieUra9Z7O1MmxLDZZPMgzSuo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjIw/NDQwODY2OC9waG90/by9zdHVkaW8taGVh/ZHNob3QtcGFraXN0/YW5pLW1hbi1zZXJp/b3VzLXNpZGUtcHJv/ZmlsZS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9QmF0b1lW/RVpyR2JCZG9neFFv/UVZUaTBFcnVSQ3ZG/bU90WUNMOWRSejlt/bz0",
+      stars: 5,
+    },
     {
       quote:
         "Sales grew 250% after Cinzmedia redesigned our website and marketing strategy. Their team truly understands what drives conversions!",
@@ -27,6 +38,25 @@ const Testimonials = () => {
         "https://readdy.ai/api/search-image?query=professional%20marketing%20director%20woman%2C%20confident%20expression%2C%20modern%20business%20environment%2C%20professional%20corporate%20headshot%2C%20stylish%20business%20attire%2C%20warm%20professional%20lighting&width=200&height=200&seq=client-3&orientation=squarish",
       stars: 5,
     },
+    {
+      quote:
+        "Cinzmedia's graphic design work for our product launch was phenomenal. The visuals were stunning and perfectly conveyed our brand message.",
+      name: "Priya Sharma",
+      role: "Product Manager, Innovate Solutions",
+      image:
+        "https://imgs.search.brave.com/3N4x3K4CVLx837zzcTqef_u-brJ8Ue-tqWZlZTreS2U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjE2/Njg0MTk2MC9waG90/by9wb3J0cmFpdC1p/bmRpYW4td29tYW4t/YW5kLWhhcHB5LWlu/LWhvbWUtYXQtc3R1/ZHktcm9vbS13aXRo/LXByaWRlLWZvci1l/ZHVjYXRpb24ta25v/d2xlZGdlLWFuZC5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/NHZRS3VMUGcyV0dL/SVdSRVN1RDdTaEUx/VlVaV183YUNzdlFS/cEUzM2NFND0",
+      stars: 5,
+    },
+    {
+      quote:
+        "Our social media engagement skyrocketed after Cinzmedia took over. Their strategies are innovative and deliver real results.",
+      name: "Rahul Kumar",
+      role: "Social Media Head, Lifestyle Brands",
+      image:
+        "https://imgs.search.brave.com/fReevHKhw6y0r42M5sixI2E8VW75dk1crHJerO2JT0A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9pbmRp/YW4tbWFuLTEyMDkw/MzQ4LmpwZw",
+      stars: 5,
+    },
+   
   ];
 
   return (
@@ -41,11 +71,15 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} testimonial={testimonial} />
-          ))}
-        </div>
+          <Marquee pauseOnHover={true} gradient={false}  speed={100} className="w-full py-4">
+            
+
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={index} testimonial={testimonial} />
+              ))}
+
+            
+          </Marquee>
       </div>
     </section>
   );
@@ -53,13 +87,13 @@ const Testimonials = () => {
 
 const TestimonialCard = ({ testimonial }) => {
   return (
-    <div className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+    <div className="bg-gray-50 w-[200px] sm:w-[500px] rounded-2xl p-2 sm:p-8 mx-2 sm:mx-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
       {/* Star Rating */}
-      <div className="flex items-center mb-4">
+      {/* <div className="flex items-center mb-4">
         {[...Array(testimonial.stars)].map((_, i) => (
           <i key={i} className="ri-star-fill text-yellow-400 text-lg"></i>
         ))}
-      </div>
+      </div> */}
 
       {/* Testimonial Quote */}
       <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>

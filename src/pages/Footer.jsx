@@ -1,10 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import transparant from '../images/logo/transparant.png'
 
 
 const socialMediaLinks = [
   {
     name: "Facebook",
-    url: "https://www.facebook.com/cinzmedia",
+    url: "https://www.facebook.com/profile.php?id=61574939545199",
     icon: "ri-facebook-fill",
   },
   {
@@ -30,6 +31,9 @@ const socialMediaLinks = [
 ];
 
 const Footer = () => {
+
+  const navigate = useNavigate();
+
   const quickLinks = [
     { name: "Home", link: "/" },
     { name: "About", link: "#about" },
@@ -39,6 +43,20 @@ const Footer = () => {
   ];
 
   console.log("Quick Links:", quickLinks);
+
+   const serviceLinks = [
+    { slug: "webdev", label: "Web & App Development" },
+    { slug: "graphic", label: "Graphic Design" },
+    { slug: "videoediting", label: "Video Editing" },
+    { slug: "brandbuilding", label: "Brand Building" },
+    { slug: "socialmediamarketing", label: "Social Media Marketing" },
+    { slug: "digitalmarketing", label: "Digital Marketing" },
+  ];
+
+   const handleServiceClick = (slug) => {
+    navigate(`/${slug}`);
+  };
+
 
   return (
     <footer className="bg-gray-900 text-white py-16 px-6">
@@ -88,23 +106,18 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              {[
-                "Website Development",
-                "Graphic Design",
-                "Video Editing",
-                "Brand Building",
-                "Social Media",
-                "Digital Marketing",
-              ].map((service, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-blue-400 transition-colors cursor-pointer"
-                  >
-                    {service}
-                  </a>
-                </li>
-              ))}
+              {serviceLinks.map((link) => (
+                    <li
+                      key={link.slug}
+                      className="cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleServiceClick(link.slug);
+                      }}
+                    >
+                      {link.label}
+                    </li>
+                  ))}
             </ul>
           </div>
         </div>

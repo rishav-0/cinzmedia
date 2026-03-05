@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   ChevronRight,
@@ -18,6 +19,10 @@ import Button from "../button";
 import { scrollToSection } from "../../utils/scrollToSection";
 
 const Brand = () => {
+  useEffect(() => {
+    document.title = "Brand Building Services | Cinzmedia";
+  }, []);
+
   const navigate = useNavigate();
   // Animation variants
   const fadeInUp = {
@@ -51,63 +56,225 @@ const Brand = () => {
       {/* SEO Meta would go in the head - using React Helmet or Next.js Head */}
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden  text-white">
-        {/* Animated background shapes */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            animate={{
-              x: [0, 30, 0],
-              y: [0, -30, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="absolute -top-1/2 -left-1/2 w-full h-full bg-blue-500/10 rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{
-              x: [0, -30, 0],
-              y: [0, 30, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-indigo-500/10 rounded-full blur-3xl"
-          />
-        </div>
+      <section className="relative overflow-hidden bg-white">
+  {/* Background Decorative Elements */}
+  <div className="pointer-events-none absolute inset-0">
+    {/* SVG Dots Pattern */}
+    <svg
+      aria-hidden="true"
+      className="absolute inset-0 h-full w-full"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <pattern
+          id="dots-pattern"
+          x="0"
+          y="0"
+          width="30"
+          height="30"
+          patternUnits="userSpaceOnUse"
+        >
+          <circle cx="1.6" cy="1.6" r="1.6" fill="rgb(15 23 42 / 0.10)" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dots-pattern)" />
+    </svg>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:h-screen md:py-32">
-          <motion.h1
-            {...fadeInUp}
-            initial="initial"
-            animate="animate"
-            className="text-4xl md:text-6xl text-[#2675f4] font-bold mb-6 max-w-4xl"
+    {/* Animated Blur Orbs */}
+    <motion.div
+      aria-hidden="true"
+      animate={{
+        x: [0, 28, 0],
+        y: [0, -24, 0],
+      }}
+      transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+      className="absolute -left-56 -top-56 h-[520px] w-[520px] rounded-full bg-[#2675f4]/10 blur-3xl"
+    />
+
+    <motion.div
+      aria-hidden="true"
+      animate={{
+        x: [0, -26, 0],
+        y: [0, 22, 0],
+      }}
+      transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+      className="absolute -bottom-56 -right-56 h-[560px] w-[560px] rounded-full bg-indigo-600/10 blur-3xl"
+    />
+
+    {/* Concentric Circles */}
+    <div className="absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full border border-slate-200/70" />
+    <div className="absolute left-1/2 top-40 h-96 w-96 -translate-x-1/2 rounded-full border border-slate-200/40" />
+  </div>
+
+  <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
+    <div className="grid items-center gap-12 lg:grid-cols-12">
+      
+      {/* LEFT COLUMN: Copy & CTAs */}
+      <div className="lg:col-span-7">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200"
+        >
+          <span className="inline-flex h-2 w-2 rounded-full bg-[#2675f4]" />
+          Digital systems built for dominance
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.06 }}
+          className="mt-6 max-w-3xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl"
+        >
+          We build brands that <span className="relative whitespace-nowrap">
+            <span className="relative z-10 text-[#2675f4]">win trust</span>
+            <motion.span
+              aria-hidden="true"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.7, delay: 0.35 }}
+              className="absolute inset-x-0 bottom-1 -z-0 h-3 origin-left rounded-full bg-[#2675f4]/15"
+            />
+          </span>
+          , sharpen positioning, and drive growth.
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.14 }}
+          className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl"
+        >
+          From strategy to execution, we help startups and enterprises launch a 
+          cohesive digital ecosystem—web, app, and brand—designed to convert attention into revenue.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.22 }}
+          className="mt-8 flex flex-wrap items-center gap-3"
+        >
+          <button 
+             onClick={() => scrollToSection("contact")}
+             className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-bold bg-[#e7a800] text-slate-950 hover:brightness-95 transition shadow-sm"
           >
-            We Build Brands That Win Trust and Drive Growth
-          </motion.h1>
-
-          <motion.p
-            {...fadeInUp}
-            initial="initial"
-            animate="animate"
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-900 mb-8 max-w-3xl"
+            Get free strategy plan
+          </button>
+          <button 
+             onClick={() => scrollToSection("services")}
+             className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-bold bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50 transition"
           >
-            From strategy to execution, we create brands for startups, SMBs, and
-            enterprises — tailored to scale.
-          </motion.p>
+            Explore services
+          </button>
+        </motion.div>
 
-          <Button
-            text={"Get free strategy plan"}
-            onClick={() => scrollToSection("contact")}
-            className={"bg-[#e7a800]  text-lg"}
-          />
-        </div>
-      </section>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.34 }}
+          className="mt-10"
+        >
+          <div className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
+            Specializing in
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {['Web Dev', 'App Dev', 'Branding', 'Video Editing', 'Marketing'].map((tag) => (
+              <span key={tag} className="inline-flex items-center rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* RIGHT COLUMN: The Visual Dashboard */}
+      <div className="lg:col-span-5">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.12 }}
+          className="relative"
+        >
+          {/* Floating Feature Chip 1 */}
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -left-3 top-8 hidden rounded-2xl bg-white px-4 py-3 text-xs font-semibold text-slate-700 shadow-lg ring-1 ring-slate-200 sm:block z-20"
+          >
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Impact: +250% Sales Growth
+            </div>
+          </motion.div>
+
+          {/* Floating Feature Chip 2 */}
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -right-4 bottom-10 hidden rounded-2xl bg-white px-4 py-3 text-xs font-semibold text-slate-700 shadow-lg ring-1 ring-slate-200 sm:block z-20"
+          >
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-[#2675f4]" />
+              Conversion lift: +28%
+            </div>
+          </motion.div>
+
+          {/* Main Visual Card */}
+          <div className="rounded-3xl bg-white p-6 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="text-xs font-semibold text-slate-500 uppercase">Strategy Engine</div>
+                <div className="mt-1 text-lg font-bold text-slate-950">Project Readiness</div>
+              </div>
+              <div className="rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold text-white">Live</div>
+            </div>
+
+            <div className="mt-5 grid grid-cols-2 gap-3">
+              {[
+                { l: 'Trust Score', v: '98/100' },
+                { l: 'Clarity', v: 'High' },
+                { l: 'Consistency', v: '99%' },
+                { l: 'Performance', v: 'Top 1%' }
+              ].map((s) => (
+                <div key={s.l} className="flex items-center justify-between gap-4 rounded-xl bg-white px-4 py-3 ring-1 ring-slate-100">
+                   <span className="text-[10px] font-bold text-slate-500 uppercase">{s.l}</span>
+                   <span className="text-sm font-bold text-slate-950">{s.v}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200">
+              <div className="flex items-center justify-between mb-3">
+                <div className="text-xs font-semibold text-slate-600 uppercase">Brand Momentum</div>
+                <div className="text-xs font-semibold text-emerald-600">Scaling</div>
+              </div>
+
+              {/* Bar Chart Visual */}
+              <div className="flex items-end gap-1 h-20">
+                {[40, 55, 45, 70, 62, 78, 66, 84, 76, 88, 82, 96].map((h, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ height: 0 }}
+                    animate={{ height: `${h}%` }}
+                    transition={{ duration: 1, delay: 0.5 + i * 0.05 }}
+                    className={`flex-1 rounded-t-sm ${i > 8 ? 'bg-[#2675f4]' : 'bg-slate-300'}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-5 flex items-center justify-between gap-3">
+              <div className="text-[10px] text-slate-500 font-medium">Deliverables: Web, App, Brand Identity</div>
+              <button className="text-xs font-bold text-[#2675f4] hover:underline">View Roadmap</button>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Why Brand Building Matters */}
       <section className="py-20 bg-gray-50">

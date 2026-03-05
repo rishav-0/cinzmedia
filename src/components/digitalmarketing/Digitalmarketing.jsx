@@ -491,6 +491,9 @@ const gradientStyles = `
 `;
 
 export default function Digitalmarketing() {
+  useEffect(() => {
+    document.title = "Digital Marketing Services | Cinzmedia";
+  }, []);
 
   const navigate = useNavigate();
 

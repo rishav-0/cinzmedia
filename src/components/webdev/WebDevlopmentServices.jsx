@@ -274,11 +274,15 @@ function WorkCard({ client, summary, metrics, tags, year }) {
 }
 
 export default function WebDevelopmentServices() {
+  useEffect(() => {
+    document.title = "Web Development Services | Cinzmedia";
+  }, []);
+
   const services = useMemo(
     () => [
       {
         icon: <Puzzle className="h-6 w-6 text-white" />,
-        title: "Custom Websites",
+        title: "Custom App & Websites",
         desc: "Conversion-focused React/Next.js builds with clean IA and brand-first UX.",
       },
       {
@@ -343,10 +347,10 @@ export default function WebDevelopmentServices() {
     offers: {
       "@type": "AggregateOffer",
       availability: "https://schema.org/InStock",
-      priceCurrency: "USD",
+      priceCurrency: "rupees",
     },
     description:
-      "SEO-friendly, high-performance web development services for growth-focused brands. We build Next.js websites optimized for conversions and Core Web Vitals.",
+      "SEO-friendly, high-performance web & app development services for growth-focused brands.",
   };
 
   // Hero fade-up animation variants
@@ -363,20 +367,20 @@ export default function WebDevelopmentServices() {
     <>
       <div className="">
         <title>
-          Web Development Services | Conversion-Focused, SEO-Friendly Websites
+          Web & App Development Services | Conversion-Focused, SEO-Friendly Websites, Fast and Scalable Apps
         </title>
         <meta
           name="description"
-          content="We build lightning-fast, SEO-friendly websites that convert. Next.js, React, headless CMS, Core Web Vitals optimization, and technical SEO for digital growth."
+          content="We build lightning-fast, SEO-friendly websites that convert.Core Web Vitals optimization, and technical SEO for digital growth."
         />
         <link rel="canonical" href="https://example.com/web-development" />
         <meta
           property="og:title"
-          content="Web Development Services | Digital Marketing Agency"
+          content="Web & App Development Services | Digital Marketing Agency"
         />
         <meta
           property="og:description"
-          content="High-performance, SEO-first web development with Next.js, Core Web Vitals, and technical SEO. Built to convert."
+          content="High-performance Apps, SEO-first web development with, Core Web Vitals, and technical SEO. Built to convert."
         />
         <meta property="og:type" content="website" />
         <script
@@ -412,7 +416,7 @@ export default function WebDevelopmentServices() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <span className="inline-flex items-center rounded-full bg-indigo-500/10 px-3 py-1 text-xs font-medium text-indigo-300 ring-1 ring-inset ring-indigo-400/20">
-                Digital Marketing Agency — Web Development
+                App Development — Web Development
               </span>
 
               <motion.h1
@@ -423,7 +427,7 @@ export default function WebDevelopmentServices() {
                 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl"
               >
                 <span className="text-white">
-                  SEO‑friendly Web Development
+                  High-Performance Website & App Development
                 </span>
               </motion.h1>
 
@@ -492,10 +496,10 @@ export default function WebDevelopmentServices() {
           className="mx-auto max-w-7xl px-6 pb-16 md:pb-24"
         >
           <h2 className="text-2xl font-semibold text-white md:text-3xl">
-            Web Development Services
+            Web & App Development Services
           </h2>
           <p className="mt-2 max-w-2xl text-slate-300">
-            End-to-end web development engineered for organic growth,
+            End-to-end web and app development engineered for organic growth,
             performance, and ROI.
           </p>
 

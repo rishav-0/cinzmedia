@@ -62,7 +62,7 @@ export default function FilmoraInterface() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: isLoading ? 1.5 : 0, duration: 1 }}
+        transition={{ delay: isLoading ? .5 : 0, duration: 1 }}
         className="relative z-10 max-w-4xl w-full mx-auto px-6"
       >
         <div className="relative bg-gray-900 bg-opacity-90 backdrop-blur-xl rounded-lg border border-gray-700 shadow-2xl ">

@@ -207,6 +207,10 @@ const portfolio = [
 ];
 
 export default function GraphicDetail() {
+  useEffect(() => {
+    document.title = "Graphic Design Services | Cinzmedia";
+  }, []);
+
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const [openService, setOpenService] = useState(null);
@@ -942,12 +946,12 @@ export default function GraphicDetail() {
                   key={title}
                   className="flex flex-col shadow-sm p-4 rounded-xl items-center text-center"
                 >
-                 
-
                   <h4 className="text-lg font-semibold text-gray-900">
                     {title}
                   </h4>
-                  <p className="mt-2 text-gray-700 max-w-xs text-sm">{description}</p>
+                  <p className="mt-2 text-gray-700 max-w-xs text-sm">
+                    {description}
+                  </p>
                 </article>
               ))}
             </div>

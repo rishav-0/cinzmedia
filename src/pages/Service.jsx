@@ -13,7 +13,7 @@ import videoe from "../images/services/video.png";
 const Services = () => {
   const services = [
     {
-      title: "Website Development",
+      title: "Website/App Development",
       description:
         "Blazing-fast, SEO-optimized websites that rank higher and convert visitors into customers.",
       icon: <Code className="text-2xl text-blue-600" />,
@@ -155,9 +155,8 @@ const Services = () => {
                     </CardItem>
                     <CardItem
                       translateZ="30"
-                      as="a"
-                      href={service.link}
-                      className="inline-block px-4 py-2 rounded-full bg-[#2675f4] text-white text-sm font-semibold hover:scale-105 transition-transform"
+                      as="div"
+                      className="inline-block px-4 py-2 rounded-full bg-[#2675f4] text-white text-sm font-semibold hover:scale-105 transition-transform cursor-pointer"
                     >
                       Explore →
                     </CardItem>

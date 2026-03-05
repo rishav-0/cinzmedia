@@ -79,6 +79,7 @@ const Projects = () => {
   const partners = [
     "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/800px-Google_2015_logo.svg.png",
     "https://upload.wikimedia.org/wikipedia/commons/e/e3/Bing_Fluent_Logo_Text.svg",
+    "https://imgs.search.brave.com/nHvGCSvjuqY0H71UZRpOQSnHNWbWgIxwmi6EDgZzp7k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/ZHlubWVkaWEtMS5t/aWNyb3NvZnQuY29t/L2lzL2ltYWdlL21p/Y3Jvc29mdGNvcnAv/bWNhcHMtY2xhc3Nw/bHVzP3NjbD0x",
     "https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Canva_Logo.svg/557px-Canva_Logo.svg.png",
     "https://upload.wikimedia.org/wikipedia/commons/8/8d/Adobe_Corporate_Logo.png",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToJYtPvckdMXR_0meTlA2hVx-L93tSyTT7t4W6Y1W3nSNv_WUb9KnKfdt5QYEkDzyY9cY&usqp=CAU",
@@ -124,7 +125,7 @@ const Projects = () => {
             <img
               src={logo}
               alt={`Partner logo ${index + 1}`}
-              className="h-12 mx-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="h-12 mx-10"
               key={index}
             />
           ))}

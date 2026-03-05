@@ -12,6 +12,7 @@ import Digitalmarketing from "./components/digitalmarketing/Digitalmarketing";
 import Brand from "./components/brandbuilding/Brand";
 import GraphicDetail from "./components/graphic/GraphicDetail";
 import Portfolio from "./components/portfolio/Portfolio";
+import WhatsAppButton from "./components/WhatsAppButton";
 import { PortfolioProvider } from "./context/PortfolioContext";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <PortfolioProvider>
       <Navbar />
       <ScrollToTop />
+      <WhatsAppButton />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Services" element={<Services />} />

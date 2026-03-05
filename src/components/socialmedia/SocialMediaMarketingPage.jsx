@@ -28,7 +28,11 @@ import { useNavigate } from "react-router";
 import { scrollToSection } from "../../utils/scrollToSection";
 import Button from "../button";
 
-const SocialMediaMarketingPage = () => {
+function SocialMediaMarketingPage() {
+  useEffect(() => {
+    document.title = "Social Media Marketing | Cinzmedia";
+  }, []);
+
   const navigate = useNavigate();
   const [hoveredCard, setHoveredCard] = useState(null);
   const [windowDimensions, setWindowDimensions] = useState({
@@ -344,7 +348,7 @@ const SocialMediaMarketingPage = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="mb-8"
           >
-            <motion.h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-[#e6a800]">
+            <motion.h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-[#e72615]">
               Go Viral.
               <br />
               <span className="text-4xl sm:text-5xl lg:text-6xl">
@@ -368,7 +372,7 @@ const SocialMediaMarketingPage = () => {
             <Button
               text="Get in touch"
               onClick={() => navigate("/", { state: { scrollTo: "contact" } })}
-              className="bg-[#e72615]"
+              className="bg-[#e6a800]"
             />
             <Button
               onClick={() => scrollToSection("testimonials")}
@@ -499,9 +503,7 @@ const SocialMediaMarketingPage = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Services That Make You{" "}
-              <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Unforgettable
-              </span>
+              <span className="text-[#e72615]">Unforgettable</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We don't just post content – we create viral moments that turn
@@ -548,10 +550,7 @@ const SocialMediaMarketingPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              How We Make You{" "}
-              <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Go Viral
-              </span>
+              How We Make You <span className="text-[#e72615]">Go Viral</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our proven 4-step process has helped thousands of creators and
@@ -645,6 +644,6 @@ const SocialMediaMarketingPage = () => {
       </motion.section>
     </div>
   );
-};
+}
 
 export default SocialMediaMarketingPage;

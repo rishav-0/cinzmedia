@@ -39,7 +39,7 @@ const portfolioData = {
       tags: ["Next.js", "SEO", "CMS Integration", "Performance"],
       description: "Enterprise website redesign improving SEO rankings by 180%",
       image:
-        "https://readdy.ai/api/search-image?query=modern%20corporate%20website%20design%2C%20professional%20business%20website%2C%20clean%20layout%2C%20responsive%20web%20design%2C%20company%20homepage&width=400&height=300&seq=portfolio-corporate-1&orientation=landscape",
+        "https://cdn.psdrepo.com/images/2x/offshoreactivated-corporate-website-design-free-psd-z7.jpg",
       results: "180% traffic growth, top 3 rankings for key terms",
     },
   ],
@@ -66,7 +66,7 @@ const portfolioData = {
       tags: ["Instagram", "Pinterest", "Influencer Marketing", "UGC"],
       description: "Organic social media strategy increasing followers by 350%",
       image:
-        "https://readdy.ai/api/search-image?query=fashion%20brand%20instagram%20feed%20aesthetic%2C%20clothing%20photography%2C%20social%20media%20posts%2C%20beautiful%20fashion%20content%2C%20stylish%20brand%20identity&width=400&height=300&seq=portfolio-fashion-1&orientation=landscape",
+        "https://aaft.com/blog/wp-content/uploads/2024/12/1664195816954-1.png",
       results: "350% follower growth, 150K monthly impressions",
     },
     {
@@ -79,7 +79,7 @@ const portfolioData = {
       description:
         "Community-driven content strategy building engaged audience",
       image:
-        "https://readdy.ai/api/search-image?query=startup%20community%20building%2C%20social%20media%20engagement%2C%20business%20networking%2C%20professional%20content%2C%20innovative%20company%20culture&width=400&height=300&seq=portfolio-startup-1&orientation=landscape",
+        "https://www.feedough.com/wp-content/uploads/2022/08/Startup-communities.png",
       results: "50K engaged followers, 12K+ monthly interactions",
     },
   ],
